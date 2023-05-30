@@ -2,7 +2,7 @@
 title: SDl2
 weight: -10
 ---
-<img class="" src="/sdl2.png" alt="">
+<img class="" src="/lem-page/sdl2.png" alt="">
 
 ## Install
 ### Ubuntu

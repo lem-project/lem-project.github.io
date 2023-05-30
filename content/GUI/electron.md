@@ -3,7 +3,7 @@ title: Electron (experimental)
 weight: -5
 ---
 
-<img class="" src="/electron.png" alt="">
+<img class="" src="/lem-page/electron.png" alt="">
 
 
 

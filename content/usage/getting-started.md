@@ -65,18 +65,6 @@ You can create the executable file of lem using the following command.
 $ sbcl --eval '(ql:quickload :lem-ncurses)' --load build.lisp
 ```
 
-
-## Extensions and modes
-
-## How to develop lisp
-See https://github.com/lem-project/lem/wiki/Lisp-Mode
-
-## How to hack on lem itself
-See https://github.com/lem-project/lem/wiki/How-to-hack-on-lem-itself
-
-If you have a questions, join [the Discord](https://discord.gg/NHzqbw4zVR).
-
-
 # If the installation fails
 Please refer to the following issue
 https://github.com/lem-project/lem/issues/628
