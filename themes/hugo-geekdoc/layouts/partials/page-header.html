@@ -1,0 +1,22 @@
+{{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
+{{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
+{{ if .File }}
+  {{ $.Scratch.Set "geekdocFilePath" (default (path.Join (default "content" .Site.Params.contentDir) .File.Path) .Page.Params.GeekdocFilePath) }}
+{{ else }}
+  {{ $.Scratch.Set "geekdocFilePath" false }}
+{{ end }}
+
+{{ define "breadcrumb" }}
+  {{ $parent := .page.Parent }}
+  {{ if $parent }}
+    {{ $name := (partial "utils/title" $parent) }}
+    {{ $position := (sub .position 1) }}
+    {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li><li> / </li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
+    {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
+  {{ else }}
+    {{ .value | safeHTML }}
+  {{ end }}
+{{ end }}
+
+{{ $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) }}
+{{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
