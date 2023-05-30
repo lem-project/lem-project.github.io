@@ -1,4 +1,4 @@
-baseURL = "http://localhost"
+baseURL = "sasanidas.github.io/lem-page"
 title = "Lem"
 theme = "hugo-geekdoc"
 
