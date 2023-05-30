@@ -1,5 +1,5 @@
 ---
-title: SDl2
+title: SDL2
 weight: -10
 ---
 <img class="" src="/lem-page/sdl2.png" alt="">
