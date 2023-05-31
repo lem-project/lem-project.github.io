@@ -46,6 +46,9 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 <img class="" src="/lem-page/sdl2.png" alt="">
 
-Since version 2.0, a GUI version is also available
+Since version 2.0, a GUI version is also available.
+
+It brings graphics and mouse support. In addition, Lem 2.0 has over
+180 colour themes.
 
 {{< /columns >}}
