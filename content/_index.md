@@ -31,7 +31,7 @@ You can skip over writing tidy settings or installing many plugins as you do on 
 
 <img class="" src="/lem-page/terminal.png" alt="">
 
-If you comes from Emacs or Vim, you will feel right at home.
+If you come from Emacs or Vim, you will feel right at home.
 <--->
 
 ### Alien Technology
