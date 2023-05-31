@@ -19,7 +19,7 @@ geekdocAnchor: false
 
 After installing lem, you can start developing in Common Lisp at once.
 
-You can skip over writing tidy settings or installing many plugins as you do on Emacs.
+In addition, many languages are supported with Lem's **built-in LSP support**.
 
 {{< button size="large" relref="usage/getting-started/" >}}Getting Started{{< /button >}}
 
