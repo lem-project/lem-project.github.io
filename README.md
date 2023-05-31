@@ -1,6 +1,6 @@
 # Lem Webpage
 
-This repository contains the code for the webpage of the Lem project and is currently hosted here(https://lem-project.github.io/lem-page/)
+This repository contains the code for the webpage of the Lem project and is currently hosted [here](https://lem-project.github.io/lem-page/)
 
 
 ## Requirements
