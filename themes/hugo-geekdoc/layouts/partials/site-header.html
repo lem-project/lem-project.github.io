@@ -26,10 +26,14 @@
     </div>
     <div class="gdoc-menu-header">
       <span class="gdoc-menu-header__items">
-        {{ if .Root.Site.Data.menu.extra.header }}
-          {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
-        {{ end }}
-
+	<span>
+          <a href="https://github.com/lem-project/lem" class="gdoc-header__link">
+            <svg class="gdoc-icon gdoc_github">
+              <title>GitHub</title>
+              <use xlink:href="#gdoc_github"></use>
+            </svg>
+          </a>
+	</span>
 
         <span id="gdoc-color-theme">
           <svg class="gdoc-icon gdoc_brightness_dark">
