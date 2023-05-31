@@ -19,7 +19,7 @@ geekdocAnchor: false
 
 After installing lem, you can start developing in Common Lisp at once.
 
-You can skip over writing tidy settings or installing many plugins as you do on Emacs.
+In addition, many languages are supported with Lem's **built-in LSP support**.
 
 {{< button size="large" relref="usage/getting-started/" >}}Getting Started{{< /button >}}
 
@@ -46,6 +46,9 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 <img class="" src="/lem-page/sdl2.png" alt="">
 
-Since version 2.0, a GUI version is also available
+Since version 2.0, a GUI version is also available.
+
+It brings graphics and mouse support. In addition, Lem 2.0 has over
+180 colour themes.
 
 {{< /columns >}}
