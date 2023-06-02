@@ -3,28 +3,22 @@ title: How to Hack on lem Itself
 weight: -5
 ---
 
-There are two ways to hack/develop lem.(主に二つの方法があります。)
-* Directly modify lem process behavior (エディタに直接変更を反映する)
-* Start Swank on lem and connect from Swank client (other lem process or Emacs Slime) (lem上でサーバを起動し、別のlemやemacsのslimeから接続する)
+There are two ways to hack/develop lem.
+* Directly modify lem process behavior
+* Start Swank on lem and connect from Swank client (other lem process or Emacs Slime)
 
 In the first case, just open a file and edit. Any evaluated expressions would apply immediately.
 The disadvantage of this choice is the editing process and the editor process are the same process so if you break the process, the editor would be in an unstable state, and you may lose work because of this.
  
-一つ目の方法はただlemを起動後、ファイルを開き,編集し,式を評価するだけで出来ます。
-今編集に使っているエディタプロセスと反映されるプロセスが同じなので、壊れた場合に影響するプロセスが編集に使っているエディタである点に注意が必要です。
-
 The second case, would start by following way:
 
-二つ目の方法は次のやり方で始められます。
-プロセスが二つにわかれているのでlemを壊した場合も安全に編集できます。
-
-### start Swank Server from lem (lem上でswankサーバを起動)
+### start Swank Server from lem
 ```
 M-x start-lisp-repl
 CL-USER> (swank:create-server :dont-close t)
 ```
 
-### Connect From Emacs or Other lem (emacsや別に起動したlemから接続する)
+### Connect From Emacs or Other lem
 ```
 M-x slime-connect
 ```
