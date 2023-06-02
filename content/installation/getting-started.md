@@ -2,6 +2,11 @@
 title: Installation
 weight: -20
 ---
+
+[Lem 2.0 was released](https://github.com/lem-project/lem/releases/tag/v2.0.0)! It provides binaries for Linux, MacOS and Windows.
+
+You can also build it yourself.
+
 ## Requirement
 - [roswell](https://github.com/roswell/roswell)
 - ncurses
