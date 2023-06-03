@@ -1,85 +1,75 @@
 ---
-title: Lisp mode (jp)
+title: Lisp mode
 weight: -10
 ---
-lemでのlisp-modeはデフォルトでemacsや他のエディタにあるのと同じslimeを提供しています。
 
-slimeはクライアントサーバモデルで、エディタ(クライント)とcommon lispランタイム(サーバ)がやりとりをして  
-common lispの開発に必要な機能を実現しています。
+In lem, lisp-mode provides slime, just as it is by default in emacs and other editors.
 
-emacsやvimなどでのslimeの実装はクライアント側がエディタプロセスで、サーバ側はcommon lispプロセスでlemも同様ですが、  
-lemの場合はエディタがcommon lispなのでサーバとクライアントを同じプロセスで動作させる事が可能です。  
-なのでlem自身の開発をslimeの機能を使って行うことが出来ます。
+SLIME uses a client-server model, where the editor (client) and the Common Lisp runtime (server) interact to realize the functions necessary for Common Lisp development.
 
-lemではlisp-modeを開始したときにサーバと接続されていければ自動でlemプロセス内でサーバが起動、  
-接続が行われslimeが始まるようになっています。
+In emacs, vim, etc., the slime implementation is such that the client side is the editor process, and the server side is the Common Lisp process. This is the same for lem, but in lem's case, since the editor is Common Lisp, it is possible to operate the server and client in the same process. Therefore, it is possible to develop lem itself using the features of slime.
 
-キーバインドはemacsのslimeとよく似ています。  
-少し違う点はサーバプロセスをlem自身で起動しているか、別のプロセスかを区別しているのでコマンドを分けているところです。  
-コマンド名にselfプリフィクスが付いているのが印です。
+In lem, when lisp-mode starts, if it can connect to the server, the server automatically starts within the lem process, the connection is made, and slime starts.
 
-## keybind
+The key bindings are similar to emacs' slime. A slight difference is that whether the server process is launched by lem itself or by another process is distinguished, so the commands are separated. The command name with the 'self' prefix is the mark of this.
+
+## Keybind
 `C-M-q (lisp-indent-sexp)`  
-現在のカーソル位置の式をインデントします。
+This indents the expression at the current cursor position.
 
 `C-c M-p (lisp-set-package)`  
-現在のパッケージを変更します。
-これはreplでだけ意味があります。
-ファイル内では自動でin-package式からパッケージ名を決めるので変更してもそれに上書きされます。
+This changes the current package. This only makes sense in repl. In a file, the package name is determined automatically from the in-package expression, so changing it will overwrite it.
 
 `C-c M-: (lisp-eval-string)`  
-ミニバッファに入力した式を評価します。
+This evaluates the expression entered in the minibuffer.
 
 `M-: (self-lisp-eval-string)`  
-現在のプロセスでミニバッファに入力した式を評価します。
+This evaluates the expression entered in the minibuffer in the current process.
 
 `C-c C-e (lisp-eval-last-expression)`  
-カーソル位置の前の式を評価します。
+This evaluates the expression before the cursor position.
 
 `C-x C-e (self-lisp-eval-last-expression)`  
-現在のプロセスでカーソル位置の前の式を評価します。
+This evaluates the expression before the cursor position in the current process.
 
 `C-M-x (lisp-eval-defun)`  
-カーソル位置にあるトップレベルの式を評価します。
+This evaluates the top-level expression at the cursor position.
 
 `C-c C-r (lisp-eval-region)`  
-選択した範囲を評価します。
+This evaluates the selected range.
 
 `C-c C-l (lisp-load-file)`  
-ファイルをロードします。
-デフォルトでは現在のファイルです。
+This loads a file. By default, it is the current file.
 
 `C-c C-k (lisp-compile-and-load-file)`  
-現在のファイルをコンパイルしロードします。
+This compiles and loads the current file.
 
 `C-c C-c (lisp-compile-defun)`  
-カーソル位置にあるトップレベルの式をコンパイルします。
+This compiles the top-level expression at the cursor position.
 
 `C-c M-c (lisp-remove-notes)`  
-コンパイルすると警告箇所に赤線が付くので、それを消すコマンドです。
-正しい式に修正してコンパイルをやりなおすと消えますが、このコマンドでも消すことが出来ます。
+When you compile, a red line is attached to the warning points, and this command removes it. If you correct the expression and recompile, it will disappear, but you can also remove it with this command.
 
 `C-c Return (lisp-macroexpand)`  
-カーソル位置にある式のmacroexpand-1の結果を別ウィンドウに表示します。
+This displays the result of macroexpand-1 of the expression at the cursor position in a separate window.
 
 `C-c M-m (lisp-macroexpand-all)`  
-カーソル位置にある式のmacroexpand-allの結果を別ウィンドウに表示します。
+This displays the result of macroexpand-all of the expression at the cursor position in a separate window.
 
 `C-c C-d C-a (lisp-autodoc-with-typeout)`  
-関数の引数の情報を別ウィンドウに表示します。
+This displays information about the function's arguments in a separate window.
 
 `C-c C-d d (lisp-describe-symbol)`  
-カーソル位置のシンボルのdescribeの結果を別ウィンドウに表示します。
+This displays the describe result of the symbol at the cursor position in a separate window.
 
 `C-c C-z (lisp-switch-to-repl-buffer)`  
-replウィンドウに切り替えます。
+This switches to the repl window.
 
 `C-c C-b (lisp-connection-list)`  
-接続しているサーバのリストを表示します。
+This displays a list of connected servers.
 
 `C-c g (lisp-interrupt)`  
-別スレッドで実行中の式を中断します。
+This interrupts the expression being executed in a separate thread.
 
 `C-c C-q (lisp-quickload)`  
-現在のパッケージ名でql:quickloadします。
-主にpackage-inferred-systemを想定しています。
+This runs ql:quickload with the current package name. It mainly assumes package-inferred-system.
