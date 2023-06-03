@@ -4,6 +4,8 @@ weight: -10
 ---
 <img class="" src="/lem-page/sdl2.png" alt="">
 
+[Lem 2.0 was released](https://github.com/lem-project/lem/releases/tag/v2.0.0)! It provides binaries for Linux, MacOS and Windows.
+
 ## Install
 ### Ubuntu
 
