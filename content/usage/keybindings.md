@@ -35,6 +35,30 @@ Use `M-x vi-mode` and `M-x emacs-mode`.
 
 You can also start Lem in any given, see the configuration section.
 
+### Auto-completion (abbrev)
+
+Lem has a system of *abbreviation* that permits to auto-complete any
+text that was previously entered in any text buffer.
+
+By default (in emacs-mode), `abbrev` is bound to `M-/`
+
+In vi's insert-mode, it is bound to `C-p`.
+
+There is also the command `abbrev-with-popup-window` that shows the list of completion candidates. It is not bound by default. We can bind it to a key:
+
+~~~lisp
+;; C-n is originally bound to next-line.
+(define-key *global-keymap* "C-n" 'lem/abbrev:abbrev-with-pop-up-window)
+~~~
+
+and in vi-mode:
+
+~~~lisp
+;; C-n is originally bound to next-line.
+(define-key lem-vi-mode:*insert-keymap* "C-n" 'lem/abbrev:abbrev-with-pop-up-window)
+~~~
+
+
 ### Describe keys
 
 To know what function is bound to a key binding, use `C-x ?` (`M-x describe-key`).
