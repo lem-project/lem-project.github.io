@@ -9,7 +9,7 @@ Lem loads `~/.lem/init.lisp` when starting up.
 
 You probably want to start it with
 
-    (in-package :lem)
+    (in-package :lem-user)
 
 ## Writing one's own commands
 
