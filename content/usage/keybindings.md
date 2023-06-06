@@ -3,7 +3,8 @@ title: Keybindings
 weight: -50
 ---
 
-The documentation is in progress. You can find a first list of available keys and commands in [default-keybindings.md](https://github.com/lem-project/lem/blob/main/docs/default-keybindings.md).
+The documentation is in progress. You can find a list of available keys and commands in [default-keybindings.md](https://github.com/lem-project/lem/blob/main/docs/default-keybindings.md), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new after Lem 2.0).
+
 
 # Lem Manual for Users
 
@@ -18,6 +19,8 @@ To switch buffers: `C-x b`.
 To run an interactive command by name: `M-x` (`alt-x`).
 
 To show the context menu: `Shift-F10`.
+
+Quit Lem with `C-x C-c`.
 
 See this Emacs & Slime cheatsheet to find more: https://lispcookbook.github.io/cl-cookbook/emacs-ide.html#appendix
 
@@ -63,11 +66,20 @@ and in vi-mode:
 
 To know what function is bound to a key binding, use `C-x ?` (`M-x describe-key`).
 
-### Describe available bindings
+### Describe and list available bindings
 
-To see the currently available key bindings, use `M-x describe-bindings`.
+To see the available key bindings in the current keymap, use `M-x describe-bindings`.
 
-See also `describe-mode`, to understand in which mode the editor is in the current buffer.
+You can use `M-x describe-mode` to understand in which mode the editor is in the current buffer.
+
+You can do more and *list all Lem's existing keybindings* with `M-x documentation-describe-bindings`. It inspects Lem and lists keybindings, grouped by modes:
+
+- move, edit, mark, word, S-expressions, file, buffer, window, multiple-cursors, process, help, font and other.
+
+**Note:** this command was added after Lem 2.0.
+
+<img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
+
 
 ### grep
 
@@ -78,5 +90,3 @@ this presents the results in a two-panes window. You can edit lines in the resul
 ### multiple cursors
 
 Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
-
-
