@@ -29,6 +29,16 @@ Using this method, it is safe to break lem because the editing process is separa
 
 I (@svetlyak40wt) found, that when you do `M-x start-lisp-repl`, then you can just browse lem's sources, and hit `C-c C-c` on any definition, to change your lem's behaviour. No need to start a Swank server and to connect it from the separate Emacs.
 
+
+Also, if you have problems launching lem (maybe for a display error), the lem function has a nice parameter to log the information into a file:
+```
+CL-USER> (ql:quickload :lem)
+
+CL-USER> (lem:lem "--debug" "--log-filename" "lem.log")
+```
+
+This should save the logs in the file "lem.log" from the directory that the the REPL was launch.
+
 ## Loading lem (into your Lisp image)
 
 The project's instructions show how to load and run Lem with Roswell. Here's how we can do without, with a regular SBCL REPL and Quicklisp.
