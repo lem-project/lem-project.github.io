@@ -48,7 +48,7 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 Since version 2.0, a GUI version is also available.
 
-It brings graphics and mouse support. In addition, Lem 2.0 has over
-180 colour themes.
+It brings graphics and mouse support, as well as games and over 180
+colour themes.
 
 {{< /columns >}}
