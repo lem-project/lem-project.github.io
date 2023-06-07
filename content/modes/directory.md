@@ -35,6 +35,14 @@ Here is a list of keybindings. Emacs' Dired users will feel right at home.
 | "R"             | rename                                                               |
 | "+"             | make a directory                                                     |
 
+Key bindings added after the Lem 2.0 release:
+
+| Key-combination | Function                            |
+|:---------------:|:-----------------------------------:|
+|                 |                                     |
+| "s"             | sort files and directories by mtime |
+
+
 ## Configuration
 
 You can write your own commands to act on the selected files and directories.
