@@ -17,3 +17,12 @@ on the backtrace), restart a given point of the backtrace (`r`,
 `sldb-restart-frame`), and so on. Quit the debugger with `q`, or use a
 suggested restart (by entering its number, pressing Enter on it, or
 clicking on it).
+
+## HyperSpec lookup
+
+Try one of these two commands:
+
+- `hyperspec-at-point` opens a browser to the HyperSpec page for the Lisp symbol the point is on,
+- `hyperspec-lookup` lets you choose a symbol (with auto-completion).
+
+These commands were added after Lem 2.0.
