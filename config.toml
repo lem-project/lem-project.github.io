@@ -4,6 +4,18 @@ theme = "hugo-geekdoc"
 
 pluralizeListTitles = false
 
+defaultContentLanguage = "en"
+
+[languages.en]
+languageName = "English"
+contentDir = "content/en"
+weight = 10
+
+# [languages.jp]
+# languageName = "Japanese"
+# contentDir = "content/jp"
+# weight = 15
+
 # Geekdoc required configuration
 pygmentsUseClasses = true
 pygmentsCodeFences = true
