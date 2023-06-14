@@ -153,6 +153,14 @@ You are presented a "modale" window. Type some text to start narrowing the buffe
 
 You can also use Space to select/deselect entries, then use a right click to choose an action to apply on the selected buffers. Default actions are to kill the selected buffers, or to save them.
 
+### Tabs
+
+Lem has a rudimentary support for tabs as for now.
+
+Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer.
+
+On the GUI version of Lem, you can click on them.
+
 ## vi and emacs modes
 
 Use `M-x vi-mode` and `M-x emacs-mode`.

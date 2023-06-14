@@ -67,7 +67,7 @@ Full-featured REPL and interactive debugger, with Paredit and a third-party Pare
 
 <--->
 
-### Project explorer
+### Project tree view
 
 <img class="" src="/lem-page/filer.png" alt="">
 
@@ -79,8 +79,8 @@ Open a file tree of the current project.
 
 <!-- <img class="" src="/lem-page/tetris.png" alt="File tree on the left."> -->
 
-Multiple cursors, interactive grep, directory mode, HTML and CSS modes,
+Multiple cursors, interactive grep, directory mode, tabs,
 
-and support for Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm, ascii, JSON…
+and support for Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm, ascii, JSON, HTML and CSS…
 
 {{< /columns >}}
