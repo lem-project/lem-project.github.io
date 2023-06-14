@@ -20,9 +20,31 @@ clicking on it).
 
 ## HyperSpec lookup
 
+> These commands were added after Lem 2.0.
+
 Try one of these two commands:
 
-- `hyperspec-at-point` opens a browser to the HyperSpec page for the Lisp symbol the point is on,
+- `hyperspec-at-point` opens a browser to the HyperSpec page for the Lisp symbol the point is on. You can also right-click on a symbol (GUI version).
 - `hyperspec-lookup` lets you choose a symbol (with auto-completion).
 
-These commands were added after Lem 2.0.
+## Paredit mode
+
+Paredit helps to handle parentheses balanced in your lisp code.
+
+Start it with
+
+    M-x paredit-mode
+
+It defines keys on:
+
+- "(" and ")" to keep parentheses balanced
+- a double quote (to insert a double quote)
+- the delete key
+- C-k: "kill" a s-expression
+- C-right: "slurp"
+- C-left: "barf"
+- M-s: "splice"
+- M-r: "raise"
+- M-(: "wrap"
+
+See also the Pareto third-party mode for a lispy-like editing.
