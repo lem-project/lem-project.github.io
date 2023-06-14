@@ -29,10 +29,24 @@ In addition, many languages are supported with Lem's **built-in LSP support**.
 
 ### Keyboard oriented
 
-<img class="" src="/lem-page/terminal.png" alt="">
+<a href="/lem-page/terminal.png"> <img class="" src="/lem-page/terminal.png" alt=""> </a>
 
 If you come from Emacs or Vim, you will feel right at home.
+
 <--->
+
+### GUI version using SDL2
+
+<a href="/lem-page/sdl2.png"> <img class="" src="/lem-page/sdl2.png" alt=""> </a>
+
+Since version 2.0, a GUI version is also available.
+
+It brings graphics and mouse support, as well as games and over 180
+colour themes.
+
+{{< /columns >}}
+
+{{< columns >}}
 
 ### Alien Technology
 
@@ -44,34 +58,25 @@ Lem is written and extensible in Common Lisp.
 
 <--->
 
-### GUI version using SDL2
-
-<img class="" src="/lem-page/sdl2.png" alt="">
-
-Since version 2.0, a GUI version is also available.
-
-It brings graphics and mouse support, as well as games and over 180
-colour themes.
-
-{{< /columns >}}
-
-{{< columns >}}
-
 ### Ready for Common Lisp
 
-<img class="" src="/lem-page/lem-lisp.png" alt="">
+<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
 
 Start developing on Lisp at once.
 
 Full-featured REPL and interactive debugger, with Paredit and a third-party Pareto (lispy-mode) mode.
 
-<--->
+{{< /columns >}}
+
+{{< columns >}}
 
 ### Project tree view
 
-<img class="" src="/lem-page/filer.png" alt="">
+<a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
 
-Open a file tree of the current project.
+Open a tree view of the current project,
+
+use project-aware commands.
 
 <--->
 
@@ -81,6 +86,10 @@ Open a file tree of the current project.
 
 Multiple cursors, interactive grep, directory mode, tabs,
 
-and support for Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm, ascii, JSON, HTML and CSS…
+and support for:
+
+Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm
+
+markdown, ascii, JSON, HTML and CSS, SQL…
 
 {{< /columns >}}
