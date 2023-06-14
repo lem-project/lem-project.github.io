@@ -134,6 +134,13 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 <img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
 
 
+## Filer
+
+The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
+
+<img class="" src="/lem-page/filer.png" alt="Lem Filer on the left window">
+
+
 ## grep
 
     M-x grep
