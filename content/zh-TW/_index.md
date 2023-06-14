@@ -1,5 +1,5 @@
 ---
-title: Lem is the editor/IDE well-tuned for Common Lisp.
+title: Lem 是為 Common Lisp 精心調校的編輯器/IDE
 geekdocNav: false
 geekdocAlign: center
 geekdocAnchor: false
