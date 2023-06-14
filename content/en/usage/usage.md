@@ -35,6 +35,14 @@ You can open a file in another "window", aka if Lem's screen is split in two, op
 
 You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
+### Filer - project explorer
+
+> This feature was added after Lem 2.0
+
+The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
+
+<img class="" src="/lem-page/filer.png" alt="Lem Filer on the left window">
+
 
 ### Find file in project
 
@@ -193,12 +201,6 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 <img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
 
-
-## Filer
-
-The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
-
-<img class="" src="/lem-page/filer.png" alt="Lem Filer on the left window">
 
 
 ## grep
