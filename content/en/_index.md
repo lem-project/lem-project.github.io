@@ -40,6 +40,8 @@ If you come from Emacs or Vim, you will feel right at home.
 
 It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
 
+Lem is written and extensible in Common Lisp.
+
 <--->
 
 ### GUI version using SDL2
@@ -50,5 +52,35 @@ Since version 2.0, a GUI version is also available.
 
 It brings graphics and mouse support, as well as games and over 180
 colour themes.
+
+{{< /columns >}}
+
+{{< columns >}}
+
+### Ready for Common Lisp
+
+<img class="" src="/lem-page/lem-lisp.png" alt="">
+
+Start developing on Lisp at once.
+
+Full-featured REPL and interactive debugger, with Paredit and a third-party Pareto (lispy-mode) mode.
+
+<--->
+
+### Project explorer
+
+<img class="" src="/lem-page/filer.png" alt="">
+
+Open a file tree of the current project.
+
+<--->
+
+### and more
+
+<!-- <img class="" src="/lem-page/tetris.png" alt="File tree on the left."> -->
+
+Multiple cursors, interactive grep, directory mode, HTML and CSS modes,
+
+and support for Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm, ascii, JSON…
 
 {{< /columns >}}
