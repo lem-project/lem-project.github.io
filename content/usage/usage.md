@@ -36,6 +36,50 @@ You can open a file in another "window", aka if Lem's screen is split in two, op
 You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
 
+### Find file in project
+
+> Project related commands were added after Lem 2.0
+
+Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project.
+
+This command isn't bound to a key, we can do it now:
+
+~~~lisp
+(define-key *global-keymap*
+  "C-x p f"
+  'lem-core/commands/project:project-find-file)
+~~~
+
+A project is recognized by typical files or directories. For example,
+a directory containing a `.git/` subdirecotry or a `.project`,
+`.projectile`, `.ignore`, `configure.ac` or `Makefile` file is
+considered the root of a project. The actual list is a bit longer, it should "just work".
+
+When you call the `project-find-file` command, Lem looks at the
+buffer's working directory if it recognizes a project root. If not, it
+goes up one directory and looks again, and continually until finding a
+project root. It stops at the home directory.
+
+If no project root was found, Lem uses the buffer's directory.
+
+There is also the commands:
+
+* `project-delete-buffers` to delete all this project's buffers, except:
+  - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
+  - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
+
+* `project-root` to display the project root
+* `project-find-file-other-window`
+* `project-root-directory` to open the project root with Lem's directory-mode.
+* `project-root-directory-other-window`
+
+The filer (`C-x d`, see below) opens the project root.
+
+The project's file chooser will try to use the `fdfind` program to list the
+project files. In that case, common development directories such as
+`.git/` and `node_modules/` will be excluded. Read more below.
+
+
 ### Find file recursively
 
 > find-file-recursively was added after Lem 2.0
