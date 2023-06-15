@@ -21,7 +21,7 @@ geekdocAnchor: false
 
 此外，Lem 的**內置 LSP 支持**支持多種語言。
 
-{{< button size="large" relref="installation/getting-started/" >}}Getting Started{{< /button >}}
+{{< button size="large" relref="installation/getting-started/" >}}開始使用{{< /button >}}
 
 ## 功能概述
 
@@ -31,14 +31,14 @@ geekdocAnchor: false
 
 <img class="" src="/lem-page/terminal.png" alt="">
 
-If you come from Emacs or Vim, you will feel right at home.
+如果您來自 Emacs 或 Vim，您會感到賓至如歸。
 <--->
 
 ### 外星科技
 
 <img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
 
-It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
+約翰麥卡錫在 1958 年向我們介紹 Lisp 時與世界分享了外星技術。我們延續這一偉大傳統。
 
 <--->
 
@@ -46,9 +46,8 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 <img class="" src="/lem-page/sdl2.png" alt="">
 
-Since version 2.0, a GUI version is also available.
+從 2.0 版開始，還提供了 GUI 版本。
 
-It brings graphics and mouse support, as well as games and over 180
-colour themes.
+它還內置了圖形和鼠標支持，以及遊戲和 180 多個顏色主題。
 
 {{< /columns >}}
