@@ -35,6 +35,16 @@ If you come from Emacs or Vim, you will feel right at home.
 
 <--->
 
+### Alien Technology
+
+<img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
+
+It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
+
+Lem is written and extensible in Common Lisp.
+
+<--->
+
 ### GUI version using SDL2
 
 <a href="/lem-page/sdl2.png"> <img class="" src="/lem-page/sdl2.png" alt=""> </a>
@@ -48,16 +58,6 @@ colour themes.
 
 {{< columns >}}
 
-### Alien Technology
-
-<img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
-
-It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
-
-Lem is written and extensible in Common Lisp.
-
-<--->
-
 ### Ready for Common Lisp
 
 <a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
@@ -66,9 +66,7 @@ Start developing on Lisp at once.
 
 Full-featured REPL and interactive debugger, with Paredit and a third-party Pareto (lispy-mode) mode.
 
-{{< /columns >}}
-
-{{< columns >}}
+<--->
 
 ### Project tree view
 
@@ -78,11 +76,13 @@ Open a tree view of the current project,
 
 use project-aware commands.
 
-<--->
+{{< /columns >}}
+
+{{< columns >}}
 
 ### and more
 
-<!-- <img class="" src="/lem-page/tetris.png" alt="File tree on the left."> -->
+<img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
 
 Multiple cursors, interactive grep, directory mode, tabs,
 
