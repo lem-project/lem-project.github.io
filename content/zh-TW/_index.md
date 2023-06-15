@@ -51,3 +51,41 @@ geekdocAnchor: false
 它還內置了圖形和鼠標支持，以及遊戲和 180 多個顏色主題。
 
 {{< /columns >}}
+
+{{< columns >}}
+
+### Ready for Common Lisp
+
+<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
+
+Start developing on Lisp at once.
+
+Full-featured REPL and interactive debugger, with Paredit and a third-party Pareto (lispy-mode) mode.
+
+<--->
+
+### Project tree view
+
+<a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
+
+Open a tree view of the current project,
+
+use project-aware commands.
+
+{{< /columns >}}
+
+{{< columns >}}
+
+### and more
+
+<img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
+
+Multiple cursors, interactive grep, directory mode, tabs,
+
+and support for:
+
+Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm
+
+markdown, ascii, JSON, HTML and CSS, SQL…
+
+{{< /columns >}}
