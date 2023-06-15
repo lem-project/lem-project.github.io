@@ -17,9 +17,9 @@ geekdocAnchor: false
 
 <!-- markdownlint-restore -->
 
-After installing lem, you can start developing in Common Lisp at once.
+安裝 lem 後，您可以立即開始使用 Common Lisp 進行開發。
 
-In addition, many languages are supported with Lem's **built-in LSP support**.
+此外，Lem 的**內置 LSP 支持**支持多種語言。
 
 {{< button size="large" relref="installation/getting-started/" >}}Getting Started{{< /button >}}
 
