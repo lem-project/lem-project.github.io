@@ -23,18 +23,18 @@ geekdocAnchor: false
 
 {{< button size="large" relref="installation/getting-started/" >}}Getting Started{{< /button >}}
 
-## Feature overview
+## 功能概述
 
 {{< columns >}}
 
-### Keyboard oriented
+### 鍵盤面向
 
 <img class="" src="/lem-page/terminal.png" alt="">
 
 If you come from Emacs or Vim, you will feel right at home.
 <--->
 
-### Alien Technology
+### 外星科技
 
 <img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
 
@@ -42,7 +42,7 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 <--->
 
-### GUI version using SDL2
+### 使用 SDL2 的 GUI 版本
 
 <img class="" src="/lem-page/sdl2.png" alt="">
 
