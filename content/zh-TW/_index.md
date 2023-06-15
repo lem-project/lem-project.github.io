@@ -58,9 +58,9 @@ geekdocAnchor: false
 
 <a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
 
-Start developing on Lisp at once.
+立即開始在 Lisp 上進行開發。
 
-Full-featured REPL and interactive debugger, with Paredit and a third-party Pareto (lispy-mode) mode.
+全功能 REPL 和交互式調試器，帶有 Paredit 和第三方 Pareto （lispy-mode） 模式。
 
 <--->
 
@@ -68,9 +68,7 @@ Full-featured REPL and interactive debugger, with Paredit and a third-party Pare
 
 <a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
 
-Open a tree view of the current project,
-
-use project-aware commands.
+打開當前專案的樹狀圖，並使用 project-aware 指令.
 
 {{< /columns >}}
 
@@ -80,9 +78,7 @@ use project-aware commands.
 
 <img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
 
-Multiple cursors, interactive grep, directory mode, tabs,
-
-and support for:
+支持多個游標, 交互 grep, 目錄模式, tabs, 和支援以下語言:
 
 Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm
 
