@@ -19,7 +19,7 @@ To switch to the REPL from a Lisp buffer, even you didn't start it before, use `
 
 * `cd` changes Lem's global current working directory
 * `change-package` changes the REPL's current CL package
-* `sayonar` quits the REPL.
+* `sayonara` quits the REPL.
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
 
@@ -60,8 +60,20 @@ clicking on it).
 
 ## Code navigation
 
-Use `M-.` (`find-definitions`) to go to the symbol definition. This
+Use `M-.` (`find-definitions`) to go to a symbol definition. This
 opens the source file where this symbol was defined. Use `M-,` to come back.
+
+It works when the cursor is on a Lisp symbol, and also… when it
+isn't. In that case, Lem asks you for a symbol *with autocompletion of
+all known symbols of the current Lisp image*, and it brings you to
+this symbol's definition.
+
+"All symbols" really means all the symbols of any package that was
+loaded in the image. This includes the implementation and Lem's
+packages, the code of your current project, and any other third-party
+library that was loaded in the current image.
+
+> This is an efficient method to jump around your code and explore anything loaded in the Lisp image.
 
 ## Code search
 
