@@ -54,7 +54,7 @@ geekdocAnchor: false
 
 {{< columns >}}
 
-### Ready for Common Lisp
+### 內置好的 Common Lisp 建構環境
 
 <a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
 
@@ -64,7 +64,7 @@ Full-featured REPL and interactive debugger, with Paredit and a third-party Pare
 
 <--->
 
-### Project tree view
+### 專案樹狀圖
 
 <a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
 
@@ -76,7 +76,7 @@ use project-aware commands.
 
 {{< columns >}}
 
-### and more
+### 更多
 
 <img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
 
