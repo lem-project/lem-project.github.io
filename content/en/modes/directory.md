@@ -60,7 +60,7 @@ Lem opens a PDF file natively, we can tell it to use an external program:
 ~~~lisp
 ;; .lem/init.lisp
 (defmethod lem-core/commands/file::execute-find-file :around (executor mode pathname)
-  (if (find (pathname-type pathname) '("pdf"))
+  (if (find (pathname-type pathname) '("pdf") :test #'equal)
       (open-external-file pathname)
       (call-next-method)))
 ~~~
