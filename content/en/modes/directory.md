@@ -37,10 +37,9 @@ Here is a list of keybindings. Emacs' Dired users will feel right at home.
 
 Key bindings added after the Lem 2.0 release:
 
-| Key-combination | Function                            |
-|:---------------:|:-----------------------------------:|
-|                 |                                     |
-| "s"             | sort files and directories by mtime |
+| Key-combination | Function                                                                  |
+|:---------------:|:-------------------------------------------------------------------------:|
+| "s"             | sort files and directories by mtime, then by size, and back to file name. |
 
 
 ## Configuration
