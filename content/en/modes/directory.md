@@ -41,6 +41,30 @@ Key bindings added after the Lem 2.0 release:
 |:---------------:|:-------------------------------------------------------------------------:|
 | "s"             | sort files and directories by mtime, then by size, and back to file name. |
 
+### Opening multimedia files
+
+Lem is smart enough to open files that it doesn't natively support
+with another program. Multimedia files, for example, will be opened
+with your favourite media player.
+
+### Opening image files
+
+Lem will open the following file extensions:
+
+    ("png" "jpg" "jpeg" "bmp" "gif")
+
+### Opening PDF files
+
+Lem opens a PDF file natively, we can tell it to use an external program:
+
+~~~lisp
+;; .lem/init.lisp
+(defmethod lem-core/commands/file::execute-find-file :around (executor mode pathname)
+  (if (find (pathname-type pathname) '("pdf"))
+      (open-external-file pathname)
+      (call-next-method)))
+~~~
+
 
 ## Configuration
 
