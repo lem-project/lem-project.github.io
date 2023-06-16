@@ -48,15 +48,7 @@ The shortcut `C-x d` opens a project explorer on the left side. Another keypress
 
 > Project related commands were added after Lem 2.0
 
-Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project.
-
-This command isn't bound to a key, we can do it now:
-
-~~~lisp
-(define-key *global-keymap*
-  "C-x p f"
-  'lem-core/commands/project:project-find-file)
-~~~
+Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
 
 A project is recognized by typical files or directories. For example,
 a directory containing a `.git/` subdirecotry or a `.project`,
@@ -70,18 +62,18 @@ project root. It stops at the home directory.
 
 If no project root was found, Lem uses the buffer's directory.
 
-There is also the commands:
+There are also the commands:
 
-* `project-delete-buffers` to delete all this project's buffers, except:
+* `project-delete-buffers` (`C-x p K`) to delete all this project's buffers, except:
   - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
   - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
 
 * `project-root` to display the project root
 * `project-find-file-other-window`
-* `project-root-directory` to open the project root with Lem's directory-mode.
+* `project-root-directory` (`C-x p d`) to open the project root with Lem's directory-mode.
 * `project-root-directory-other-window`
 
-The filer (`C-x d`, see below) opens the project root.
+The filer (`C-x d`, see above) opens the project root.
 
 The project's file chooser will try to use the `fdfind` program to list the
 project files. In that case, common development directories such as
