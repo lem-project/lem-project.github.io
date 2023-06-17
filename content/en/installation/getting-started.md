@@ -88,7 +88,7 @@ make build-sdl2
 
 You can create the executable file of lem using the following command.
 ```
-$ sbcl --eval '(ql:quickload :lem-ncurses)' --load build.lisp
+$ sbcl --eval '(ql:quickload :lem-ncurses)' --load scripts/build.lisp
 ```
 
 # If the installation fails
