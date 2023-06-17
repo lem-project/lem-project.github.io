@@ -39,3 +39,11 @@ game is updated on the fly.
 <img class="" src="/lem-page/developing-game.png" alt="">
 
 Lem developpers are investigated to interface with Trial, the game engine of the Kandria game.
+
+## Misc
+
+### Transparent background
+
+You can add a transparent background to Lem's SDL2 GUI! Add this to your init file:
+
+    (sdl2-ffi.functions:sdl-set-window-opacity (lem-sdl2::display-window lem-sdl2::*display*) 0.9)
