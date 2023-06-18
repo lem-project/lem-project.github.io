@@ -8,8 +8,9 @@ weight: -20
 You can also build it yourself.
 
 ## Requirement
-- [roswell](https://github.com/roswell/roswell)
+- [sbcl](https://www.sbcl.org/)
 - ncurses
+
 
 ## Platform
 - Linux
@@ -88,7 +89,7 @@ make build-sdl2
 
 You can create the executable file of lem using the following command.
 ```
-$ sbcl --eval '(ql:quickload :lem-ncurses)' --load scripts/build.lisp
+$ sbcl --eval '(ql:quickload :lem-ncurses)' --load scripts/patch-build-ncurses.lisp
 ```
 
 # If the installation fails
