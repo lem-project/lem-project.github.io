@@ -136,3 +136,14 @@ It defines keys on:
 - M-(: "wrap" the following expression inside a set of parens.
 
 See also the Pareto third-party mode for a lispy-like editing.
+
+### Colourful parentheses
+
+Lem by default highlights the matching pair when the point is on a
+parenthesis. This minor mode is called `toggle-show-paren` and it is
+on by default.
+
+You can bring distinct colours to each pair with this
+simple command:
+
+    M-x toggle-paren-coloring
