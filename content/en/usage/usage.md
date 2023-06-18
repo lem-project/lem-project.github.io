@@ -212,3 +212,11 @@ this presents the results in a two-panes window. You can edit lines in the resul
 ## multiple cursors
 
 Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
+
+## Misc
+
+Try:
+
+- `M-x toggle-line-numbers`
+- `M-x toggle-read-only`
+- `M-x toggle-auto-save`
