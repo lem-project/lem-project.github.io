@@ -64,19 +64,29 @@ If no project root was found, Lem uses the buffer's directory.
 
 There are also the commands:
 
-* `project-delete-buffers` (`C-x p K`) to delete all this project's buffers, except:
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-------------------------------------------------------------------------:|
+| `project-delete-buffers` | `C-x p K` | delete all this project's buffers                    |
+| `project-root` |                     | display the project root         |
+| `project-find-file-other-window` | `C-x 4 p f` | open a file in another window              |
+| `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
+| `project-root-directory-other-window` |  | open the project root in another window          |
+
+These commands allow to **switch** between projects:
+
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-------------------------------------------------------------------------:|
+| `project-save` | `C-x p s` | save the current project. This populates the text file on `(lem-home)/history/projects`. |
+| `project-switch` |`C-x p p`| choose a saved project and find a file in it |
+| `project-unsave` |`C-x p u`| remove a project from the history            |
+
+
+Configuration:
+
+- for `project-delete-buffers`:
   - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
   - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
-* `project-root` to display the project root
-* `project-find-file-other-window` (`C-x 4 p f`)
-* `project-root-directory` (`C-x p d`) to open the project root with Lem's directory-mode.
-* `project-root-directory-other-window`
 
-and those commands, to save projects across sessions, and **switch** between projects:
-
-* `project-save` (`C-x p s`) to save the current project. This populates the text file on `(lem-home)/history/projects`.
-* `project-switch` (`C-x p p`) to choose a saved project and find a file in it.
-* `project-unsave` (`C-x p u`) to remove a project from the history.
 
 The **filer** (`C-x d`, see above) opens the project root.
 
