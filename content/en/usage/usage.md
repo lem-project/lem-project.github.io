@@ -218,5 +218,8 @@ Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to
 Try:
 
 - `M-x toggle-line-numbers`
+  - or `(lem/line-numbers:toggle-line-numbers)`
 - `M-x toggle-read-only`
+  - `(lem-core/commands/buffer:toggle-read-only)`
 - `M-x toggle-auto-save`
+  - `(lem/auto-save:toggle-auto-save)`
