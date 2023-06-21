@@ -12,4 +12,4 @@ https://github.com/lem-project/lem/issues?q=is%3Aissue+is%3Aopen+label%3AOnboard
 We would be delighted if you could take on the challenge.
 
 Feel free to ask if you have any questions.  
-You can use both our (Discord)[https://discord.gg/NHzqbw4zVR] and the GitHub (Discussions)[https://github.com/lem-project/lem/discussions].
+You can use both our [Discord](https://discord.gg/NHzqbw4zVR) and the GitHub [Discussions](https://github.com/lem-project/lem/discussions)
