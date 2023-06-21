@@ -3,7 +3,6 @@ title: How to contribute to lem
 weight: 1
 ---
 
-## How to contribute to lem
 Thank you for your willingness to contribute to lem.  
 We welcome you!
 
