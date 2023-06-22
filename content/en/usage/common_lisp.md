@@ -19,6 +19,7 @@ To switch to the REPL from a Lisp buffer, even you didn't start it before, use `
 
 * `cd` changes Lem's global current working directory
 * `change-package` changes the REPL's current CL package
+* `quickload`, to choose a Quicklisp system (with autocompletion) and load it.
 * `sayonara` quits the REPL.
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
