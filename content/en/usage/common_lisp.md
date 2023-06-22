@@ -46,7 +46,16 @@ To evaluate some Lisp code globalyl wherever you are in Lem, use `M-:`.
 ## Inspection
 
 Use `C-c I` (`M-x lisp-inspect`) to get an inspector window about an expression. If the
-point is on a symbol, inspect this symbol.
+point is on a symbol, inspect this symbol. It works with objects printed on the REPL.
+
+Use `M-x lisp-browse-class-as-tree` to display the inheritance tree of a class.
+In the screenshot below, you can inspect a class node by clicking on it.
+You can also scroll the graph with the same key bindings as cursor movement.
+
+For example, inspect `lem::editor-condition` or `simple-condition`.
+
+<a href="/lem-page/class-tree.png"> <img class="" src="/lem-page/lem-lisp.png" alt="class tree inspector: a graph of clickable nodes."> </a>
+
 
 ## Interactive debugger
 
