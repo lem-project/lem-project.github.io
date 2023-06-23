@@ -7,8 +7,7 @@ weight: 1
 Lem has a test suite that uses [rove](https://github.com/fukamachi/rove) a great package to test systems, this page is inteded to show
 the progress of each implementation. SBCL should be the default one, with all test green.
 
-For now, this table reflect the implementation status from the branch `other-lisp-implementations`
-from this pull request https://github.com/lem-project/lem/pull/686
+The changes are in Lem main branch (for more in-depth information, https://github.com/lem-project/lem/pull/686 )
 
 ### Implementations
 {{< expand "SBCL - 2.3.3" >}}
