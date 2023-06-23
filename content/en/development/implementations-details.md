@@ -6474,3 +6474,1024 @@ from this pull request https://github.com/lem-project/lem/pull/686
 | (lem-tests/timer TIMER-NAME-TESTS)                                       | Expect (STRING= "HELLO" LEM-TESTS/TIMER::VALUE) to be true.                                          | <strong> ERROR </strong> |
 
 {{< /expand >}}
+
+{{< expand "Clasp - cclasp-boehmprecise-2.3.0-7-gd8234df58-cst" >}}
+{{< progress title="Progress" value="84" icon="gdoc_info_outline" >}}
+## lem-tests
+| Test                                                                     | Description                                                                                          | Result                   |
+|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------|
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (LEM/COMMON/KILLRING:PUSH-KILLRING-ITEM
+        LEM-TESTS/COMMON/KILLRING::KILLRING
+      ...                                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (EQUAL "abc"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (EQUAL "abc"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (LEM/COMMON/KILLRING:PUSH-KILLRING-ITEM
+        LEM-TESTS/COMMON/KILLRING::KILLRING
+      ...                                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (EQUAL "def"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (EQUAL "abc"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST)                                  | Expect (EQUAL "def"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST NIL)                              | Expect (EQUAL "def!!"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TE...                                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/common/killring SIMPLE-TEST NIL)                              | Expect (EQUAL "??def!!"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-...                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/common/killring APPENDING-IF-EMPTY)                           | Expect (EQUAL "abc"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/common/killring BEFORE-INSERTING)                             | Expect (EQUAL "ba"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TESTS...                                                                                                                                                       | <strong> OK </strong>    |
+| (lem-tests/common/killring BEFORE-INSERTING)                             | Expect (EQUAL "cba"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| NIL                                                                      | no error                                                                                             | <strong> OK </strong>    |
+| (lem-tests/common/killring ROTATE)                                       | Expect (EQUAL "a"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TESTS/...                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/common/killring ROTATE)                                       | Expect (EQUAL "b"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TESTS/...                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/common/killring ROTATE)                                       | Expect (EQUAL "b"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TESTS/...                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/common/killring ROTATE)                                       | Expect (EQUAL "a"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TESTS/...                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/common/killring INTERNAL-OPTION)                              | Expect (EQUAL '("foo" (:TEST))
+              (MULTIPLE-VALUE-LIST
+               (LEM/COMMON/KILL...                                                                                                                                                | <strong> OK </strong>    |
+| (lem-tests/common/killring INTERNAL-OPTION)                              | Expect (EQUAL '("foobar" (:TEST :TEST2))
+              (MULTIPLE-VALUE-LIST
+               (LEM/C...                                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/common/killring INTERNAL-OPTION)                              | Expect (EQUAL '("bazfoobar" (:TEST3 :TEST :TEST2))
+              (MULTIPLE-VALUE-LIST
+           ...                                                                                                                                                                    | <strong> OK </strong>    |
+| (lem-tests/common/killring PEEK-KILLRING-ITEM-WHEN-EMPTY)                | Expect (NULL
+        (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+         LEM-TESTS/COMMON/KILLRING::...                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST)                                          | Expect (NULL (LEM/COMMON/HISTORY:LAST-HISTORY LEM-TESTS/HISTORY::HISTORY)) to be true.               | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST)                                          | Expect (EQUAL "foo"
+              (LEM/COMMON/HISTORY:LAST-HISTORY LEM-TESTS/HISTORY::HISTORY)) t...                                                                                                  | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST)                                          | Expect (EQUAL "bar"
+              (LEM/COMMON/HISTORY:LAST-HISTORY LEM-TESTS/HISTORY::HISTORY)) t...                                                                                                  | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST NIL)                                      | Expect (EQUAL '("bar" T)
+              (MULTIPLE-VALUE-LIST
+               (LEM/COMMON/HISTORY:PR...                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST NIL)                                      | Expect (EQUAL '("foo" T)
+              (MULTIPLE-VALUE-LIST
+               (LEM/COMMON/HISTORY:PR...                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST NIL)                                      | Expect (NULL (LEM/COMMON/HISTORY:PREVIOUS-HISTORY LEM-TESTS/HISTORY::HISTORY)) to be true.           | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST NIL)                                      | Expect (EQUAL '("bar" T)
+              (MULTIPLE-VALUE-LIST
+               (LEM/COMMON/HISTORY:NE...                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/history SIMPLE-TEST NIL)                                      | Expect (NULL (LEM/COMMON/HISTORY:NEXT-HISTORY LEM-TESTS/HISTORY::HISTORY)) to be true.               | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "project-root/foo/bar"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::INFER-...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "project-root-tests/a"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::INFER-...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "project-root/test/a/b"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::INFER...                                                                                                                    | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "project-root/test/a/b"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::INFER...                                                                                                                    | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "project-root/main"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::INFER-PAC...                                                                                                                | <strong> OK </strong>    |
+| (lem-tests/lisp-mode/package-inferred-system INFER-PACKAGE-NAME-1)       | Expect (EQUAL "lem-project-root/foo/bar"
+              (LEM-LISP-MODE/PACKAGE-INFERRED-SYSTEM::IN...                                                                                                                       | <strong> OK </strong>    |
+| (lem-tests/killring EXTERNAL-OPTION)                                     | Expect (EQUAL '("baz" (:TEST))
+              (MULTIPLE-VALUE-LIST (LEM-CORE:YANK-FROM-CLIPBOARD-O...                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/killring EXTERNAL-OPTION)                                     | Expect (EQUAL LEM-TESTS/KILLRING::EXPECTED-RESULT
+              (LEM-CORE:YANK-FROM-CLIPBOARD-OR-...                                                                                                                                | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (LEM-BASE:CONTROL-CHAR CHAR) to be false.                                                     | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CONTROL-CHAR)                              | Expect (EQUAL (LEM-BASE:CONTROL-CHAR CHAR) LEM-BASE:CONTROL-CHAR) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-CHAR-P)                               | Expect (LOOP :FOR
+             CHAR
+             :IN
+             LEM-TESTS/STRING-WIDTH-UTILS::A...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-CHAR-P)                               | Expect (LOOP :FOR
+             CHAR
+             :IN
+             LEM-TESTS/STRING-WIDTH-UTILS::C...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-CHAR-P)                               | Expect (LOOP :FOR
+             (LEM-TESTS/STRING-WIDTH-UTILS::START
+              LEM-TESTS/STRIN...                                                                                                                                                  | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-CHAR-P)                               | Expect (LEM-BASE:WIDE-CHAR-P (CODE-CHAR 127798)) to be false.                                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-CHAR-P)                               | Expect (LEM-BASE:WIDE-CHAR-P (CODE-CHAR 128253)) to be false.                                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 1 (LEM-BASE:CHAR-WIDTH #\a 0)) to be true.                                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2 (LEM-BASE:CHAR-WIDTH #\a 1)) to be true.                                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (LOOP :FOR
+             LEM-TESTS/STRING-WIDTH-UTILS::I
+             :FROM
+             0
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (LOOP :FOR
+             LEM-TESTS/STRING-WIDTH-UTILS::I
+             :FROM
+             8
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 10 (LEM-BASE:CHAR-WIDTH #\Tab 9 :TAB-SIZE 10)) to be true.                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2 (LEM-BASE:CHAR-WIDTH #\NUL 0)) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 3 (LEM-BASE:CHAR-WIDTH #\NUL 1)) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 4 (LEM-BASE:CHAR-WIDTH #\UE0FF 0)) to be true.                                           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 5 (LEM-BASE:CHAR-WIDTH #\UE0FF 1)) to be true.                                           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 6 (LEM-BASE:CHAR-WIDTH #\UE0FF 2)) to be true.                                           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2 (LEM-BASE:CHAR-WIDTH #\HIRAGANA_LETTER_A 0)) to be true.                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 3 (LEM-BASE:CHAR-WIDTH #\HIRAGANA_LETTER_A 1)) to be true.                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 2
+            (LEM-BASE:CHAR-WIDTH (CODE-CHAR LEM-TESTS/STRING-WIDTH-UTILS::CODE)
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils CHAR-WIDTH NIL)                            | Expect (EQL 0 (LEM-BASE:CHAR-WIDTH #\Newline 0)) to be true.                                         | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 1 (LEM-BASE:STRING-WIDTH "a")) to be true.                                               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH "ab")) to be true.                                              | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH "abc")) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH "abc" :START 1)) to be true.                                    | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH "abc" :END 2)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH "abcdef" :START 1 :END 3)) to be true.                          | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH "B")) to be true.                                              | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH "aB")) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 0 (LEM-BASE:STRING-WIDTH "abcdeBDFHJ" :END 0)) to be true.                          | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH "abcdeBDFHJ" :END 3)) to be true.                          | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 1 (LEM-BASE:STRING-WIDTH "abcdeBDFHJ" :START 4 :END 5)) to be true.                 | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH "abcdeBDFHJ" :START 4 :END 6)) to be true.                 | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 5 (LEM-BASE:STRING-WIDTH "abcdeBDFHJ" :START 4 :END 7)) to be true.                 | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 10 (LEM-BASE:STRING-WIDTH (FORMAT NIL "~Aab" #\Tab))) to be true.                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 10 (LEM-BASE:STRING-WIDTH (FORMAT NIL "ab~Aab" #\Tab))) to be true.                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 5 (LEM-BASE:STRING-WIDTH (FORMAT NIL "~Aab" #\Tab) :TAB-SIZE 3)) to be true.             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 2 (LEM-BASE:STRING-WIDTH (FORMAT NIL "~Aab" #\Tab) :START 1)) to be true.                | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 5 (LEM-BASE:STRING-WIDTH (FORMAT NIL "ab~Aab" #\Tab) :TAB-SIZE 3)) to be true.           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 5 (LEM-BASE:STRING-WIDTH (FORMAT NIL "ab~Aab" #\Tab) :TAB-SIZE 1)) to be true.           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH (FORMAT NIL "B~A" #\Tab) :TAB-SIZE 1)) to be true.             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 3 (LEM-BASE:STRING-WIDTH (FORMAT NIL "~AaB" #\Tab) :START 1)) to be true.               | <strong> OK </strong>    |
+| (lem-tests/string-width-utils STRING-WIDTH)                              | Expect (EQL 6
+            (LEM-BASE:STRING-WIDTH (FORMAT NIL "~AaB" #\Tab)
+                      ...                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 1 (LEM-BASE:WIDE-INDEX "abc" 1)) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 2 (LEM-BASE:WIDE-INDEX "abc" 2)) to be true.                                             | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL NIL (LEM-BASE:WIDE-INDEX "abc" 3)) to be true.                                           | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL NIL (LEM-BASE:WIDE-INDEX "abc" 10)) to be true.                                          | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 0 (LEM-BASE:WIDE-INDEX "BDHFJ" 0)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 0 (LEM-BASE:WIDE-INDEX "BDHFJ" 1)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 1 (LEM-BASE:WIDE-INDEX "BDHFJ" 2)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 1 (LEM-BASE:WIDE-INDEX "BDHFJ" 3)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 2 (LEM-BASE:WIDE-INDEX "BDHFJ" 4)) to be true.                                      | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 2 (LEM-BASE:WIDE-INDEX "BDH" 5)) to be true.                                          | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL NIL (LEM-BASE:WIDE-INDEX "BDH" 6)) to be true.                                        | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 0 (LEM-BASE:WIDE-INDEX (FORMAT NIL "~Aabcdefghijk" #\Tab) 5)) to be true.                | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 2
+            (LEM-BASE:WIDE-INDEX (FORMAT NIL "~Aabcdefghijk" #\Tab)
+               ...                                                                                                                                                                | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 6
+            (LEM-BASE:WIDE-INDEX (FORMAT NIL "~Aabcdefghijk" #\Tab) 5 :START 1)) to...                                                                                            | <strong> OK </strong>    |
+| (lem-tests/string-width-utils WIDE-INDEX)                                | Expect (EQL 5
+            (LEM-BASE:WIDE-INDEX (FORMAT NIL "~Aa~Abcdefghijk" #\Tab #\Tab)
+       ...                                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (EQUAL "hello"
+              (LEM-FAKE-INTERFACE:GET-DISPLAYED-TEXT
+               LEM-TES...                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (EQUAL "hello"
+              (LEM-BASE:BUFFER-TEXT
+               (LEM-CORE:WINDOW-BUFFER ...                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (EQL 1
+            (LEM-CORE:FLOATING-WINDOW-BORDER
+             LEM-TESTS/POPUP-WINDOW::P...                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (EQ (LEM-CORE:CURRENT-WINDOW)
+           (LEM/POPUP-WINDOW::POPUP-WINDOW-SOURCE-WINDOW
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (= 5
+          (LEM/POPUP-WINDOW::POPUP-WINDOW-BASE-WIDTH
+           LEM-TESTS/POPUP-WINDO...                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (= 1
+          (LEM/POPUP-WINDOW::POPUP-WINDOW-BASE-HEIGHT
+           LEM-TESTS/POPUP-WIND...                                                                                                                                                | <strong> OK </strong>    |
+| (lem-tests/popup-window DISPLAY-POPUP-WINDOW)                            | Expect (LEM/POPUP-WINDOW::POPUP-WINDOW-GRAVITY
+        LEM-TESTS/POPUP-WINDOW::POPUP-WINDOW) to b...                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/prompt PROMPT-FOR-CHARACTER)                                  | Expect (EQUAL #\a
+              (LEM-CORE:PROMPT-FOR-CHARACTER "test: "
+                         ...                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/isearch REPLACE-STRING)                                       | Expect (EQUAL
+        (CL-PPCRE:REGEX-REPLACE-ALL "foo" LEM-TESTS/ISEARCH::*TEXT* "foobar")
+     ...                                                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (ALEXANDRIA:LENGTH= 1
+                           (LEM-CORE:BUFFER-FAKE-CURSORS
+           ...                                                                                                                                                                    | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQ LEM-TESTS/CURSORS::CURSOR
+           (FIRST (LEM-CORE:BUFFER-FAKE-CURSORS LEM-TESTS/CU...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQ (LEM-CORE:CURRENT-KILLRING) LEM-TESTS/CURSORS::KILLRING) to be false.                     | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQUAL "aaa"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQUAL "bbb"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQUAL "ccc"
+              (LEM/COMMON/KILLRING:PEEK-KILLRING-ITEM
+               LEM-TEST...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL NIL)                      | Expect (EQ :LEFT-INSERTING (LEM-BASE:POINT-KIND LEM-TESTS/CURSORS::CURSOR)) to be true.              | <strong> OK </strong>    |
+| (lem-tests/cursors SIMPLE-FAKE-CURSOR-TEST NIL)                          | Expect (NULL (LEM-CORE:BUFFER-FAKE-CURSORS LEM-TESTS/CURSORS::BUFFER)) to be true.                   | <strong> OK </strong>    |
+| (lem-tests/cursors TEST-TO-EXECUTE-A-SERIES-OF-COMMANDS NIL)             | Expect (STRING= (LEM-TESTS/UTILITIES:LINES " abcdefg" " hijklmn" " opqrstu")
+                (LEM...                                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/cursors TEST-TO-EXECUTE-A-SERIES-OF-COMMANDS NIL)             | Expect (STRING= (LEM-TESTS/UTILITIES:LINES "abcdefg" "hijklmn" "opqrstu")
+                (LEM-BA...                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/cursors TEST-TO-EXECUTE-A-SERIES-OF-COMMANDS NIL)             | Expect (EQUAL '("abcd" "opqr" "hijk")
+              (MAPCAR
+               (LAMBDA (LEM-TESTS/CUR...                                                                                                                                          | <strong> OK </strong>    |
+| (lem-tests/cursors NEXT-LINE/PREVIOUS-LINE)                              | Expect (LEM-TESTS/CURSORS::POSITIONS-SET-EQUAL '((2 12) (3 10) (4 10))
+                          ...                                                                                                                                                     | <strong> OK </strong>    |
+| (lem-tests/cursors NEXT-LINE/PREVIOUS-LINE)                              | Expect (LEM-TESTS/CURSORS::POSITIONS-SET-EQUAL '((1 14) (2 12) (3 10))
+                          ...                                                                                                                                                     | <strong> OK </strong>    |
+| (lem-tests/cursors NEXT-LINE/PREVIOUS-LINE)                              | Expect (LEM-TESTS/CURSORS::POSITIONS-SET-EQUAL '((2 12) (3 10) (4 10))
+                          ...                                                                                                                                                     | <strong> OK </strong>    |
+| (lem-tests/self-insert-command SELF-INSERT-COMMAND)                      | aaa                                                                                                  | <strong> OK </strong>    |
+| (lem-tests/self-insert-command SELF-INSERT-COMMAND)                      | aaaa                                                                                                 | <strong> OK </strong>    |
+| (lem-tests/self-insert-command SELF-INSERT-COMMAND)                      | Expect (SEARCH "Key not found: "
+               (PRINC-TO-STRING LEM-TESTS/SELF-INSERT-COMMAND::E...                                                                                                               | <strong> OK </strong>    |
+| (lem/tests/interp EXECUTE-THE-SAME-COMMAND-CONSECUTIVELY)                | Expect (EQUAL '(NIL T T) LEM/TESTS/INTERP::*RESULT*) to be true.                                     | <strong> OK </strong>    |
+| (lem/tests/file GET-FILE-MODE)                                           | Expect (EQUAL 'LEM-POSIX-SHELL-MODE:POSIX-SHELL-MODE
+              (LEM-CORE:GET-FILE-MODE ".bash...                                                                                                                                   | <strong> OK </strong>    |
+| (lem/tests/file GET-FILE-MODE)                                           | Expect (EQUAL 'LEM-POSIX-SHELL-MODE:POSIX-SHELL-MODE
+              (LEM-CORE:GET-FILE-MODE "foo.b...                                                                                                                                   | <strong> OK </strong>    |
+| (lem/tests/file GET-FILE-MODE)                                           | Expect (EQUAL 'LEM-LISP-MODE/INTERNAL:LISP-MODE
+              (LEM-CORE:GET-FILE-MODE "foo.lisp")...                                                                                                                              | <strong> OK </strong>    |
+| (lem/tests/file GET-FILE-MODE)                                           | Expect (NULL (LEM-CORE:GET-FILE-MODE "foo.lisp.bak")) to be true.                                    | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL '("apple" "banana" "orange" "pineapple")
+              (LEM-CORE:COMPLETION "a" LEM...                                                                                                                                     | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL '("apple" "pineapple")
+              (LEM-CORE:COMPLETION "app" LEM-TESTS/COMPLETIO...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL 'NIL (LEM-CORE:COMPLETION "xyz" LEM-TESTS/COMPLETION::ITEMS)) to be true.              | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL 'NIL (LEM-CORE:COMPLETION "APP" LEM-TESTS/COMPLETION::ITEMS)) to be true.              | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL '("apple" "pineapple")
+              (LEM-CORE:COMPLETION "APP"
+                   ...                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/completion TEST-COMPLETION)                                   | Expect (EQUAL '("foo-bar-baz" "foo-bar-y")
+              (LEM-CORE:COMPLETION "foo-bar"
+         ...                                                                                                                                                                      | <strong> OK </strong>    |
+| (lem-tests/common/ring COPY-RING)                                        | Expect (EQ LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::RING2) to be false.                           | <strong> OK </strong>    |
+| (lem-tests/common/ring COPY-RING)                                        | Expect (EQUAL (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 0)
+              (LEM/COMMON/RING:RI...                                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/common/ring COPY-RING)                                        | Expect (EQUAL (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 1)
+              (LEM/COMMON/RING:RI...                                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be true.                               | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-EMPTY-P)                                     | Expect (LEM/COMMON/RING:RING-EMPTY-P LEM/COMMON/RING:RING) to be false.                              | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= 0 (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING:RING)) to be true.                          | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-LENGTH)                                      | Expect (= (MIN 3 LEM-TESTS/COMMON/RING::I)
+          (LEM/COMMON/RING:RING-LENGTH LEM/COMMON/RING...                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQL 5 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 0)) to be true.                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQL 4 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 1)) to be true.                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQL 3 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 2)) to be true.                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQL 2 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 3)) to be true.                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQL 1 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 4)) to be true.                         | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING -1) to signal INVALID-INDEX-ERROR.             | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING LEM-TESTS/COMMON/RING::I) to signal INVALID... | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQUAL 100 (SETF (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 0) 100)) to be true.          | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQUAL 100 (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 0)) to be true.                     | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQUAL "xx"
+              (SETF (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 3) "xx")) t...                                                                                                 | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (EQUAL "xx" (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 3)) to be true.                    | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-REF)                                         | Expect (SETF (LEM/COMMON/RING:RING-REF LEM/COMMON/RING:RING 5)
+               'LEM-TESTS/COMMON/R...                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/common/ring RING-PUSH)                                        | Expect (STRING=
+        (WITH-OUTPUT-TO-STRING (LEM-TESTS/COMMON/RING::OUT)
+          (LOOP :FOR
+...                                                                                                                                                                               | <strong> ERROR </strong> |
+| (lem-tests/timer COMPUTE-THE-TIME-FOR-THE-NEXT-IDLE-TIMER-TO-BE-CALLED)  | Expect (NULL (LEM/COMMON/TIMER:GET-NEXT-TIMER-TIMING-MS)) to be true.                                | <strong> OK </strong>    |
+| (lem-tests/timer COMPUTE-THE-TIME-FOR-THE-NEXT-IDLE-TIMER-TO-BE-CALLED)  | Expect (= 10 (LEM/COMMON/TIMER:GET-NEXT-TIMER-TIMING-MS)) to be true.                                | <strong> OK </strong>    |
+| (lem-tests/timer COMPUTE-THE-TIME-FOR-THE-NEXT-IDLE-TIMER-TO-BE-CALLED)  | Expect (= 8 (LEM/COMMON/TIMER:GET-NEXT-TIMER-TIMING-MS)) to be true.                                 | <strong> OK </strong>    |
+| (lem-tests/timer COMPUTE-THE-TIME-FOR-THE-NEXT-IDLE-TIMER-TO-BE-CALLED)  | Expect (= 0 (LEM/COMMON/TIMER:GET-NEXT-TIMER-TIMING-MS)) to be true.                                 | <strong> OK </strong>    |
+| (lem-tests/timer COMPUTE-THE-TIME-FOR-THE-NEXT-IDLE-TIMER-TO-BE-CALLED)  | Expect (= -8 (LEM/COMMON/TIMER:GET-NEXT-TIMER-TIMING-MS)) to be true.                                | <strong> OK </strong>    |
+| (lem-tests/timer TIMER-NAME-TESTS)                                       | Expect (STRING= "TESTING-TIMER" LEM-TESTS/TIMER::VALUE) to be true.                                  | <strong> OK </strong>    |
+| (lem-tests/timer TIMER-NAME-TESTS)                                       | Expect (STRING= "TESTING-TIMER" LEM-TESTS/TIMER::VALUE) to be true.                                  | <strong> OK </strong>    |
+| (lem-tests/timer TIMER-NAME-TESTS)                                       | Expect (STRING= "foo" LEM-TESTS/TIMER::VALUE) to be true.                                            | <strong> OK </strong>    |
+| (lem-tests/timer TIMER-NAME-TESTS)                                       | Expect (STRING= "HELLO" LEM-TESTS/TIMER::VALUE) to be true.                                          | <strong> ERROR </strong> |
+| (lem-tests/lisp-syntax/indent-test COND-1)                               | COND-1                                                                                               | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/indent-test DEFCLASS-1)                           | DEFCLASS-1                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/indent-test INDENT-TEST-UNDER-LEM-BASE)           | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/lisp-syntax/indent-test INDENT-TEST-FOR-SAMPLE-CASE)          | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (= 2 (LENGTH VALUES)) to be true.                                                             | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (EQ 'LEM-TESTS/LISP-SYNTAX/DEFSTRUCT-TO-DEFCLASS::FOO
+           LEM-TESTS/LISP-SYNTAX/DEF...                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-INFO-P
+        LEM-TESTS/LISP-SYNTAX/DEFST...                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (NULL
+        (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-CONC-NAME
+         LEM-TESTS...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (= 2 (LENGTH VALUES)) to be true.                                                             | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (EQ 'LEM-TESTS/LISP-SYNTAX/DEFSTRUCT-TO-DEFCLASS::FOO
+           LEM-TESTS/LISP-SYNTAX/DEF...                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-INFO-P
+        LEM-TESTS/LISP-SYNTAX/DEFST...                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (STRING= ""
+                (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-CONC-NAME
+    ...                                                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (= 2 (LENGTH VALUES)) to be true.                                                             | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (EQ 'LEM-TESTS/LISP-SYNTAX/DEFSTRUCT-TO-DEFCLASS::FOO
+           LEM-TESTS/LISP-SYNTAX/DEF...                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-INFO-P
+        LEM-TESTS/LISP-SYNTAX/DEFST...                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (STRING= ""
+                (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-CONC-NAME
+    ...                                                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (= 2 (LENGTH VALUES)) to be true.                                                             | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (EQ 'LEM-TESTS/LISP-SYNTAX/DEFSTRUCT-TO-DEFCLASS::FOO
+           LEM-TESTS/LISP-SYNTAX/DEF...                                                                                                                                           | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-INFO-P
+        LEM-TESTS/LISP-SYNTAX/DEFST...                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | Expect (STRING= "PREFIX-"
+                (LEM-LISP-SYNTAX.DEFSTRUCT-TO-DEFCLASS::OPTIONS-CONC-NA...                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | (1)                                                                                                  | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | (1 CONC-NAME)                                                                                        | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | (NIL)                                                                                                | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | (FOO (CONC-NAME 1))                                                                                  | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass PARSE-NAME-AND-OPTIONS NIL) | (FOO (CONC-NAME #()))                                                                                | <strong> OK </strong>    |
+| (lem-tests/lisp-syntax/defstruct-to-defclass ANALYZE-DEFSTRUCT NIL)      | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/lisp-syntax/defstruct-to-defclass ANALYZE-DEFSTRUCT NIL)      | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/lisp-syntax/defstruct-to-defclass ANALYZE-DEFSTRUCT NIL)      | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/syntax-test SCAN-LISTS NIL NIL)                               | Expect (AND
+        (NULL
+         (LEM-BASE:SCAN-LISTS LEM-TESTS/SYNTAX-TEST::POINT
+            ...                                                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/syntax-test SCAN-LISTS NIL NIL)                               | Expect (AND
+        (EQ LEM-TESTS/SYNTAX-TEST::POINT
+            (LEM-BASE:SCAN-LISTS LEM-TESTS/S...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/syntax-test SCAN-LISTS NIL NIL)                               | Expect (AND
+        (NULL
+         (LEM-BASE:SCAN-LISTS LEM-TESTS/SYNTAX-TEST::POINT
+            ...                                                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/syntax-test SCAN-LISTS NIL NIL)                               | Expect (AND
+        (EQ LEM-TESTS/SYNTAX-TEST::POINT
+            (LEM-BASE:SCAN-LISTS LEM-TESTS/S...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/syntax-test FORM-OFFSET NIL)                                  | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+| (lem-tests/buffer-list-test BUFFER-LIST)                                 | Expect (NULL (LEM-BASE:BUFFER-LIST)) to be true.                                                     | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BUFFER-LIST)                                 | Expect (LEM-BASE:BUFFERP LEM-TESTS/BUFFER-LIST-TEST::BUFFER) to be true.                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BUFFER-LIST)                                 | Expect (NULL (LEM-BASE:BUFFER-LIST)) to be true.                                                     | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BUFFER-LIST NIL)                             | Expect (EQUAL (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A)
+              (LEM-BASE:BUFFER-LIST)) t...                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BUFFER-LIST NIL)                             | Expect (EQUAL
+        (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+              LEM-TESTS/BUFFER-L...                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BUFFER-LIST NIL)                             | Expect (EQUAL
+        (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+              LEM-TESTS/BUFFER-L...                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER)                                  | Expect (NULL (LEM-BASE:GET-BUFFER "a")) to be true.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A (LEM-BASE:GET-BUFFER "a")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A (LEM-BASE:GET-BUFFER "a")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B (LEM-BASE:GET-BUFFER "b")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A (LEM-BASE:GET-BUFFER "a")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B (LEM-BASE:GET-BUFFER "b")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C (LEM-BASE:GET-BUFFER "c")) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A
+           (LEM-BASE:GET-BUFFER LEM-TESTS/BUFFER-...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+           (LEM-BASE:GET-BUFFER LEM-TESTS/BUFFER-...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-BUFFER NIL)                              | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+           (LEM-BASE:GET-BUFFER LEM-TESTS/BUFFER-...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME NIL)                      | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME NIL)                      | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME NIL)                      | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "foo" (LEM-BASE:UNIQUE-BUFFER-NAME "foo")) to be true.                                 | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "a<1>" LEM-TESTS/BUFFER-LIST-TEST::NAME) to be true.                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "a<2>" LEM-TESTS/BUFFER-LIST-TEST::NAME) to be true.                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (STRING= (LEM-BASE:BUFFER-NAME LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A) "a") to be true.         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (STRING= (LEM-BASE:BUFFER-NAME LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<1>)
+                "a...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (STRING= (LEM-BASE:BUFFER-NAME LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<2>)
+                "a...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<2>
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "a<2>" (LEM-BASE:UNIQUE-BUFFER-NAME "a")) to be true.                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<1>
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "a<1>" (LEM-BASE:UNIQUE-BUFFER-NAME "a")) to be true.                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<2>
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "a" (LEM-BASE:UNIQUE-BUFFER-NAME "a")) to be true.                                     | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A<2>
+...                                                                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNIQUE-BUFFER-NAME)                          | Expect (EQUAL "b" (LEM-BASE:UNIQUE-BUFFER-NAME "b")) to be true.                                     | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (FUNCALL FUNCTION "name") to signal TYPE-ERROR.                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be false.          | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be true.           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (EQUAL LEM-TESTS/BUFFER-LIST-TEST::RESULT
+              LEM-TESTS/BUFFER-LIST-TEST::EXPECT...                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be false.          | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be true.           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (EQUAL LEM-TESTS/BUFFER-LIST-TEST::RESULT
+              LEM-TESTS/BUFFER-LIST-TEST::EXPECT...                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be false.          | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::DELETING-BUFFER) to be true.           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER)                               | Expect (EQUAL LEM-TESTS/BUFFER-LIST-TEST::RESULT
+              LEM-TESTS/BUFFER-LIST-TEST::EXPECT...                                                                                                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::BUFFER) to be false.                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (EQUAL LEM-TESTS/BUFFER-LIST-TEST::BUFFER-LIST
+              (LEM-BASE:DELETE-BUFFER LEM-T...                                                                                                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL)                           | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::BUFFER) to be true.                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER
+           LEM-TESTS/BUFFER-LIST-TEST::DELET...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER) to be false.            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect LEM-TESTS/BUFFER-LIST-TEST::CALLED-HOOK-P to be true.                                         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER
+           LEM-TESTS/BUFFER-LIST-TEST::DELET...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER) to be false.            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect LEM-TESTS/BUFFER-LIST-TEST::CALLED-HOOK-P to be true.                                         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL NIL)                   | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER
+           LEM-TESTS/BUFFER-LIST-TEST::DELET...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL NIL)                   | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER) to be false.            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL NIL)                   | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER
+           LEM-TESTS/BUFFER-LIST-TEST::DELET...                                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL NIL)                   | Expect (LEM-BASE:DELETED-BUFFER-P LEM-TESTS/BUFFER-LIST-TEST::HOOKED-BUFFER) to be false.            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test DELETE-BUFFER NIL NIL)                       | Expect (EQUAL '(:LOCAL :GLOBAL)
+              (NREVERSE LEM-TESTS/BUFFER-LIST-TEST::CALLED-ORDER)...                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (FUNCALL FUNCTION "name") to signal TYPE-ERROR.                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (FUNCALL FUNCTION (LEM-BASE:MAKE-BUFFER NIL :TEMPORARY T)) NIL) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (FUNCALL FUNCTION LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A) NIL) to be true.                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (LEM-BASE:GET-NEXT-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C)
+           LEM-TESTS/B...                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (LEM-BASE:GET-NEXT-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B)
+           LEM-TESTS/B...                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (LEM-BASE:GET-NEXT-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A) NIL) to be true.          | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-NEXT-BUFFER NIL)                         | Expect (EQ (LEM-BASE:GET-NEXT-BUFFER (LEM-BASE:MAKE-BUFFER NIL :TEMPORARY T))
+           NIL) to ...                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (FUNCALL FUNCTION "name") to signal TYPE-ERROR.                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ (FUNCALL FUNCTION (LEM-BASE:MAKE-BUFFER NIL :TEMPORARY T)) NIL) to be true.               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ (FUNCALL FUNCTION LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A) NIL) to be true.                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ (LEM-BASE:GET-PREVIOUS-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C)
+           NIL) to...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ (LEM-BASE:GET-PREVIOUS-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B)
+           LEM-TES...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ (LEM-BASE:GET-PREVIOUS-BUFFER LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A)
+           LEM-TES...                                                                                                                                                             | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-PREVIOUS-BUFFER NIL)                     | Expect (EQ
+        (LEM-BASE:GET-PREVIOUS-BUFFER (LEM-BASE:MAKE-BUFFER NIL :TEMPORARY T))
+       ...                                                                                                                                                                        | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (FUNCALL FUNCTION "name") to signal TYPE-ERROR.                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A
+           (LEM-BASE:BURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A)) t...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+           (LEM-BASE:BURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+           (LEM-BASE:BURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+           (LEM-BASE:BURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL)                             | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL NIL)                         | Expect (EQ NIL (LEM-BASE:BURY-BUFFER (LEM-BASE:MAKE-BUFFER NIL :TEMPORARY T))) to be true.           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL NIL)                         | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+           (LEM-BASE:BURY-BUFFER (LEM-BASE:MAKE-B...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test BURY-BUFFER NIL NIL)                         | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (FUNCALL FUNCTION NIL) to signal TYPE-ERROR.                                                  | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (FUNCALL FUNCTION 1) to signal TYPE-ERROR.                                                    | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (FUNCALL FUNCTION #(#\a #\b)) to signal TYPE-ERROR.                                           | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (FUNCALL FUNCTION "name") to signal TYPE-ERROR.                                               | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFF...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A)) t...                                                                                                                   | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFF...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-A
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFF...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-B
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFF...                                                                                                                              | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL)                           | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL NIL)                       | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL NIL)                       | Expect (EQ LEM-TESTS/BUFFER-LIST-TEST::BUFFER
+           (LEM-BASE:UNBURY-BUFFER LEM-TESTS/BUFFER...                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test UNBURY-BUFFER NIL NIL)                       | Expect (EQUAL (LEM-BASE:BUFFER-LIST)
+              (LIST LEM-TESTS/BUFFER-LIST-TEST::BUFFER-C
+   ...                                                                                                                                                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER NIL)                         | Expect (LEM-BASE:GET-FILE-BUFFER NIL) to signal TYPE-ERROR.                                          | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER NIL)                         | Expect (LEM-BASE:GET-FILE-BUFFER T) to signal TYPE-ERROR.                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER NIL)                         | Expect (LEM-BASE:GET-FILE-BUFFER 1) to signal TYPE-ERROR.                                            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER NIL)                         | Expect (LEM-BASE:GET-FILE-BUFFER #(#\a)) to signal TYPE-ERROR.                                       | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER)                             | Expect (NULL (LEM-BASE:GET-FILE-BUFFER LEM-TESTS/BUFFER-LIST-TEST::FILENAME)) to be true.            | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test GET-FILE-BUFFER)                             | Expect (EQ (LEM-BASE:GET-FILE-BUFFER LEM-TESTS/BUFFER-LIST-TEST::FILENAME)
+           LEM-TESTS/B...                                                                                                                                                         | <strong> OK </strong>    |
+| (lem-tests/buffer-list-test ANY-MODIFIED-BUFFER-P)                       | Raise an error while testing.                                                                        | <strong> ERROR </strong> |
+
+{{< /expand >}}
