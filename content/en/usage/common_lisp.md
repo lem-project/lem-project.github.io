@@ -15,12 +15,16 @@ Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x
 
 Start a Lisp REPL with `M-x start-lisp-repl`.
 
-To switch to the REPL from a Lisp buffer, even you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (coma). For example:
+To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (coma). For example:
 
 * `cd` changes Lem's global current working directory
 * `change-package` changes the REPL's current CL package
 * `quickload`, to choose a Quicklisp system (with autocompletion) and load it.
 * `sayonara` quits the REPL.
+
+Inside the REPL, go up to the previous prompt with `C-c p` (`backward-prompt`) and down to the next one with `C-n n` (`forward-prompt`).
+
+Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
 
