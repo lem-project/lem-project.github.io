@@ -51,7 +51,7 @@ The shortcut `C-x d` opens a project explorer on the left side. Another keypress
 Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
 
 A project is recognized by typical files or directories. For example,
-a directory containing a `.git/` subdirecotry or a `.project`,
+a directory containing a `.git/` subdirectory or a `.project`,
 `.projectile`, `.ignore`, `configure.ac` or `Makefile` file is
 considered the root of a project. The actual list is a bit longer, it should "just work".
 
@@ -64,16 +64,31 @@ If no project root was found, Lem uses the buffer's directory.
 
 There are also the commands:
 
-* `project-delete-buffers` (`C-x p K`) to delete all this project's buffers, except:
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-------------------------------------------------------------------------:|
+| `project-delete-buffers` | `C-x p K` | delete all this project's buffers                    |
+| `project-root` |                     | display the project root         |
+| `project-find-file-other-window` | `C-x 4 p f` | open a file in another window              |
+| `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
+| `project-root-directory-other-window` |  | open the project root in another window          |
+
+These commands allow to **switch** between projects:
+
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-------------------------------------------------------------------------:|
+| `project-save` | `C-x p s` | save the current project. This populates the text file on `(lem-home)/history/projects`. |
+| `project-switch` |`C-x p p`| choose a saved project and find a file in it |
+| `project-unsave` |`C-x p u`| remove a project from the history            |
+
+
+Configuration:
+
+- for `project-delete-buffers`:
   - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
   - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
 
-* `project-root` to display the project root
-* `project-find-file-other-window`
-* `project-root-directory` (`C-x p d`) to open the project root with Lem's directory-mode.
-* `project-root-directory-other-window`
 
-The filer (`C-x d`, see above) opens the project root.
+The **filer** (`C-x d`, see above) opens the project root.
 
 The project's file chooser will try to use the `fdfind` program to list the
 project files. In that case, common development directories such as
@@ -218,5 +233,8 @@ Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to
 Try:
 
 - `M-x toggle-line-numbers`
+  - or `(lem/line-numbers:toggle-line-numbers)`
 - `M-x toggle-read-only`
+  - `(lem-core/commands/buffer:toggle-read-only)`
 - `M-x toggle-auto-save`
+  - `(lem/auto-save:toggle-auto-save)`
