@@ -98,6 +98,19 @@ The following two commands are shortcuts around the built-in `trace` macro:
 * `M-x lisp-toggle-trace` (`C-c C-t`): toggle tracing of the function under point.
 * `M-x lisp-trace-list` (`C-c T`): see all the traced functions, select the ones to untrace.
 
+## Watch
+
+> These commands were added after Lem 2.0.
+
+A new feature in `micros` (Lem's fork of Swank) allows to display evaluation results on the fly.
+
+By adding `(micros:watch some-lisp-form)` in your code, you can see
+intermediate (and final) results being displayed in the source buffer,
+in overlays, next to the watch call.
+
+<video src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" data-canonical-src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"> </video>
+
+
 ## Code search
 
 ### Apropos
