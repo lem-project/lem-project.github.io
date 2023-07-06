@@ -89,6 +89,15 @@ library that was loaded in the current image.
 
 > This is an efficient method to jump around your code and explore anything loaded in the Lisp image.
 
+## Trace
+
+> These commands were added after Lem 2.0.
+
+The following two commands are shortcuts around the built-in `trace` macro:
+
+* `M-x lisp-toggle-trace` (`C-c C-t`): toggle tracing of the function under point.
+* `M-x lisp-trace-list` (`C-c T`): see all the traced functions, select the ones to untrace.
+
 ## Code search
 
 ### Apropos
