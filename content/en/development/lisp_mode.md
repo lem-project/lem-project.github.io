@@ -3,15 +3,17 @@ title: Lisp mode
 weight: -10
 ---
 
-In lem, lisp-mode provides slime, just as it is by default in emacs and other editors.
+In Lem, lisp-mode provides SLIME, just as it is by default in Emacs and other editors.
 
 SLIME uses a client-server model, where the editor (client) and the Common Lisp runtime (server) interact to realize the functions necessary for Common Lisp development.
 
-In emacs, vim, etc., the slime implementation is such that the client side is the editor process, and the server side is the Common Lisp process. This is the same for lem, but in lem's case, since the editor is Common Lisp, it is possible to operate the server and client in the same process. Therefore, it is possible to develop lem itself using the features of slime.
+In Emacs, Vim, etc., the SLIME implementation is such that the client side is the editor process, and the server side is the Common Lisp process. 
 
-In lem, when lisp-mode starts, if it can connect to the server, the server automatically starts within the lem process, the connection is made, and slime starts.
+This is the same for Lem, but in Lem's case, since the editor is Common Lisp, it is possible to operate the server and client in the same process. Therefore, it is possible to develop Lem itself using the features of SLIME.
 
-The key bindings are similar to emacs' slime. A slight difference is that whether the server process is launched by lem itself or by another process is distinguished, so the commands are separated. The command name with the 'self' prefix is the mark of this.
+In Lem, when lisp-mode starts, if it can connect to the server, the server automatically starts within the lem process, the connection is made, and SLIME starts.
+
+The key bindings are similar to Emacs' SLIME. A slight difference is that whether the server process is launched by Lem itself or by another process is distinguished, so the commands are separated. The command name with the 'self' prefix is the mark of this.
 
 ## Keybind
 `C-M-q (lisp-indent-sexp)`  
