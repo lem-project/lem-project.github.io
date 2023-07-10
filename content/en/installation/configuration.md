@@ -37,6 +37,6 @@ You can now call it with `M-x open-init-file`.
 
 For inspiration, see:
 
-- [@sasanidas](https://gitlab.com/sasanidas/lem-config/-/blob/master/init.lisp)
+- [@sasanidas](https://codeberg.org/sasanidas/lem-config/src/branch/master/init.lisp)
 - [@vindarel](https://github.com/vindarel/lem-init)
 - https://gist.github.com/jason-chandler/6332e3fd753fa87e3b1cd13582df5862 getting cxxxr/valtan to work along with paredit and the monokai theme
