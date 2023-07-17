@@ -238,3 +238,8 @@ Try:
   - `(lem-core/commands/buffer:toggle-read-only)`
 - `M-x toggle-auto-save`
   - `(lem/auto-save:toggle-auto-save)`
+- `M-x toggle-frame-fullscreen`
+
+Set a transparent background with this line in your init file:
+
+    (sdl2-ffi.functions:sdl-set-window-opacity (lem-sdl2::display-window lem-sdl2::*display*) 0.9)
