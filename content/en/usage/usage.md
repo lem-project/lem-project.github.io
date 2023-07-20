@@ -168,6 +168,28 @@ Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer
 
 On the GUI version of Lem, you can click on them.
 
+### Workspaces
+
+Lem has a frame multiplexer, aka "workspaces" or "screen
+manager".
+
+This feature allows to create many workspaces, or screen
+configurations, on the same Lem instance. We can create a new
+workspace, open buffers and arrange the window as we like (split
+vertically, horizontally…), and switch to another workspace where the
+window arrangement and the displayed buffers are different.
+
+The frame multiplexer bindings start with `C-z`:
+
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-----------------------------------------------------------------------:|
+| `frame-multiplexer-create-with-new-buffer-list` | `C-z c` | create a new workspace          |
+| `frame-multiplexer-next` | `C-z n`              | go to the next workspace         |
+| `frame-multiplexer-prev` | `C-z p`              | go to the previous workspace     |
+| `frame-multiplexer-delete` | `C-z d`            | delete the current workspace     |
+| `toggle-frame-multiplexer` |                    | enable or disable (and loose) all workspaces     |
+
+
 ## vi and emacs modes
 
 Use `M-x vi-mode` and `M-x emacs-mode`.
