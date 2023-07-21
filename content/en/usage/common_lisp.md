@@ -17,10 +17,12 @@ Start a Lisp REPL with `M-x start-lisp-repl`.
 
 To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (coma). For example:
 
-* `cd` changes Lem's global current working directory
 * `change-package` changes the REPL's current CL package
 * `quickload`, to choose a Quicklisp system (with autocompletion) and load it.
 * `sayonara` quits the REPL.
+* `pwd` prints Lem's current working directory.
+* `cd` changes it,
+* `ls` lists files and directories. This list has the same form as the list of directory-mode and is interactive: we can visit files at point.
 
 Inside the REPL, go up to the previous prompt with `C-c p` (`backward-prompt`) and down to the next one with `C-n n` (`forward-prompt`).
 
