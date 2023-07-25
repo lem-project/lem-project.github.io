@@ -151,18 +151,65 @@ or `:after` qualifiers.
      (do-something-with-the-results)))
 ~~~
 
+## Buffers, windows and workspaces management
 
-## Switching buffers
+### Switching buffers
 
-Use `C-x b` (aka `M-x list-buffers`). But don't stop here, it's a rich command.
+To switch buffers, use `C-x Left/Right arrow` (aka `M-x previous-buffer` and `next-buffer`).
 
-You are presented a "modale" window. Type some text to start narrowing the buffers list matching your entry.
+To choose a buffer interactively, use `C-x b` (aka `M-x
+list-buffers`). You are presented a completion window. Type some text
+to start narrowing the buffers list matching your entry. But that's not all.
 
-You can also use Space to select/deselect entries, then use a right click to choose an action to apply on the selected buffers. Default actions are to kill the selected buffers, or to save them.
+You can also use Space to select or deselect entries, then use a right
+click to choose an action to apply on the selected buffers. Default
+actions are to kill the selected buffers, or to save them.
+
+### Creating new buffers
+
+A buffer contains some text to display, but is not necessarily tied to a file.
+
+Try using the `C-x b` command and typing the name of a buffer that
+doesn't exist. Lem will ask confirmation to create it. If you confirm,
+you'll get a buffer that is not tied to a file on your filesystem. You
+can write whatever you want, as well as enable a major mode (`M-x
+lisp-mode`, `M-x markdown-mode`…). You'll note that the command `C-x
+C-s` (`save-current-buffer`) doesn't work, saying "No file name". This
+is correct, no file is associated to this buffer. To save this buffer
+to a new file, use `C-x C-w` (`M-x write-file`). It asks for a
+filename, and saves the buffer to disk.
+
+### Windows
+
+A Lem "screen" can be divided into multiple windows.
+
+To split your screen vertically and have two vertical windows, use
+`C-x 3`. To do so horizontally, use `C-x 2`. You can divide your
+screen into any number of windows you like.
+
+To widen the current window, use `C-x 1`
+(`delete-other-windows`). This deletes other windows, but not their
+buffers.
+
+To make the current window disappear, use `C-x 0` (a zero) (`delete-active-window`).
+
+To switch windows (aka splits of a screen), use `C-x o` ('o' letter) or `M-o`.
+
+To switch to the previously active window, use `M-x
+switch-to-last-focused-window`, which is not bound to a key by
+default.
+
+These other commands are not bound to a key:
+
+| Command | Key-combination | Function                                                        |
+|:-------:|:-------:|:-----------------------------------------------------------------------:|
+| `window-move-down/up` |  | Go to the window at the bottom / at the top          |
+| `window-move-left/right` |  | Go to the window at the left / at the right          |
+
 
 ### Tabs
 
-Lem has a rudimentary support for tabs as for now.
+Lem has a rudimentary support for tabs.
 
 Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer.
 
@@ -188,6 +235,14 @@ The frame multiplexer bindings start with `C-z`:
 | `frame-multiplexer-prev` | `C-z p`              | go to the previous workspace     |
 | `frame-multiplexer-delete` | `C-z d`            | delete the current workspace     |
 | `toggle-frame-multiplexer` |                    | enable or disable (and loose) all workspaces     |
+
+The frame multiplexer is enabled by default. It shows a buffer indicator on the top left corner of the editor.
+
+You can disable it with `M-x toggle-frame-multiplexer`.
+
+Well, if you want to be sure, add this in your Lem init file:
+
+     (remove-hook *after-init-hook* 'lem/frame-multiplexer::enable-frame-multiplexer)
 
 
 ## vi and emacs modes
