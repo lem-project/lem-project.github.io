@@ -77,7 +77,7 @@ on the backtrace), restart a given point of the backtrace (`r`,
 suggested restart (by entering its number, pressing Enter on it, or
 clicking on it).
 
-## Code navigation
+## Code navigation (find-definitions, lisp-search-symbol)
 
 Use `M-.` (`find-definitions`) to go to a symbol definition. This
 opens the source file where this symbol was defined. Use `M-,` to come back.
@@ -93,6 +93,10 @@ packages, the code of your current project, and any other third-party
 library that was loaded in the current image.
 
 > This is an efficient method to jump around your code and explore anything loaded in the Lisp image.
+
+The command `lisp-search-symbol` (`C-c C-d s`) is similar, but more to the point: it asks for a lisp symbol, with autocompletion, and brings us to the symbol's definition.
+
+> lisp-search-symbol was added after Lem 2.1.
 
 ## Trace
 
