@@ -112,6 +112,20 @@ in overlays, next to the watch call.
 
 <video src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" data-canonical-src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"> </video>
 
+## Macrostep, macroexpand
+
+The **macrostep** commands are interactive commands that allow to expand the macro at point *right inside the source file*. It is a great way to understand what the macro is doing, and debug it.
+
+The **macroexpand** commands expand the macro too, but show the result in an overlay window.
+
+To call macrostep, put the cursor at the opening parentheses and call `M-x lisp-macrostep-expand` (`C-c Return`). This will show you a message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
+
+Press `C-c Return` a second time (or call `lisp-macrostep-next`) to expand the macro once again.
+
+Press `q` to quit the macroexpand mode and see the original source again.
+
+You can also call `M-x lisp-macroexpand` (unbound by default) to expand the macro once, and `M-x lisp-macroexpand-all` to expand all successive macros.
+
 
 ## Code search
 
