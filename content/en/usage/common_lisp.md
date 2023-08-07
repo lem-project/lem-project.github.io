@@ -118,13 +118,22 @@ The **macrostep** commands are interactive commands that allow to expand the mac
 
 The **macroexpand** commands expand the macro too, but show the result in an overlay window.
 
-To call macrostep, put the cursor at the opening parentheses and call `M-x lisp-macrostep-expand` (`C-c Return`). This will show you a message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
+To call macrostep, put the cursor at the opening parentheses and call `M-x lisp-macrostep-expand` (`C-c Return`). This will show you an information message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
 
 Press `C-c Return` a second time (or call `lisp-macrostep-next`) to expand the macro once again.
 
-Press `q` to quit the macroexpand mode and see the original source again.
+Press `q` to quit the macroexpand mode and see the original source again. You have more keys to interact with the expansions:
 
-You can also call `M-x lisp-macroexpand` (unbound by default) to expand the macro once, and `M-x lisp-macroexpand-all` to expand all successive macros.
+| Command | Key-combination | Function                                                       |
+|:-------:|:-------:|:----------------------------------------------------------------------:|
+| `lisp-macrostep-expand`    | `C-c Return`           | expand once, enter macrostep mode    |
+| `lisp-macrostep-next`      | `Tab`, `Return`        | expand the macro once again          |
+| `lisp-macrostep-previous`  | `Shit-Tab`             | previous macro-expansio              |
+| `lisp-macrostep-undo`      | `Return`               | undo previous step                   |
+| `lisp-macrostep-quit`      | `q`                    | quit and come back to the source     |
+
+
+You can also call `M-x lisp-macroexpand-all` (`C-c M-m`) to expand the macro completely, or `M-x lisp-macroexpand`.
 
 
 ## Code search
