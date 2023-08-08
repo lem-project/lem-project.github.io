@@ -12,3 +12,16 @@ Languages include: asm, c, css, dart, go, haskell, html, java, js, lisp, nim, oc
 Other modes include: asciidoc, dot, json, lsp, makefile, paredit, patch, posix-shell, review, vi, yaml…
 
 Please choose a mode on the sidebar to see more!
+
+## Configuration
+
+All modes support a hook mechanism. A hook allows to run an arbitrary
+function when a mode is activated.
+
+You can add a hook with `add-hook`.
+
+For example:
+
+```lisp
+(add-hook lem-c-mode::*c-mode-hook* #'lem-vi-mode/commands:vi-insert)  ;; start in vi insert mode.
+```
