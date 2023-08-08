@@ -4,33 +4,34 @@ weight: -5
 ---
 
 There are two ways to hack/develop lem.
+* Start Swank on lem and connect from Swank client (other lem process or Emacs SLIME)
 * Directly modify lem process behavior
-* Start Swank on lem and connect from Swank client (other lem process or Emacs Slime)
 
-In the first case, just open a file and edit. Any evaluated expressions would apply immediately.
-The disadvantage of this choice is the editing process and the editor process are the same process so if you break the process, the editor would be in an unstable state, and you may lose work because of this.
- 
-The second case, would start by following way:
-
-### start Swank Server from lem
+### Start Swank Server from Lem
 ```
 M-x start-lisp-repl
 CL-USER> (swank:create-server :dont-close t)
 ```
 
-### Connect From Emacs or Other lem
+### Connect from Emacs or other Lem
 ```
 M-x slime-connect
 ```
 
 Using this method, it is safe to break lem because the editing process is separate from the main lem process.
 
+### Self connect from Lem
+
+```
+M-x slime-self-connect
+```
+
+This will open a connection to Lem itself, the only problem with this approach is that if you are tweaking some internal features it may broke the current editor, so be careful.
+
+
 #### Notes
 
-I (@svetlyak40wt) found, that when you do `M-x start-lisp-repl`, then you can just browse lem's sources, and hit `C-c C-c` on any definition, to change your lem's behaviour. No need to start a Swank server and to connect it from the separate Emacs.
-
-
-Also, if you have problems launching lem (maybe for a display error), the lem function has a nice parameter to log the information into a file:
+If you have problems launching lem (maybe for a display error), the lem function has a nice parameter to log the information into a file:
 ```
 CL-USER> (ql:quickload :lem)
 
@@ -70,16 +71,17 @@ Load the SDL2 frontend:
 To build a binary, see the following section.
 
 ## Building lem
+From the root directory of the Lem project, using Make.
+
+- With ncurses:
 
 ```
-    ./bootstrap
-    ./configure
+ make build-ncurses
 ```
-
-and optionally
+- With sld2:
 
 ```
-    make install
+ make build-sdl2 
 ```
-
-This creates a binary in the `bin/` directory.
+    
+This creates a binary on the root of the lem project called "lem".

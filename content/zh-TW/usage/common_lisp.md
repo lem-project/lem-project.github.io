@@ -15,18 +15,33 @@ Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x
 
 Start a Lisp REPL with `M-x start-lisp-repl`.
 
-To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (coma). For example:
+To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (comma). For example:
 
-* `cd` changes Lem's global current working directory
 * `change-package` changes the REPL's current CL package
 * `quickload`, to choose a Quicklisp system (with autocompletion) and load it.
 * `sayonara` quits the REPL.
+* `pwd` prints Lem's current working directory.
+* `cd` changes it,
+* `ls` lists files and directories. This list has the same form as the list of directory-mode and is interactive: we can visit files at point (see screenshot below).
 
 Inside the REPL, go up to the previous prompt with `C-c p` (`backward-prompt`) and down to the next one with `C-n n` (`forward-prompt`).
 
 Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
+
+<a href="/lem-page/lem-repl-ls.png"> <img class="" src="/lem-page/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
+
+### Configuration
+
+You can do something when the REPL starts by using its `lem-lisp-mode:*lisp-repl-hook*`.
+
+For example: you have enable `vi-mode` by default, and you want to enter the REPL in vi's insert-mode:
+
+    (add-hook lem-lisp-mode:*lisp-repl-mode-hook* 'lem-vi-mode/commands:vi-insert)
+
+> Note: this hook was added after Lem 2.1.
+
 
 ## Compilation
 
@@ -72,7 +87,7 @@ on the backtrace), restart a given point of the backtrace (`r`,
 suggested restart (by entering its number, pressing Enter on it, or
 clicking on it).
 
-## Code navigation
+## Code navigation (find-definitions, lisp-search-symbol)
 
 Use `M-.` (`find-definitions`) to go to a symbol definition. This
 opens the source file where this symbol was defined. Use `M-,` to come back.
@@ -88,6 +103,10 @@ packages, the code of your current project, and any other third-party
 library that was loaded in the current image.
 
 > This is an efficient method to jump around your code and explore anything loaded in the Lisp image.
+
+The command `lisp-search-symbol` (`C-c C-d s`) is similar, but more to the point: it asks for a lisp symbol, with autocompletion, and brings us to the symbol's definition.
+
+> lisp-search-symbol was added after Lem 2.1.
 
 ## Trace
 
@@ -109,6 +128,29 @@ intermediate (and final) results being displayed in the source buffer,
 in overlays, next to the watch call.
 
 <video src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" data-canonical-src="https://user-images.githubusercontent.com/13656378/250151099-cdeb8ead-3380-4804-b85b-d487a7e733b1.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"> </video>
+
+## Macrostep, macroexpand
+
+The **macrostep** commands are interactive commands that allow to expand the macro at point *right inside the source file*. It is a great way to understand what the macro is doing, and debug it.
+
+The **macroexpand** commands expand the macro too, but show the result in an overlay window.
+
+To call macrostep, put the cursor at the opening parentheses and call `M-x lisp-macrostep-expand` (`C-c Return`). This will show you an information message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
+
+Press `C-c Return` a second time (or call `lisp-macrostep-next`) to expand the macro once again.
+
+Press `q` to quit the macroexpand mode and see the original source again. You have more keys to interact with the expansions:
+
+| Command | Key-combination | Function                                                       |
+|:-------:|:-------:|:----------------------------------------------------------------------:|
+| `lisp-macrostep-expand`    | `C-c Return`           | expand once, enter macrostep mode    |
+| `lisp-macrostep-next`      | `Tab`, `Return`        | expand the macro once again          |
+| `lisp-macrostep-previous`  | `Shit-Tab`             | previous macro-expansio              |
+| `lisp-macrostep-undo`      | `Return`               | undo previous step                   |
+| `lisp-macrostep-quit`      | `q`                    | quit and come back to the source     |
+
+
+You can also call `M-x lisp-macroexpand-all` (`C-c M-m`) to expand the macro completely, or `M-x lisp-macroexpand`.
 
 
 ## Code search

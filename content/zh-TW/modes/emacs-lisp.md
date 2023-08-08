@@ -7,7 +7,7 @@ title: Emacs Lisp
 
 This mode is built in Lem, there is the basic command of `run-elisp` that launches a basic REPL interaction.
 
-For a more advance development experience, you can install [Lemmington](https://github.com/lem-project/lemmigton) that enable some RPC interactions.
+For a more advance development experience, you can install [Lemmington](https://github.com/lem-project/lemmington) that enable some RPC interactions.
 
 **For now, only autocompletion is supported.**
 
