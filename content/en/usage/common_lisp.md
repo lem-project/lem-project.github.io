@@ -32,6 +32,16 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 <a href="/lem-page/lem-repl-ls.png"> <img class="" src="/lem-page/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
 
+### Configuration
+
+You can do something when the REPL starts by using its `lem-lisp-mode:*lisp-repl-hook*`.
+
+For example: you have enable `vi-mode` by default, and you want to enter the REPL in vi's insert-mode:
+
+    (add-hook lem-lisp-mode:*lisp-repl-mode-hook* 'lem-vi-mode/commands:vi-insert)
+
+> Note: this hook was added after Lem 2.1.
+
 
 ## Compilation
 
