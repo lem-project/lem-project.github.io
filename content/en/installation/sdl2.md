@@ -13,6 +13,12 @@ weight: -10
 $ sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
 ```
 
+### Arch Linux
+
+```shell
+sudo pacman -S sdl2_image sdl2_ttf
+```
+
 ### MacOS
 
 ```shell
