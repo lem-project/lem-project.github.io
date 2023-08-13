@@ -5,7 +5,7 @@ weight: -50
 
 ## Supported languages
 
-To see all supported languages and modes, see Lem's [modes directory](https://github.com/lem-project/lem/tree/main/modes).
+To see all supported languages and modes, see Lem's [extensions directory](https://github.com/lem-project/lem/tree/main/extensions).
 
 Languages include: asm, c, css, dart, go, haskell, html, java, js, lisp, nim, ocaml, python, rust, scala, scheme, shell, sql…
 
