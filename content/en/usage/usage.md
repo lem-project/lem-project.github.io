@@ -240,7 +240,7 @@ The frame multiplexer is enabled by default. It shows a buffer indicator on the 
 
 You can disable it with `M-x toggle-frame-multiplexer`.
 
-Well, if you want to be sure, add this in your Lem init file:
+Well, if you want to be sure, add this in your Lem init file (`~/.lem/init.lisp` or `~/.config/lem/init.lisp` since Lem 2.2):
 
      (remove-hook *after-init-hook* 'lem/frame-multiplexer::enable-frame-multiplexer)
 

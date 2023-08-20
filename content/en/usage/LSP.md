@@ -16,7 +16,7 @@ For information on each supported programming language, see the Modes menu.
 For some languages it should work without doing anything (for example
 Go, if you have `gopls`). Otherwise, a configuration step is required.
 
-This is an example JS config for LSP. Place it in your `~/.lem/init.lisp` (or evaluate it with `M-:`).
+This is an example JS config for LSP. Place it in your `~/.lem/init.lisp` (or `~/.config/lem/init.lisp` since Lem 2.2) (or evaluate it with `M-:`).
 
 ```lisp
 (lem-lsp-mode/lsp-mode::define-language-spec
