@@ -225,3 +225,15 @@ You can bring distinct colours to each pair with this
 simple command:
 
     M-x toggle-paren-coloring
+
+## Testing
+
+Lem supports running tests with a keystroke.
+
+In a Lisp test file, run `M-x lisp-test-run-current` (`C-c C-r`) to
+run the test at point or `M-x lisp-test-run-buffer` (`C-c C-R`) to run
+all tests in the current buffer. This displays test results in the REPL.
+
+> This was added after Lem 2.1.
+
+> This test runner currently only supports tests written with Rove.
