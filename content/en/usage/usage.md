@@ -249,7 +249,7 @@ Well, if you want to be sure, add this in your Lem init file (`~/.lem/init.lisp`
 
 Use `M-x vi-mode` and `M-x emacs-mode`.
 
-You can also start Lem in any given, see the configuration section.
+You can also start Lem in any given mode, see the configuration section.
 
 ## Auto-completion (abbrev)
 
