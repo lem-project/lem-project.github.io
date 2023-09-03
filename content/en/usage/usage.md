@@ -66,11 +66,11 @@ There are also the commands:
 
 | Command | Key-combination | Function                                                        |
 |:-------:|:-------:|:-------------------------------------------------------------------------:|
-| `project-delete-buffers` | `C-x p K` | delete all this project's buffers                    |
+| `project-kill-buffers` | `C-x p K` | delete all this project's buffers                    |
 | `project-root` |                     | display the project root         |
-| `project-find-file-other-window` | `C-x 4 p f` | open a file in another window              |
+| `project-find-file-next-window` | `C-x 4 p f` | open a file in another window              |
 | `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
-| `project-root-directory-other-window` |  | open the project root in another window          |
+| `project-root-directory-next-window` |  | open the project root in another window          |
 
 These commands allow to **switch** between projects:
 
@@ -83,7 +83,7 @@ These commands allow to **switch** between projects:
 
 Configuration:
 
-- for `project-delete-buffers`:
+- for `project-kill-buffers`:
   - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
   - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
 
