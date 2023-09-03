@@ -68,7 +68,7 @@ There are also the commands:
 |:-------:|:-------:|:-------------------------------------------------------------------------:|
 | `project-kill-buffers` | `C-x p K` | delete all this project's buffers                    |
 | `project-root` |                     | display the project root         |
-| `project-find-file-other-window` | `C-x 4 p f` | open a file in another window              |
+| `project-find-file-next-window` | `C-x 4 p f` | open a file in another window              |
 | `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
 | `project-root-directory-other-window` |  | open the project root in another window          |
 
