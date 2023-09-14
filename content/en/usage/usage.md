@@ -305,6 +305,17 @@ this presents the results in a two-panes window. You can edit lines in the resul
 
 Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
 
+## opening links
+
+Lem will recognize some forms of links, specifically **URLs** and
+**links to files**, and will write them with a special face attribute
+(in my case, an underscore). You can open such a link with the command
+`M-x open-link` (not bound to a key by default).
+
+- URL: opens your web browser
+- file (the link must start with `file://`): Lem opens the file.
+
+
 ## Misc
 
 Try:
