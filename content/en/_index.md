@@ -88,7 +88,7 @@ Multiple cursors, interactive grep, directory mode, tabs,
 
 and support for:
 
-Scheme, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm
+Scheme, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, Swift, shell, asm
 
 markdown, ascii, JSON, HTML and CSS, SQL…
 
