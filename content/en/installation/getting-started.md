@@ -5,17 +5,20 @@ weight: -20
 
 [Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
 
-You can also build it yourself.
+You can also build it yourself and Arch users can get it with AUR.
 
 ## Requirement
 - [sbcl](https://www.sbcl.org/)
 - ncurses
 
-
 ## Platform
 - Linux
 - MacOS
 - [Windows](https://github.com/lem-project/lem/wiki/Windows-Platform)
+
+## ArchLinux
+
+Arch users have a AUR package: https://aur.archlinux.org/packages/lem-editor-git
 
 ## Installation with roswell
 
@@ -69,9 +72,9 @@ $ sbcl
 * (lem:lem)
 ```
 
-### Build an executable
+## Build an executable
 
-## With make
+### With make
 
 If you have [make](https://www.gnu.org/software/make) installed, you have available these commands:
 
@@ -85,7 +88,7 @@ make build-ncurses
 make build-sdl2
 ```
 
-## Without make
+### Without make
 
 You can create the executable file of lem using the following command.
 ```
