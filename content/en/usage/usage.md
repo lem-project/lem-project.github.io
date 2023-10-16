@@ -3,7 +3,7 @@ title: Usage
 weight: -50
 ---
 
-The documentation is in progress. You can find a list of available keys and commands in [keybindings](/lem-page/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new after Lem 2.0).
+The documentation is in progress. You can find a list of available keys and commands in [keybindings](/lem-page/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
 
 
 # Lem Manual for Users
@@ -37,7 +37,7 @@ You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
 ### Filer - project explorer
 
-> This feature was added after Lem 2.0
+> This feature was added in Lem 2.1
 
 The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
 
@@ -46,7 +46,7 @@ The shortcut `C-x d` opens a project explorer on the left side. Another keypress
 
 ### Find file in project
 
-> Project related commands were added after Lem 2.0
+> Project related commands were added in Lem 2.1
 
 Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
 
@@ -97,7 +97,7 @@ project files. In that case, common development directories such as
 
 ### Find file recursively
 
-> find-file-recursively was added after Lem 2.0
+> find-file-recursively was added in Lem 2.1
 
 The command `find-file-recursively` is not bound to a key by default. This command opens a selection prompt and lists all files under the buffer's directory, recursively, letting you choose and open a file deep in the directory tree quickly.
 
@@ -289,7 +289,7 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 - move, edit, mark, word, S-expressions, file, buffer, window, multiple-cursors, process, help, font and other.
 
-**Note:** this command was added after Lem 2.0.
+**Note:** this command was added in Lem 2.1.
 
 <img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
 
