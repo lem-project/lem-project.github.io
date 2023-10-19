@@ -64,6 +64,9 @@ You can put the files in `$HOME/common-lisp` or in the quicklisp location `$HOME
 $ mkdir $HOME/common-lisp
 $ cd $HOME/common-lisp
 $ git clone --recursive https://github.com/lem-project/lem.git
+$ git clone --recursive https://github.com/lem-project/micros
+$ git clone --recursive https://github.com/lukpank/lem-base16-themes
+$ git clone --recursive https://github.com/lem-project/lem-mailbox
 ```
 You can start "lem" using the following command.
 ```
