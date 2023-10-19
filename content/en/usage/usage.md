@@ -322,6 +322,7 @@ Try:
 
 - `M-x toggle-line-numbers`
   - or `(lem/line-numbers:toggle-line-numbers)`
+  - use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
 - `M-x toggle-read-only`
   - `(lem-core/commands/buffer:toggle-read-only)`
 - `M-x toggle-auto-save`
