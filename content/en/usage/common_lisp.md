@@ -3,6 +3,8 @@ title: Common Lisp commands
 weight: -10
 ---
 
+{{< toc >}}
+
 Lem is written and extensible in Common Lisp. You can start writing
 and compiling Common Lisp code right away.
 

@@ -2,6 +2,9 @@
 title: Usage
 weight: -50
 ---
+{{< toc >}}
+
+
 
 The documentation is in progress. You can find a list of available keys and commands in [keybindings](/lem-page/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
 
