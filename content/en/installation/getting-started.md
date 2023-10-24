@@ -10,6 +10,7 @@ You can also build it yourself and Arch users can get it with AUR.
 ## Requirement
 - [sbcl](https://www.sbcl.org/)
 - ncurses
+- [qlot](https://github.com/fukamachi/qlot)
 
 ## Platform
 - Linux
@@ -54,16 +55,17 @@ You can watch the screencast on Youtube.
 
 [Screencast](https://youtu.be/YkSJ3p7Z9H0)
 
-## Installation with sbcl
+## Installation with sbcl + quicklisp + qlot
 
-Please clone lem to a location where the path to [asdf](https://asdf.common-lisp.dev/) is accessible,
-it is also recommended to install [quicklisp](https://www.quicklisp.org/beta/).
+Install quicklisp https://www.quicklisp.org/beta/ and qlot https://github.com/fukamachi/qlot#installation
 
 You can put the files in `$HOME/common-lisp` or in the quicklisp location `$HOME/quicklisp/local-projects`
+
 ```
 $ mkdir $HOME/common-lisp
 $ cd $HOME/common-lisp
-$ git clone --recursive https://github.com/lem-project/lem.git
+$ git clone https://github.com/lem-project/lem.git
+$ cd lem && qlot install
 ```
 You can start "lem" using the following command.
 ```
@@ -74,25 +76,25 @@ $ sbcl
 
 ## Build an executable
 
-### With make
+## With make + qlot
 
 If you have [make](https://www.gnu.org/software/make) installed, you have available these commands:
 
 1. Build ncurses executable
 ```
-make build-ncurses
+make ncurses
 ```
 
 2. Build sdl2 executable
 ```
-make build-sdl2
+make sdl2
 ```
 
 ### Without make
 
 You can create the executable file of lem using the following command.
 ```
-$ sbcl --eval '(ql:quickload :lem-ncurses)' --load scripts/patch-build-ncurses.lisp
+$ sbcl --eval '(ql:quickload :lem-ncurses)' --load scripts/build-ncurses.lisp
 ```
 
 # If the installation fails
