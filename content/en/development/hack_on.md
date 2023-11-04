@@ -4,21 +4,40 @@ weight: -5
 ---
 
 There are two ways to hack/develop lem.
-* Start Swank on lem and connect from Swank client (other lem process or Emacs SLIME)
+* Start Swank on lem and connect from Swank client
 * Directly modify lem process behavior
 
+## Hack with Emacs
+
 ### Start Swank Server from Lem
+
 ```
 M-x start-lisp-repl
 CL-USER> (swank:create-server :dont-close t)
 ```
 
-### Connect from Emacs or other Lem
+### Connect from Emacs
+
 ```
 M-x slime-connect
 ```
 
 Using this method, it is safe to break lem because the editing process is separate from the main lem process.
+
+## Hack with Lem
+
+### Start micros server from Lem
+
+```
+M-x start-lisp-repl
+CL-USER> (micros:create-server :dont-close t)
+```
+
+### Start Another Lem and Connect
+
+```
+M-x slime-connect
+```
 
 ### Self connect from Lem
 
@@ -76,12 +95,12 @@ From the root directory of the Lem project, using Make.
 - With ncurses:
 
 ```
- make build-ncurses
+ make ncurses
 ```
 - With sld2:
 
 ```
- make build-sdl2 
+ make sdl2 
 ```
     
 This creates a binary on the root of the lem project called "lem".
