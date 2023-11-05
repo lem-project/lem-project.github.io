@@ -21,7 +21,7 @@ After installing lem, you can start developing in Common Lisp at once.
 
 In addition, many languages are supported with Lem's **built-in LSP support**.
 
-{{< button size="large" relref="installation/getting-started/" >}}Getting Started{{< /button >}}
+{{< button size="large" relref="installation/ncurses/linux" >}}Getting Started{{< /button >}}
 
 ## Feature overview
 
