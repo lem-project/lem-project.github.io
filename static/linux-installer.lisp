@@ -59,7 +59,13 @@
 
     (title "Running make...")
     (run-user-command (format nil "cd ~a/lem && make ncurses" common-lisp-dir)
-                      :output t)))
+                      :output t)
+    (when (string=
+           (uiop:run-program "which lem" :output :string  :ignore-error-status t) "")
+
+      (title "Adding lem executable to /usr/local/bin")
+      (uiop:run-program (format nil "cd ~a/lem && cp lem /usr/local/bin" common-lisp-dir) :output t)
+      (dot-line))))
 
 
 (if (uiop:getenv "SUDO_USER")
@@ -68,7 +74,9 @@
      (title "Installing dependencies...")
      (uiop:run-program "sudo apt install -y sbcl libncurses5-dev build-essential" :output :interactive)
      (dot-line)
+
      (installing-qlot)
      (make-lem))
+
     (:arch ))
   (format t "This file need to be run as sudo! ~%"))
