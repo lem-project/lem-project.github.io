@@ -72,7 +72,7 @@
   (ecase (member-of *os-name*)
     (:debian
      (title "Installing dependencies...")
-     (uiop:run-program "sudo apt install -y sbcl libncurses5-dev build-essential" :output :interactive)
+     (uiop:run-program "sudo apt install -y curl git sbcl libncurses5-dev build-essential" :output :interactive)
      (dot-line)
 
      (installing-qlot)
