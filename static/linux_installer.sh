@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # For now, this only works with SBCL
 if [ $(which sbcl) ]
 then
