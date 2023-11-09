@@ -29,6 +29,15 @@ $ ros follow-dependency=t install lem-project/lem
 export PATH=$PATH:~/.roswell/bin
 ```
 
+### Installation with Docker
+
+Clone the Lem repository and build a Docker image:
+
+    $ docker build -t lem .
+
+You can now run it:
+
+    $ docker run --rm -it -v .:/shared lem
 
 ## Installation from scratch
 - [sbcl](https://www.sbcl.org/)
