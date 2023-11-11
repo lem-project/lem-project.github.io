@@ -12,14 +12,14 @@ raco pkg install r7rs
 ```
 
 
-Once we have the package installed, we can then clone [r7rs-swak](https://github.com/ecraven/r7rs-swank) to enable
+Once we have the package installed, we can then clone [r7rs-swank](https://github.com/ecraven/r7rs-swank) to enable
 swank functionality:
 
 ```sh
 git clone https://github.com/ecraven/r7rs-swank.git
 ```
 
-Then, to start the racket swak server:
+Then, to start the racket swank server:
 ```sh
 cd sr7rs-swank && sh racket.sh
 ```
