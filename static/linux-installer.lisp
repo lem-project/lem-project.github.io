@@ -55,16 +55,18 @@
     (title "Cloning Lem...")
     (unless (uiop:directory-exists-p (pathname (format nil "~a/lem" common-lisp-dir)))
       (run-user-command (format nil "cd ~a && git clone https://github.com/lem-project/lem.git"
-                                common-lisp-dir) :output t))
+                                common-lisp-dir)
+                        :output :interactive))
 
     (title "Running make...")
     (run-user-command (format nil "cd ~a/lem && make ncurses" common-lisp-dir)
-                      :output t)
+                      :output :interactive)
     (when (string=
            (uiop:run-program "which lem" :output :string  :ignore-error-status t) "")
 
       (title "Adding lem executable to /usr/local/bin")
-      (uiop:run-program (format nil "cd ~a/lem && cp lem /usr/local/bin" common-lisp-dir) :output t)
+      (uiop:run-program (format nil "cd ~a/lem && cp lem /usr/local/bin" common-lisp-dir)
+                        :output :interactive)
       (dot-line))))
 
 
