@@ -16,6 +16,31 @@ weight: -20
 sudo pacman -Sy lem-editor-git
 ```
 
+## Debian/Mint/Ubuntu
+There is an automatic installer that works on Debian, Linux Mint and Ubuntu.
+
+Before that, install the dependencies:
+```
+sudo apt install sbcl curl git
+```
+
+Now, run the command that will install Lem:
+{{< expand "Check the script! (it runs sudo to install more depencies regarding ncurses)" >}}
+
+The sh script is located here https://lem-project.github.io/lem-page/linux_installer.sh which downloads
+
+the lisp file that is interpreted for SBCL, it can be checked here https://lem-project.github.io/lem-page/linux-installer.lisp
+
+
+{{< /expand >}}
+```
+curl -L https://lem-project.github.io/lem-page/linux_installer.sh | bash
+```
+
+Important places from the script installation:
+- `$HOME/common-lisp/lem` (Lem installation location)
+- `/usr/local/bin/lem` (Lem symlink)
+
 ## Other GNU/Linux
     
 ### Installation with roswell
