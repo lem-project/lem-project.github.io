@@ -46,4 +46,7 @@ Lem developpers are investigated to interface with Trial, the game engine of the
 
 You can add a transparent background to Lem's SDL2 GUI! Add this to your init file:
 
-    (sdl2-ffi.functions:sdl-set-window-opacity (lem-sdl2::display-window lem-sdl2::*display*) 0.9)
+```
+(sdl2-ffi.functions:sdl-set-window-opacity
+ (lem-sdl2/display:display-window (lem-sdl2/display:current-display)) 0.9)
+```
