@@ -38,7 +38,7 @@ You can now call it with `M-x open-init-file`.
 For inspiration, see those configuration files:
 
 - [@fukamachi](https://github.com/fukamachi/.lem/)
-- [@sasanidas](https://codeberg.org/sasanidas/lem-config/src/branch/master/init.lisp)
+- [@sasanidas](https://codeberg.org/sasanidas/lem-config/)
 - [@vindarel](https://github.com/vindarel/lem-init)
 - [@Gavinok](https://github.com/Gavinok/.lem)
 - [@garlic0x1](https://github.com/garlic0x1/.lem)
