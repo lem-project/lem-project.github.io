@@ -19,7 +19,7 @@ weight: -20
 #### Install SBCL and ncurses library
 - Debian-like distro
 ```
-sudo apt install sbcl libncurses5-dev build-essential libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+sudo apt install sbcl build-essential libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
 ```
 
 #### Install qlot
@@ -38,7 +38,7 @@ For an alternative installation, https://github.com/fukamachi/qlot#installation
 mkdir $HOME/common-lisp
 cd $HOME/common-lisp
 git clone https://github.com/lem-project/lem.git
-cd lem && make ncurses
+cd lem && make sdl2
 ```
 
 #### Add the executable to PATH
