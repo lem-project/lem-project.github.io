@@ -6,7 +6,7 @@ weight: -50
 
 
 
-The documentation is in progress. You can find a list of available keys and commands in [keybindings](/lem-page/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
+The documentation is in progress. You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
 
 
 # Lem Manual for Users
@@ -44,7 +44,7 @@ You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
 The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
 
-<img class="" src="/lem-page/filer.png" alt="Lem Filer on the left window">
+<img class="" src="/filer.png" alt="Lem Filer on the left window">
 
 
 ### Find file in project
@@ -104,7 +104,7 @@ project files. In that case, common development directories such as
 
 The command `find-file-recursively` is not bound to a key by default. This command opens a selection prompt and lists all files under the buffer's directory, recursively, letting you choose and open a file deep in the directory tree quickly.
 
-<img class="" src="/lem-page/find-file-recursively.png" alt="">
+<img class="" src="/find-file-recursively.png" alt="">
 
 > Note: contrary to `project-find-file`, it starts the search at the buffer's directory, not at the project root.
 
@@ -294,7 +294,7 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 **Note:** this command was added in Lem 2.1.
 
-<img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
+<img class="" src="/documentation-describe-bindings.png" alt="">
 
 
 

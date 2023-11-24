@@ -1,6 +1,6 @@
 # Lem Webpage
 
-This repository contains the code for the webpage of the Lem project and is currently hosted [here](https://lem-project.github.io/lem-page/)
+This repository contains the code for the webpage of the Lem project and is currently hosted [here](https://lem-project.github.io/)
 
 
 ## Requirements
@@ -29,6 +29,6 @@ make build
 
 ## Contributions
 
-Contributions are more than welcome, open an issue [here](https://github.com/lem-project/lem-page/issues) or a pull request [here](https://github.com/lem-project/lem-page/pulls).
+Contributions are more than welcome, open an issue [here](https://github.com/lem-project/issues) or a pull request [here](https://github.com/lem-project/pulls).
 
-In general, follow the guidelines of the main project (https://lem-project.github.io/lem-page/usage/contribute/)
+In general, follow the guidelines of the main project (https://lem-project.github.io/usage/contribute/)

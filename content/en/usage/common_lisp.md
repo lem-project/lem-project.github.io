@@ -10,7 +10,7 @@ and compiling Common Lisp code right away.
 
 Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x start-lisp-repl` or just switch to one with `C-c C-z`.
 
-<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
+<a href="/lem-lisp.png"> <img class="" src="/lem-lisp.png" alt=""> </a>
 
 
 ## REPL
@@ -32,7 +32,7 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
 
-<a href="/lem-page/lem-repl-ls.png"> <img class="" src="/lem-page/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
+<a href="/lem-repl-ls.png"> <img class="" src="/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
 
 ### Configuration
 
@@ -75,7 +75,7 @@ You can also scroll the graph with the same key bindings as cursor movement.
 
 For example, inspect `lem::editor-condition` or `simple-condition`.
 
-<a href="/lem-page/class-tree.png"> <img class="" src="/lem-page/lem-lisp.png" alt="class tree inspector: a graph of clickable nodes."> </a>
+<a href="/class-tree.png"> <img class="" src="/lem-lisp.png" alt="class tree inspector: a graph of clickable nodes."> </a>
 
 
 ## Interactive debugger

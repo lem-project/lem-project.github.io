@@ -27,14 +27,14 @@ sudo apt install sbcl curl git
 Now, run the command that will install Lem:
 {{< expand "Check the script! (it runs sudo to install more depencies regarding ncurses)" >}}
 
-The sh script is located here https://lem-project.github.io/lem-page/linux_installer.sh which downloads
+The sh script is located here https://lem-project.github.io/linux_installer.sh which downloads
 
-the lisp file that is interpreted for SBCL, it can be checked here https://lem-project.github.io/lem-page/linux-installer.lisp
+the lisp file that is interpreted for SBCL, it can be checked here https://lem-project.github.io/linux-installer.lisp
 
 
 {{< /expand >}}
 ```
-curl -L https://lem-project.github.io/lem-page/linux_installer.sh | bash
+curl -L https://lem-project.github.io/linux_installer.sh | bash
 ```
 
 Important places from the script installation:

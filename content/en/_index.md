@@ -9,7 +9,7 @@ geekdocAnchor: false
 <!-- markdownlint-disable MD033 -->
 
 
-<img class="" src="/lem-page/icon-blue.svg" alt="">
+<img class="" src="/icon-blue.svg" alt="">
 
 <span class="badge-placeholder">[![Build Status](https://github.com/lem-project/lem/workflows/CI/badge.svg)](https://github.com/lem-project/lem/actions)</span>
 <span class="badge-placeholder">[![Backers on Open Collective](https://opencollective.com/lem/backers/badge.svg)](https://github.com/lem-project/lem#backers)</span>
@@ -29,7 +29,7 @@ In addition, many languages are supported with Lem's **built-in LSP support**.
 
 ### Keyboard oriented
 
-<a href="/lem-page/terminal.png"> <img class="" src="/lem-page/terminal.png" alt=""> </a>
+<a href="/terminal.png"> <img class="" src="/terminal.png" alt=""> </a>
 
 If you come from Emacs or Vim, you will feel right at home.
 
@@ -37,7 +37,7 @@ If you come from Emacs or Vim, you will feel right at home.
 
 ### Alien Technology
 
-<img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
+<img class="" src="/lisp_logo.png" alt="" style="height: 265px" >
 
 It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
 
@@ -47,7 +47,7 @@ Lem is written and extensible in Common Lisp.
 
 ### GUI version using SDL2
 
-<a href="/lem-page/sdl2.png"> <img class="" src="/lem-page/sdl2.png" alt=""> </a>
+<a href="/sdl2.png"> <img class="" src="/sdl2.png" alt=""> </a>
 
 Since version 2.0, a GUI version is also available.
 
@@ -60,7 +60,7 @@ colour themes.
 
 ### Ready for Common Lisp
 
-<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
+<a href="/lem-lisp.png"> <img class="" src="/lem-lisp.png" alt=""> </a>
 
 Start developing on Lisp at once.
 
@@ -70,7 +70,7 @@ Full-featured REPL and interactive debugger, with Paredit and a third-party Pare
 
 ### Project tree view
 
-<a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
+<a href="/filer.png"> <img class="" src="/filer.png" alt=""> </a>
 
 Open a tree view of the current project,
 
@@ -82,7 +82,7 @@ use project-aware commands.
 
 ### and more
 
-<img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
+<img class="" src="/tetris.png" alt="File tree on the left.">
 
 Multiple cursors, interactive grep, directory mode, tabs,
 
