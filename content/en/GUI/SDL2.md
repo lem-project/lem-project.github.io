@@ -3,7 +3,7 @@ title: SDL2 features
 weight: -20
 ---
 
-<img class="" src="/lem-page/sdl2.png" alt="">
+<img class="" src="/sdl2.png" alt="">
 
 The SDL2 backend of Lem adds images and graphics support. You can draw at any location on a specified buffer or window.
 
@@ -26,7 +26,7 @@ Lem can run graphical games! Try this:
     M-x load-library RET tetris RET
     M-x tetris
 
-<img class="" src="/lem-page/tetris.png" alt="">
+<img class="" src="/tetris.png" alt="">
 
 Stop the game with `q`. By the way, Tetris works in the ncurses frontend too.
 
@@ -36,7 +36,7 @@ He develops the game interactively. On the screenshot below, he
 inspects the player class, changes its X and Y coordinates and the
 game is updated on the fly.
 
-<img class="" src="/lem-page/developing-game.png" alt="">
+<img class="" src="/developing-game.png" alt="">
 
 Lem developpers are investigated to interface with Trial, the game engine of the Kandria game.
 
