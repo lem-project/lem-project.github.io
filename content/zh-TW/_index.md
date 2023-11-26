@@ -21,7 +21,7 @@ geekdocAnchor: false
 
 此外，Lem 的**內置 LSP 支持**支持多種語言。
 
-{{< button size="large" relref="installation/getting-started/" >}}開始使用{{< /button >}}
+{{< button size="large" relref="installation/ncurses/linux" >}}開始使用{{< /button >}}
 
 ## 功能概述
 
