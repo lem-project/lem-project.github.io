@@ -9,7 +9,7 @@ geekdocAnchor: false
 <!-- markdownlint-disable MD033 -->
 
 
-<img class="" src="/lem-page/icon-blue.svg" alt="">
+<img class="" src="/icon-blue.svg" alt="">
 
 <span class="badge-placeholder">[![Build Status](https://github.com/lem-project/lem/workflows/CI/badge.svg)](https://github.com/lem-project/lem/actions)</span>
 <span class="badge-placeholder">[![Backers on Open Collective](https://opencollective.com/lem/backers/badge.svg)](https://github.com/lem-project/lem#backers)</span>
@@ -29,14 +29,14 @@ In addition, many languages are supported with Lem's **built-in LSP support**.
 
 ### Keyboard oriented
 
-<img class="" src="/lem-page/terminal.png" alt="">
+<img class="" src="/terminal.png" alt="">
 
 If you come from Emacs or Vim, you will feel right at home.
 <--->
 
 ### Alien Technology
 
-<img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
+<img class="" src="/lisp_logo.png" alt="" style="height: 265px" >
 
 It is an established fact that John McCarthy shared alien tech with the world in 1958 when he introduced us to Lisp. We continue that great tradition.
 
@@ -44,7 +44,7 @@ It is an established fact that John McCarthy shared alien tech with the world in
 
 ### GUI version using SDL2
 
-<img class="" src="/lem-page/sdl2.png" alt="">
+<img class="" src="/sdl2.png" alt="">
 
 Since version 2.0, a GUI version is also available.
 
