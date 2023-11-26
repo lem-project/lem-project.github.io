@@ -9,6 +9,9 @@ the progress of each implementation. SBCL should be the default one, with all te
 
 The changes are in Lem main branch (for more in-depth information, https://github.com/lem-project/lem/pull/686 )
 
+
+**With the recent changes using qlot, for now, only SBCL is supported on master**
+
 ### Implementations
 {{< expand "SBCL - 2.3.3" >}}
 {{< progress title="Progress" value="98" icon="gdoc_info_outline" >}}

@@ -2,8 +2,11 @@
 title: Usage
 weight: -50
 ---
+{{< toc >}}
 
-The documentation is in progress. You can find a list of available keys and commands in [keybindings](/lem-page/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new after Lem 2.0).
+
+
+The documentation is in progress. You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
 
 
 # Lem Manual for Users
@@ -37,16 +40,16 @@ You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
 ### Filer - project explorer
 
-> This feature was added after Lem 2.0
+> This feature was added in Lem 2.1
 
 The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
 
-<img class="" src="/lem-page/filer.png" alt="Lem Filer on the left window">
+<img class="" src="/filer.png" alt="Lem Filer on the left window">
 
 
 ### Find file in project
 
-> Project related commands were added after Lem 2.0
+> Project related commands were added in Lem 2.1
 
 Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
 
@@ -66,11 +69,11 @@ There are also the commands:
 
 | Command | Key-combination | Function                                                        |
 |:-------:|:-------:|:-------------------------------------------------------------------------:|
-| `project-delete-buffers` | `C-x p K` | delete all this project's buffers                    |
+| `project-kill-buffers` | `C-x p K` | delete all this project's buffers                    |
 | `project-root` |                     | display the project root         |
-| `project-find-file-other-window` | `C-x 4 p f` | open a file in another window              |
+| `project-find-file-next-window` | `C-x 4 p f` | open a file in another window              |
 | `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
-| `project-root-directory-other-window` |  | open the project root in another window          |
+| `project-root-directory-next-window` |  | open the project root in another window          |
 
 These commands allow to **switch** between projects:
 
@@ -83,7 +86,7 @@ These commands allow to **switch** between projects:
 
 Configuration:
 
-- for `project-delete-buffers`:
+- for `project-kill-buffers`:
   - if `*delete-repl-buffer*` is non t, we don't delete the REPL buffer.
   - if `*delete-last-buffer*` is non nil, we will delete the last buffer. This would cause Lem to exit.
 
@@ -97,11 +100,11 @@ project files. In that case, common development directories such as
 
 ### Find file recursively
 
-> find-file-recursively was added after Lem 2.0
+> find-file-recursively was added in Lem 2.1
 
 The command `find-file-recursively` is not bound to a key by default. This command opens a selection prompt and lists all files under the buffer's directory, recursively, letting you choose and open a file deep in the directory tree quickly.
 
-<img class="" src="/lem-page/find-file-recursively.png" alt="">
+<img class="" src="/find-file-recursively.png" alt="">
 
 > Note: contrary to `project-find-file`, it starts the search at the buffer's directory, not at the project root.
 
@@ -240,7 +243,7 @@ The frame multiplexer is enabled by default. It shows a buffer indicator on the 
 
 You can disable it with `M-x toggle-frame-multiplexer`.
 
-Well, if you want to be sure, add this in your Lem init file:
+Well, if you want to be sure, add this in your Lem init file (`~/.lem/init.lisp` or `~/.config/lem/init.lisp` since Lem 2.2):
 
      (remove-hook *after-init-hook* 'lem/frame-multiplexer::enable-frame-multiplexer)
 
@@ -249,7 +252,7 @@ Well, if you want to be sure, add this in your Lem init file:
 
 Use `M-x vi-mode` and `M-x emacs-mode`.
 
-You can also start Lem in any given, see the configuration section.
+You can also start Lem in any given mode, see the configuration section.
 
 ## Auto-completion (abbrev)
 
@@ -289,9 +292,9 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 - move, edit, mark, word, S-expressions, file, buffer, window, multiple-cursors, process, help, font and other.
 
-**Note:** this command was added after Lem 2.0.
+**Note:** this command was added in Lem 2.1.
 
-<img class="" src="/lem-page/documentation-describe-bindings.png" alt="">
+<img class="" src="/documentation-describe-bindings.png" alt="">
 
 
 
@@ -305,12 +308,24 @@ this presents the results in a two-panes window. You can edit lines in the resul
 
 Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
 
+## opening links
+
+Lem will recognize some forms of links, specifically **URLs** and
+**links to files**, and will write them with a special face attribute
+(in my case, an underscore). You can open such a link with the command
+`M-x open-link` (not bound to a key by default).
+
+- URL: opens your web browser
+- file (the link must start with `file://`): Lem opens the file.
+
+
 ## Misc
 
 Try:
 
 - `M-x toggle-line-numbers`
   - or `(lem/line-numbers:toggle-line-numbers)`
+  - use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
 - `M-x toggle-read-only`
   - `(lem-core/commands/buffer:toggle-read-only)`
 - `M-x toggle-auto-save`

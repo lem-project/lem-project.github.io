@@ -3,7 +3,10 @@ title: Keybindings
 weight: -40
 ---
 
+
 # Lem 2.0 keybindings
+
+{{< toc >}}
 
 This is the full list of Lem 2.0 keybindings.
 

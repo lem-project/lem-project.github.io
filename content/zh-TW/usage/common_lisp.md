@@ -3,12 +3,14 @@ title: Common Lisp commands
 weight: -10
 ---
 
+{{< toc >}}
+
 Lem is written and extensible in Common Lisp. You can start writing
 and compiling Common Lisp code right away.
 
 Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x start-lisp-repl` or just switch to one with `C-c C-z`.
 
-<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
+<a href="/lem-lisp.png"> <img class="" src="/lem-lisp.png" alt=""> </a>
 
 
 ## REPL
@@ -30,7 +32,7 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 > You can open Lem with a Lisp REPL with this one-liner: `lem --eval "(lem-lisp-mode:start-lisp-repl t)"`
 
-<a href="/lem-page/lem-repl-ls.png"> <img class="" src="/lem-page/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
+<a href="/lem-repl-ls.png"> <img class="" src="/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
 
 ### Configuration
 
@@ -73,7 +75,7 @@ You can also scroll the graph with the same key bindings as cursor movement.
 
 For example, inspect `lem::editor-condition` or `simple-condition`.
 
-<a href="/lem-page/class-tree.png"> <img class="" src="/lem-page/lem-lisp.png" alt="class tree inspector: a graph of clickable nodes."> </a>
+<a href="/class-tree.png"> <img class="" src="/lem-lisp.png" alt="class tree inspector: a graph of clickable nodes."> </a>
 
 
 ## Interactive debugger
@@ -225,3 +227,37 @@ You can bring distinct colours to each pair with this
 simple command:
 
     M-x toggle-paren-coloring
+
+## Testing
+
+> This was added after Lem 2.1.
+
+For now, Lem testing of Common Lisp is split in two approaches:
+- buffer-oriented (using detective):
+
+    It uses buffer references to get information about the tests in the buffer and send information to the an active REPL.
+
+- connection-oriented (using the connection with micros):
+
+    It uses `micros` to communicate with the underlying connection to send commands and uses custom visual for each
+    tests.
+
+### Detective testing
+
+It works with-in the current buffer, it's configure by default to work with the rove testing framework, but
+it can be adapted to work with others, changing the value of the variable `*run-test-function-name*` for single
+test run and `*run-suite-test-function-name*` for running a test suite.
+
+The commands available are:
+- `M-x lisp-test-run-current`: Sends the current test to run on the REPL.
+- `M-x lisp-test-run-buffer`: Select a test in the buffer to run.
+- `M-x lisp-test-run-suite`: Run the current buffer suite (define on the top of the buffer).
+
+### Using micro with test-runner
+
+It works by using the underlying connection to the lisp server,for now, it only works with the rove
+testing framework.
+
+The commands available are:
+- `M-x lisp-test-runner-run-current` or (`C-c C-r`): It sends the current test symbol to the connection.
+- `M-x lisp-test-runner-run-buffer` or (`C-c C-R`): Run the test suite of the current buffer.

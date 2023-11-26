@@ -33,13 +33,14 @@ Here is a list of keybindings. Emacs' Dired users will feel right at home.
 | "D"             | delete marked files and directories (recursively, with confirmation) |
 | "C"             | copy marked files and directories                                    |
 | "R"             | rename                                                               |
+| "s"             | sort files and directories by mtime, then by size, and back to file name. |
 | "+"             | make a directory                                                     |
 
-Key bindings added after the Lem 2.0 release:
+Key bindings added after the Lem 2.1 release:
 
 | Key-combination | Function                                                                  |
 |:---------------:|:-------------------------------------------------------------------------:|
-| "s"             | sort files and directories by mtime, then by size, and back to file name. |
+| "C-x C-j"       | find-file-directory. From a file buffer, open this file's directory.      |
 
 ### Opening multimedia files
 

@@ -21,6 +21,13 @@ Working on your first Pull Request? You can learn how from this *free* series, [
 
 Any code change should be submitted as a pull request. The description should explain what the code does and give steps to execute it. The pull request should also contain tests.
 
+
+If this is your first time, you might not know where to start.
+For such situations, we have prepared issues labeled "onboarding" for you to begin with.
+https://github.com/lem-project/lem/issues?q=is%3Aissue+is%3Aopen+label%3AOnboarding 
+
+We would be delighted if you could take on the challenge.
+
 ## Code review process
 
 The bigger the pull request, the longer it will take to review and merge. Try to break down large pull requests in smaller chunks that are easier to review and merge.
@@ -35,6 +42,8 @@ Anyone can file an expense. If the expense makes sense for the development of th
 
 If you have any questions, create an [issue](https://github.com/lem-project/lem/issues) (protip: do a quick search first to see if someone else didn't ask the same question before!).
 You can also reach us at hello@lem.opencollective.com.
+
+You can use both our [Discord](https://discord.gg/NHzqbw4zVR) and the [Matrix](https://app.gitter.im/#/room/#lem-developers_community:gitter.im)
 
 ## Credits
 
