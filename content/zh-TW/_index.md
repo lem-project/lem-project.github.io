@@ -9,7 +9,7 @@ geekdocAnchor: false
 <!-- markdownlint-disable MD033 -->
 
 
-<img class="" src="/lem-page/icon-blue.svg" alt="">
+<img class="" src="/icon-blue.svg" alt="">
 
 <span class="badge-placeholder">[![Build Status](https://github.com/lem-project/lem/workflows/CI/badge.svg)](https://github.com/lem-project/lem/actions)</span>
 <span class="badge-placeholder">[![Backers on Open Collective](https://opencollective.com/lem/backers/badge.svg)](https://github.com/lem-project/lem#backers)</span>
@@ -29,14 +29,14 @@ geekdocAnchor: false
 
 ### 鍵盤面向
 
-<img class="" src="/lem-page/terminal.png" alt="">
+<a href="/terminal.png"> <img class="" src="/terminal.png" alt=""> </a>
 
 如果您來自 Emacs 或 Vim，您會感到賓至如歸。
 <--->
 
 ### 外星科技
 
-<img class="" src="/lem-page/lisp_logo.png" alt="" style="height: 265px" >
+<img class="" src="/lisp_logo.png" alt="" style="height: 265px" >
 
 約翰麥卡錫在 1958 年向我們介紹 Lisp 時與世界分享了外星技術。我們延續這一偉大傳統。
 
@@ -44,7 +44,7 @@ geekdocAnchor: false
 
 ### 使用 SDL2 的 GUI 版本
 
-<img class="" src="/lem-page/sdl2.png" alt="">
+<a href="/sdl2.png"> <img class="" src="/sdl2.png" alt=""> </a>
 
 從 2.0 版開始，還提供了 GUI 版本。
 
@@ -56,7 +56,7 @@ geekdocAnchor: false
 
 ### 內置好的 Common Lisp 建構環境
 
-<a href="/lem-page/lem-lisp.png"> <img class="" src="/lem-page/lem-lisp.png" alt=""> </a>
+<a href="/lem-lisp.png"> <img class="" src="/lem-lisp.png" alt=""> </a>
 
 立即開始在 Lisp 上進行開發。
 
@@ -66,7 +66,7 @@ geekdocAnchor: false
 
 ### 專案樹狀圖
 
-<a href="/lem-page/filer.png"> <img class="" src="/lem-page/filer.png" alt=""> </a>
+<a href="/filer.png"> <img class="" src="/filer.png" alt=""> </a>
 
 打開當前專案的樹狀圖，並使用 project-aware 指令.
 
@@ -76,12 +76,12 @@ geekdocAnchor: false
 
 ### 更多
 
-<img class="" src="/lem-page/tetris.png" alt="File tree on the left.">
+<img class="" src="/tetris.png" alt="File tree on the left.">
 
 支持多個游標, 交互 grep, 目錄模式, tabs, 和支援以下語言:
 
 Scheme, Clojure, Go, JavaScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, shell, asm
 
-markdown, ascii, JSON, HTML and CSS, SQL…
+markdown, ascii, JSON, HTML 和 CSS, SQL…
 
 {{< /columns >}}
