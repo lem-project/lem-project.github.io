@@ -38,7 +38,7 @@ game is updated on the fly.
 
 <img class="" src="/developing-game.png" alt="">
 
-Lem developpers are investigated to interface with Trial, the game engine of the Kandria game.
+Lem developers are investigating interfacing to Trial, the game engine of the Kandria game.
 
 ## Misc
 
