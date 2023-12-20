@@ -321,17 +321,36 @@ Lem will recognize some forms of links, specifically **URLs** and
 
 ## Misc
 
-Try:
+### Line numbers
 
-- `M-x toggle-line-numbers`
-  - or `(lem/line-numbers:toggle-line-numbers)`
-  - use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
-- `M-x toggle-read-only`
-  - `(lem-core/commands/buffer:toggle-read-only)`
-- `M-x toggle-auto-save`
-  - `(lem/auto-save:toggle-auto-save)`
-- `M-x toggle-frame-fullscreen`
+Use: `M-x toggle-line-numbers`
+
+or `(lem/line-numbers:toggle-line-numbers)`
+
+Use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
+
+### Read-only
+
+Use: `M-x toggle-read-only`
+
+aka `(lem-core/commands/buffer:toggle-read-only)`
+
+### Auto-save
+
+Use: `M-x toggle-auto-save`
+
+aka `(lem/auto-save:toggle-auto-save)`
+
+### Full screen
+
+Use: `M-x toggle-frame-fullscreen`
+
+### Transparent background (SDL2 only)
 
 Set a transparent background with this line in your init file:
 
     (sdl2-ffi.functions:sdl-set-window-opacity (lem-sdl2::display-window lem-sdl2::*display*) 0.9)
+
+### Font size (SDL2 only)
+
+Use: `font-size-increase` (`C-+`), `font-size-decrease` (`C--`) and `font-size-set [number]`.
