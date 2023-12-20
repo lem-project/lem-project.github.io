@@ -11,6 +11,37 @@ You probably want to start it with
 
     (in-package :lem-user)
 
+Otherwise, be sure to refer to Lem functions with the `lem:` prefix.
+
+## Binding keys
+
+Use the `define-key` function:
+
+~~~lisp
+(lem:define-key lem:*global-keymap*
+    "C-x F" 'lem-core/commands/file:find-file-recursively)
+~~~
+
+Its first argument is a *keymap*. Essentially, there is a keymap for
+global keybindings, for each programming language mode (such as
+`lem-python-mode::*python-mode-keymap*`, you can find it in Lem with
+the autocompletion), and for every other tool: there is a keymap for
+`grep` mode, for the directory mode, for the different vi mode states,
+etc.
+
+You can also use `lem:define-keys` to define more than one key at once:
+
+~~~lisp
+(define-keys *global-keymap*
+  ("C-a b" 'describe-bindings)
+  ("C-a k" 'describe-key)
+  ("C-a a" 'lem-lisp-mode:lisp-apropos)
+  ("C-a c" 'apropos-command)
+  ("C-a p" 'lem-lisp-mode:lisp-apropos-package)
+  ("C-a f" 'lem-lisp-mode:lisp-describe-symbol))
+~~~
+
+
 ## Writing one's own commands
 
 Use `define-command`:
