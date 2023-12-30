@@ -34,6 +34,13 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 <a href="/lem-repl-ls.png"> <img class="" src="/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
 
+### Start a REPL with another Lisp core
+
+Use `C-u M-x slime`. This way, you can choose another implementation or an image of your own.
+
+This is equivalent of using the `--core` command-line argument.
+
+
 ### Configuration
 
 You can do something when the REPL starts by using its `lem-lisp-mode:*lisp-repl-hook*`.
