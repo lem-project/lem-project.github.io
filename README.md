@@ -31,4 +31,4 @@ make build
 
 Contributions are more than welcome, open an issue [here](https://github.com/lem-project/lem/issues) or a pull request [here](https://github.com/lem-project/lem/pulls).
 
-In general, follow the guidelines of the main project (https://lem-project.github.io/usage/contribute/)
+In general, follow the guidelines of the main project (https://lem-project.github.io/development/contribute/)
