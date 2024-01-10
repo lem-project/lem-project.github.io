@@ -20,7 +20,7 @@ mode keymap (paredit).
 
 If you want to add support for another programming language, please see Lem's `modes/` directory (and get in touch!).
 
-Also, remember that you don't need to create a major mode to add custom commands to Lem. A `define-command` in that case is enough, please see [configuring Lem](/installation/configuration/).
+Also, remember that you don't need to create a major mode to add custom commands to Lem. A `define-command` in that case is enough, please see [configuring Lem](/usage/configuration/).
 
 But, how do we create a new major mode?
 
