@@ -13,7 +13,7 @@ weight: -20
     
 - Run the installation command:
 ```
-sudo pacman -Sy lem-editor-git
+yay -S lem-editor-git
 ```
 
 ## Debian/Mint/Ubuntu
