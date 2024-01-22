@@ -237,29 +237,6 @@ simple command:
 
 ## Testing
 
-> This was added after Lem 2.1.
-
-For now, Lem testing of Common Lisp is split in two approaches:
-- buffer-oriented (using detective):
-
-    It uses buffer references to get information about the tests in the buffer and send information to the an active REPL.
-
-- connection-oriented (using the connection with micros):
-
-    It uses `micros` to communicate with the underlying connection to send commands and uses custom visual for each
-    tests.
-
-### Detective testing
-
-It works with-in the current buffer, it's configure by default to work with the rove testing framework, but
-it can be adapted to work with others, changing the value of the variable `*run-test-function-name*` for single
-test run and `*run-suite-test-function-name*` for running a test suite.
-
-The commands available are:
-- `M-x lisp-test-run-current`: Sends the current test to run on the REPL.
-- `M-x lisp-test-run-buffer`: Select a test in the buffer to run.
-- `M-x lisp-test-run-suite`: Run the current buffer suite (define on the top of the buffer).
-
 ### Using micro with test-runner
 
 It works by using the underlying connection to the lisp server,for now, it only works with the rove
