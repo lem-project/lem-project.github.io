@@ -321,6 +321,10 @@ Lem will recognize some forms of links, specifically **URLs** and
 
 ## Misc
 
+### Color preview
+
+Use: `M-x color-preview` to highlight strings denoting a color (such as "blue" or "#ffffff") in their color.
+
 ### Line numbers
 
 Use: `M-x toggle-line-numbers`
