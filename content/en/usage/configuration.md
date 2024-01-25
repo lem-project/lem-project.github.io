@@ -64,6 +64,34 @@ or copy-paste this with `M-:`
 
 You can now call it with `M-x open-init-file`.
 
+## Formatting
+
+Formatters can be defined for major modes,
+they are implemented as a function that accepts a buffer as an argument.
+
+Some are built-in, but you can make your own in two ways:
+
+1. `register-formatter`
+
+You can register a formatter for an existing major mode like this:
+
+```lisp
+(lem:register-formatter my-mode #'my-formatter)
+```
+
+2. `define-major-mode`
+
+If you are creating your own major mode,
+you can add a formatter in the mode definition:
+
+```lisp
+(define-major-mode my-mode ()
+    (:name "My mode"
+     :keymap *my-mode-keymap*
+     :formatter #'my-formatter)
+  )
+```
+
 ## Example users' init files
 
 For inspiration, see those configuration files:
