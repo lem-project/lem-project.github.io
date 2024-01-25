@@ -68,7 +68,6 @@ You can now call it with `M-x open-init-file`.
 
 Formatters can be defined for major modes,
 they are implemented as a function that accepts a buffer as an argument.
-
 Some are built-in, but you can make your own in two ways:
 
 1. `register-formatter`
