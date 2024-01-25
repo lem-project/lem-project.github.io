@@ -75,6 +75,8 @@ Currently formatters available by default are:
 - `prettier` for js-mode and json-mode
 - and it works for lisp code of course.
 
+Additionally, rust-mode uses `rustfmt`.
+
 To use formatting, you can either manually invoke
 `M-x format-current-buffer`, or enable auto-formatting like this:
 
