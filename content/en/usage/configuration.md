@@ -92,6 +92,10 @@ you can add a formatter in the mode definition:
   )
 ```
 
+To use formatting, you can either manually invoke
+`M-x format-current-buffer`, or enable auto-formatting
+with `(setf lem:*auto-format* t)`
+
 ## Example users' init files
 
 For inspiration, see those configuration files:
