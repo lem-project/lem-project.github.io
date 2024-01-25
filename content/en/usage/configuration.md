@@ -64,7 +64,23 @@ or copy-paste this with `M-:`
 
 You can now call it with `M-x open-init-file`.
 
-## Formatting
+## Formatting code
+
+Lem uses external code formatters that can be run automatically when you save a file.
+
+Currently formatters available by default are:
+
+- `gofmt` for go-mode
+- `clang-format` for c-mode
+- `prettier` for js-mode and json-mode
+- and it works for lisp code of course.
+
+To use formatting, you can either manually invoke
+`M-x format-current-buffer`, or enable auto-formatting like this:
+
+```lisp
+(setf lem:*auto-format* t)
+```
 
 Formatters can be defined for major modes,
 they are implemented as a function that accepts a buffer as an argument.
@@ -91,12 +107,6 @@ you can add a formatter in the mode definition:
   )
 ```
 
-To use formatting, you can either manually invoke
-`M-x format-current-buffer`, or enable auto-formatting like this:
-
-```lisp
-(setf lem:*auto-format* t)
-```
 
 ## Example users' init files
 

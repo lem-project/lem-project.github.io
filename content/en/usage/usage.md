@@ -321,6 +321,15 @@ Lem will recognize some forms of links, specifically **URLs** and
 
 ## Misc
 
+### Code formatting
+
+Use `M-x format-current-buffer`, or enable auto-formatting like this:
+
+    (setf lem:*auto-format* t)
+
+Formatters are currently defined for c (`clang-format`), go (`gofmt`), js and json (`prettier`), and lisp of course, but you can add your own, see the Configuration page.
+
+
 ### Color preview
 
 Use: `M-x color-preview` to highlight strings denoting a color (such as "blue" or "#ffffff") in their color.
