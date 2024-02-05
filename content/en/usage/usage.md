@@ -334,6 +334,15 @@ Formatters are currently defined for c (`clang-format`), go (`gofmt`), js and js
 
 Use: `M-x color-preview` to highlight strings denoting a color (such as "blue" or "#ffffff") in their color.
 
+### Color picker (SDL2)
+
+The SDL2 frontend provides a graphical color picker.
+
+To invoke it, simply write a color name or representation inside a string, enable the color preview, and click on the color. Press `q` (`color-picker-quit`) to close it.
+
+<img class="" src="/lem-color-picker.png" alt="Lem color picker" width="600px">
+
+
 ### Line numbers
 
 Use: `M-x toggle-line-numbers`
