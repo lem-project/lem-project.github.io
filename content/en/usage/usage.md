@@ -367,6 +367,17 @@ aka `(lem/auto-save:toggle-auto-save)`
 
 Use: `M-x toggle-frame-fullscreen`
 
+### Mouse support (ncurses)
+
+The GUI version supports the mouse, which is more difficult to bring
+to the terminal, so the feature is available in an optional contrib module.
+
+You can try it with:
+
+    M-x load-contrib RET mouse-sgr1006 RET
+
+and now you can click around in windows.
+
 ### Transparent background (SDL2 only)
 
 Set a transparent background with this line in your init file:
