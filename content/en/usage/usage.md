@@ -318,6 +318,32 @@ Lem will recognize some forms of links, specifically **URLs** and
 - URL: opens your web browser
 - file (the link must start with `file://`): Lem opens the file.
 
+## Version control (Git, experimental)
+
+Simple Git support is available for reckless users.
+
+Load it with:
+
+    (ql:quickload :lem/legit)
+
+then:
+
+    C-x g
+
+or `M-x legit-status`.
+
+Available features are:
+
+- see status (staged and unstaged changes, latest commits…)
+- stage files and diff hunks
+- commit
+- push, pull the current branch
+- interactive rebase (best case scenario, Linux only)
+
+and basic support for Mercurial and Fossil.
+
+Wait for more and come talk, it's actually easy to contribute ;)
+
 
 ## Misc
 
