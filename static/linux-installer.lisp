@@ -7,7 +7,7 @@
                (uiop:read-file-lines #P"/etc/os-release" ) :test #'uiop:string-prefix-p)))
 
 (defparameter *deb-package-systems-ids*
-  '("ubuntu" "debian" "linuxmint"))
+  '("ubuntu" "debian" "linuxmint" "pop"))
 
 (defparameter *arch-package-system-ids*
   '("arch"))
