@@ -62,7 +62,12 @@ export PATH=$PATH:~/.roswell/bin
 
 ### Installation with Docker
 
-Clone the Lem repository and build a Docker image:
+Use the ready-to-use Lem image in the GitHub Container Registry:
+
+    $ docker run --rm -it ghcr.io/lem-project/lem:latest
+
+
+or clone the Lem repository and build the Docker image:
 
     $ docker build -t lem .
 
