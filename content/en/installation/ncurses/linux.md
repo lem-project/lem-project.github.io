@@ -43,23 +43,6 @@ Important places from the script installation:
 
 ## Other GNU/Linux
 
-### Installation with roswell
-
-Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
-
-After that, please follow the steps bellow.
-
-1. Install lem by roswell
-
-```
-$ ros follow-dependency=t install lem-project/lem
-```
-
-2. Add the PATH in the initialization file (such as `~/.bashrc`)
-```
-export PATH=$PATH:~/.roswell/bin
-```
-
 ### Installation with Docker
 
 Use the ready-to-use Lem image in the GitHub Container Registry:
@@ -126,4 +109,21 @@ or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choo
 - Copying the PATH to `~/.bashrc`
 ```
 export PATH="$HOME/common-lisp/lem:$PATH"
+```
+
+### Installation with roswell
+
+Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
+
+After that, please follow the steps bellow.
+
+1. Install lem by roswell
+
+```
+$ ros follow-dependency=t install lem-project/lem
+```
+
+2. Add the PATH in the initialization file (such as `~/.bashrc`)
+```
+export PATH=$PATH:~/.roswell/bin
 ```
