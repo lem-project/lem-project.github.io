@@ -3,15 +3,15 @@ title: MacOS
 weight: -20
 ---
 ## Using the binary
-    
+
 [Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
-    
-#### How to Fix “App Is Damaged and Can’t Be Opened” on OSX 
+
+#### How to Fix “App Is Damaged and Can’t Be Opened” on OSX
 Copy the app file to the applications folder and type the following in your terminal:
 ```
 xattr -d com.apple.quarantine /Applications/lem.app
 ```
-	
+
 ## Installation with roswell
 
 Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
@@ -44,11 +44,11 @@ You can now run it:
 - [ncurses](https://invisible-island.net/ncurses/announce.html#h2-overview)
 - [qlot](https://github.com/fukamachi/qlot)
 - [git](https://git-scm.com/)
-    
+
 
 ### Install SBCL and ncurses
 - Using HomeBrew https://brew.sh/
-    
+
 ```
 brew install sbcl ncurses
 ```
@@ -62,7 +62,7 @@ For an alternative installation, https://github.com/fukamachi/qlot#installation
 
 
 #### Download and build the executable
-    
+
 - Create the directories
 
 ```
@@ -72,6 +72,8 @@ mkdir $HOME/common-lisp && cd $HOME/common-lisp
 git clone https://github.com/lem-project/lem.git
 cd lem && make ncurses
 ```
+
+or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choose the interface at startup with `--ncurses` or `--sdl2` (aka `--nogui` and `--gui`).
 
 #### Add the executable to PATH
 - Copying the PATH to `~/.bashrc`

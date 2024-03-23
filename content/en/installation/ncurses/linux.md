@@ -2,15 +2,15 @@
 title: GNU/Linux
 weight: -20
 ---
-    
+
 ## Using the binary
-    
+
 [Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
 
 ## Arch linux
-    
+
 - Enable the AUR arch package system https://wiki.archlinux.org/title/Arch_User_Repository
-    
+
 - Run the installation command:
 ```
 yay -S lem-editor-git
@@ -42,7 +42,7 @@ Important places from the script installation:
 - `/usr/local/bin/lem` (Lem symlink)
 
 ## Other GNU/Linux
-    
+
 ### Installation with roswell
 
 Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
@@ -81,24 +81,24 @@ You can now run it:
 - [ncurses](https://invisible-island.net/ncurses/announce.html#h2-overview)
 - [qlot](https://github.com/fukamachi/qlot)
 - [git](https://git-scm.com/)
-    
+
 
 #### Install SBCL and ncurses library
 - Debian-like distro
 ```
 sudo apt install sbcl libncurses5-dev build-essential
 ```
-    
+
 - Fedora
 ```
 sudo yum install sbcl ncurses-devel make automake gcc gcc-c++
 ```
-    
+
 - OpenSuse
 ```
 sudo zypper install sbcl ncurses-devel make devel_basis
 ```
-    
+
 #### Install qlot
 - Automatic installer
 ```
@@ -108,7 +108,7 @@ For an alternative installation, https://github.com/fukamachi/qlot#installation
 
 
 #### Download and build the executable
-    
+
 - Create the directories
 
 ```
@@ -118,6 +118,9 @@ mkdir $HOME/common-lisp && cd $HOME/common-lisp
 git clone https://github.com/lem-project/lem.git
 cd lem && make ncurses
 ```
+
+or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choose the interface at startup with `--ncurses` or `--sdl2` (aka `--nogui` and `--gui`).
+
 
 #### Add the executable to PATH
 - Copying the PATH to `~/.bashrc`
