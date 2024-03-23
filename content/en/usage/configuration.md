@@ -15,6 +15,8 @@ Otherwise, be sure to refer to Lem functions with the `lem:` prefix.
 
 ## Binding keys
 
+### `define-key`
+
 Use the `define-key` function:
 
 ~~~lisp
@@ -29,6 +31,8 @@ the autocompletion), and for every other tool: there is a keymap for
 `grep` mode, for the directory mode, for the different vi mode states,
 etc.
 
+### `define-keys`
+
 You can also use `lem:define-keys` to define more than one key at once:
 
 ~~~lisp
@@ -40,6 +44,40 @@ You can also use `lem:define-keys` to define more than one key at once:
   ("C-a p" 'lem-lisp-mode:lisp-apropos-package)
   ("C-a f" 'lem-lisp-mode:lisp-describe-symbol))
 ~~~
+
+But wait, there is more.
+
+### Defining a keymap
+
+Did you notice that all the above commands have
+the `C-a` prefix? We can refactor this.
+
+First, we define a keymap object. Let's take another example, the
+frame-multiplexer (aka tabs):
+
+~~~lisp
+(defvar *keymap*
+  (make-keymap :name '*frame-multiplexer-keymap*)
+  "Keymap for commands related to the frame-multiplexer.")
+~~~
+
+Now we can use `(define-key *keymap* key command)` (singular), like this:
+
+~~~lisp
+(define-key *keymap* "c" 'frame-multiplexer-create-with-new-buffer-list)
+(define-key *keymap* "d" 'frame-multiplexer-delete)
+(define-key *keymap* "p" 'frame-multiplexer-prev)
+(define-key *keymap* "n" 'frame-multiplexer-next)
+(define-key *keymap* "r" 'frame-mulitplexer-rename)
+~~~
+
+And now we can define the prefix key for our keymap and all its sub-keys commands:
+
+~~~lisp
+(define-key *global-keymap* "C-z" *keymap*)
+~~~
+
+As a result, we defined `C-z c` for `'frame-mulitplexer-create-with-new-buffer-list`.
 
 
 ## Writing one's own commands
