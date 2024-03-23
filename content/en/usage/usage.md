@@ -324,7 +324,7 @@ Simple Git support is available for reckless users.
 
 Load it with:
 
-    (ql:quickload :lem/legit)
+    (ql:quickload "lem/legit")
 
 then:
 
@@ -335,14 +335,17 @@ or `M-x legit-status`.
 Available features are:
 
 - see status (staged and unstaged changes, latest commits…)
-- stage files and diff hunks
-- commit
-- push, pull the current branch
+- stage files and diff hunks ("s", "u")
+- commit ("c")
+- push, pull the current branch ("P p" and "P f")
 - interactive rebase (best case scenario, Linux only)
+  - "r i": start an interactive rebase
+  - "r a": abort an ongoing rebase (started by you or another process)
+- see the help with "?"
 
 and basic support for Mercurial and Fossil.
 
-Wait for more and come talk, it's actually easy to contribute ;)
+[See its README on GitHub](https://github.com/lem-project/lem/blob/main/extensions/legit/README.md), wait for more and come talk, it's actually easy to contribute ;)
 
 
 ## Misc
