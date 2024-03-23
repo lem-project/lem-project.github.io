@@ -102,7 +102,7 @@ git clone https://github.com/lem-project/lem.git
 cd lem && make ncurses
 ```
 
-or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choose the interface at startup with `--ncurses` or `--sdl2` (aka `--nogui` and `--gui`).
+or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choose the interface at startup with `-i / --interface`, either "sdl2" or "ncurses".
 
 
 #### Add the executable to PATH
