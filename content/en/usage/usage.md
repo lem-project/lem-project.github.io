@@ -388,9 +388,14 @@ aka `(lem-core/commands/buffer:toggle-read-only)`
 
 ### Auto-save
 
-Use: `M-x toggle-auto-save`
+Use: `M-x auto-save-mode`, aka `(lem/auto-save::auto-save-mode t)`.
 
-aka `(lem/auto-save:toggle-auto-save)`
+This one is a global mode: autosave is enabled for all buffers.
+
+You can also use a minor mode: `M-x toggle-auto-save`, aka
+`(lem/auto-save:toggle-auto-save)`, to enable auto-save for the
+current buffer only.
+
 
 ### Full screen
 
