@@ -147,6 +147,46 @@ you can add a formatter in the mode definition:
   )
 ```
 
+## Hooks
+
+Hooks allow you to run abritrary code before (or after) a command is called or a
+given mode is entered (or exited).
+
+Some examples:
+
+- `after-save-hook`
+- `kill-buffer-hook`
+- `*find-file-hook*`
+- `*exit-editor-hook*`
+- `*after-init-hook*`
+- [self-insert-hook](https://github.com/lem-project/lem/blob/main/extensions/lisp-mode/self-insert-hook.lisp): run code before or after a character is inserted in the buffer.
+- and more: checkout each mode (programming modes, vi mode…) inside Lem with the completion.
+
+The hooks mechanism is defined in `src/common/hooks.lisp`. It is made of the available functions and macros:
+
+- `add-hook place callback`: add a hook
+  - example: `(add-hook *after-init-hook* #'display-welcome)`
+
+- `remove-hook place callback`: remove a hook
+
+- `run-hooks list`: run all hooks.
+
+Each mode defines a hook variable name. For example:
+
+```lisp
+(define-major-mode c-mode language-mode
+    (:name "C"
+     :keymap *c-mode-keymap*
+     :syntax-table *c-syntax-table*
+     :mode-hook *c-mode-hook*       ;; <---------- defines our hook name
+     :formatter #'lem-c-mode/format:clang-format)
+  (setf (variable-value 'enable-syntax-highlight) t)
+  ;; more settings here…
+  )
+
+(add-hook *c-mode-hook* 'guess-offset)  ;; <------ adds a hook
+```
+
 
 ## Example users' init files
 
