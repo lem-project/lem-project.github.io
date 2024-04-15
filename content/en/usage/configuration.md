@@ -110,14 +110,14 @@ The `define-command` examples above have two empty `() ()`. This is
 the place for parameters names and special argument descriptors.
 
 We can tell it to accept a prefix argument (a number), we can make the
-command ask for user input (a string), we can make the command work on
-region delimiters (the start and end points).
+command ask for user input (a string, an integer, a buffer, a file)
+and work on region delimiters.
 
-#### Prefix arguments
+#### Universal prefix argument
 
-For instance, we tell the following command that it accepts a prefix
+We tell the following command that it accepts a prefix
 argument. We use "p" and `n` is the argument name to use in the
-command body:
+command body. `n` defaults to 1.
 
 ~~~lisp
 (define-command hellos (n) ("p")
@@ -129,10 +129,18 @@ Call this command `M-x hellos` and it writes 1 "hello".
 
 Call it with `C-u 3 M-x hellos` and it writes "hello" 3 times.
 
+
 #### Optional arguments and default values
 
 We can also use `(&optional n) ("P")` or `(&optional (n 3)) ("P")` to
 change the default value.
+
+"P" is similar to "p" but doesn't default to 1.
+
+#### Ask for a number
+
+Use "n". This prompts the user for a number.
+
 
 #### Ask for a string
 
@@ -147,6 +155,18 @@ This is how a directory-mode is done:
 
 Run it with `M-x simple-message`.
 
+#### Ask for a buffer
+
+Use "b". It defaults to the current buffer's name.
+
+There is also "B" that defaults to the other buffer's name.
+
+#### Ask for a file
+
+Use "f" to prompt for a file. It defaults to the current buffer's directory.
+
+There is also "F" that defaults to the buffer's directory and must not be existing.
+
 
 #### Run on region
 
@@ -154,7 +174,8 @@ Next, how can we run a command on a region? A region is defined with a
 start and end point. We have to tell the command it operates on a
 region, that way it gives us the two points.
 
-We do by declaring two `start` and `end` arguments, and a special argument descriptor: "r", a string. Here's how it is done for the `python-eval-region` command:
+We do so by declaring two `start` and `end` arguments, and a special
+argument descriptor: "r". Here's how it is done for the `python-eval-region` command:
 
 
 ~~~lisp
@@ -169,7 +190,7 @@ We do by declaring two `start` and `end` arguments, and a special argument descr
 We can have multiple arguments, for example:
 
 ```lisp
-(define-command multple-args (regex &optional arg) ("sEnter a regex:" "P")
+(define-command multiple-args (regex &optional arg) ("sEnter a regex:" "P")
   ...)
 ```
 
