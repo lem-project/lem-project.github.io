@@ -102,6 +102,78 @@ or copy-paste this with `M-:`
 
 You can now call it with `M-x open-init-file`.
 
+### Commands arguments
+
+How can we **give an argument to a command**, how can we run it on a region?
+
+The `define-command` examples above have two empty `() ()`. This is
+the place for parameters names and special argument descriptors.
+
+We can tell it to accept a prefix argument (a number), we can make the
+command ask for user input (a string), we can make the command work on
+region delimiters (the start and end points).
+
+#### Prefix arguments
+
+For instance, we tell the following command that it accepts a prefix
+argument. We use "p" and `n` is the argument name to use in the
+command body:
+
+~~~lisp
+(define-command hellos (n) ("p")
+  (dotimes (i n)
+    (insert-string (current-point) "hello ")))
+~~~
+
+Call this command `M-x hellos` and it writes 1 "hello".
+
+Call it with `C-u 3 M-x hellos` and it writes "hello" 3 times.
+
+#### Optional arguments and default values
+
+We can also use `(&optional n) ("P")` or `(&optional (n 3)) ("P")` to
+change the default value.
+
+#### Ask for a string
+
+Use "s" for the arg-descriptor, and "sMy prompt: " to give a custom prompt.
+
+This is how a directory-mode is done:
+
+~~~lisp
+(define-command simple-message (s) ("sEnter a string: ")
+  (message s))
+~~~
+
+Run it with `M-x simple-message`.
+
+
+#### Run on region
+
+Next, how can we run a command on a region? A region is defined with a
+start and end point. We have to tell the command it operates on a
+region, that way it gives us the two points.
+
+We do by declaring two `start` and `end` arguments, and a special argument descriptor: "r", a string. Here's how it is done for the `python-eval-region` command:
+
+
+~~~lisp
+(define-command python-eval-region (start end) ("r")
+  (unless (alive-process-p)
+    (editor-error "Python process doesn't exist."))
+  (lem-process:process-send-input *process* (points-to-string start end)))
+~~~
+
+#### Multiple arguments
+
+We can have multiple arguments, for example:
+
+```lisp
+(define-command multple-args (regex &optional arg) ("sEnter a regex:" "P")
+  ...)
+```
+
+
 ## Formatting code
 
 Lem uses external code formatters that can be run automatically when you save a file.
