@@ -3,8 +3,6 @@ title: Configuration
 weight: 5
 ---
 
-## Configuration
-
 Lem loads `~/.lem/init.lisp` when starting up.
 
 You probably want to start it with
@@ -12,6 +10,8 @@ You probably want to start it with
     (in-package :lem-user)
 
 Otherwise, be sure to refer to Lem functions with the `lem:` prefix.
+
+{{< toc >}}
 
 ## Binding keys
 
@@ -186,6 +186,22 @@ Each mode defines a hook variable name. For example:
 
 (add-hook *c-mode-hook* 'guess-offset)  ;; <------ adds a hook
 ```
+
+## Vi mode
+
+Start Lem in vi-mode:
+
+```lisp
+;; Start in vi-mode
+(lem-vi-mode:vi-mode)
+```
+
+We can use a hook to be in vi insert mode when we start the Lisp REPL:
+
+~~~lisp
+;; Start the Lisp REPL in vi insert mode.
+(add-hook lem-lisp-mode:*lisp-repl-mode-hook* 'lem-vi-mode/commands:vi-insert)
+~~~
 
 
 ## Example users' init files
