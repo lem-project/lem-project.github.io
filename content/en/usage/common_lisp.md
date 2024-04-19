@@ -15,7 +15,7 @@ Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x
 
 ## REPL
 
-Start a Lisp REPL with `M-x start-lisp-repl`.
+Start a Lisp REPL with `M-x slime`.
 
 To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (comma). For example:
 
@@ -34,11 +34,22 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 <a href="/lem-repl-ls.png"> <img class="" src="/lem-repl-ls.png" alt="The ,ls command in a REPL prints a files and directories listing we can click on."> </a>
 
+### Start a REPL with Lem packages available
+
+There is a second way to start a Lisp REPL: `M-x start-lisp-repl`.
+
+This gives you a REPL, with the benefit that all Lem systems and packages are loaded and available. You should use this to explore Lem and work on it.
+
+
 ### Start a REPL with another Lisp core
 
-Use `C-u M-x slime`. This way, you can choose another implementation or an image of your own.
+Use a prefix argument, as in `C-u M-x slime`. This prompts you for a Lisp command, with a pre-defined list of options such as `sbcl`, `ros run`, `ros -L ccl-bin`…).
 
-This is equivalent of using the `--core` command-line argument.
+This way, you can choose another implementation, you can choose an
+image of your own (with `--core`), and you can set other command line
+arguments. For example, to extend the dynamic space size for SBCL:
+
+    C-u M-x slime <RET> sbcl --dynamic-space-size 4GiB
 
 
 ### Configuration
