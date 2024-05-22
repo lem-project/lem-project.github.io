@@ -19,7 +19,7 @@ To switch windows (aka splits of a screen): `C-x o` ('o' letter) and `M-o`. To m
 
 To switch buffers: `C-x b`.
 
-To run an interactive command by name: `M-x` (`alt-x`).
+To **run an interactive command by name**: `M-x` (`alt-x`).
 
 To show the context menu: `Shift-F10`.
 

@@ -13,11 +13,62 @@ Otherwise, be sure to refer to Lem functions with the `lem:` prefix.
 
 {{< toc >}}
 
+## Choosing the completion pop-up position: center, top, bottom
+
+Lem's completion pop-up, for example the one that shows on `M-x`, is
+by default centered on the middle of the screen.
+
+Since May of 2024, it is possible to choose its position: à la Emacs at the bottom? À la VSCode at the top?
+
+If you want the completion pop-up at the bottom like this:
+
+<img class="" src="/lem-completion-bottom.png" alt="Lem's completion pop-up at the window bottom.">
+
+Add this to your init file:
+
+```lisp
+(setf lem-core::*default-prompt-gravity* :bottom-display)
+(setf lem/prompt-window::*prompt-completion-window-gravity* :horizontally-above-window)
+(setf lem/prompt-window::*fill-width* t)
+```
+
+If you want it at the top like this:
+
+<img class="" src="/lem-completion-top.png" alt="Lem's completion pop-up at the window top.">
+
+Add this to your init file:
+
+```lisp
+(setf lem-core::*default-prompt-gravity* :top-display)
+(setf lem/prompt-window::*fill-width* t)
+```
+
+There is more. You can allow the order of completions to be reversed:
+this is helpful when the prompt is at the bottom of the screen, so
+that the firts completion candidate is just above the prompt, so you
+don't have to move your eyes. Use this so that completions are
+reversed in regular prompts, but normal in code completion::
+
+```lisp
+(add-hook *prompt-after-activate-hook*
+          (lambda ()
+            (setf lem/completion-mode::*completion-reverse* t)
+            (call-command 'lem/prompt-window::prompt-completion nil)))
+
+(add-hook *prompt-deactivate-hook*
+          (lambda ()
+            (setf lem/completion-mode::*completion-reverse* nil)
+            (lem/completion-mode:completion-end)))
+```
+
+
 ## Binding keys
+
+We will learn how to bind your own keys to commands. Afterwards we'll learn how to write your own interactive commands.
 
 ### `define-key`
 
-Use the `define-key` function:
+Use the `define-key` function to associate a keybinding to a command:
 
 ~~~lisp
 (lem:define-key lem:*global-keymap*
