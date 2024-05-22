@@ -38,6 +38,10 @@ You can open a file in another "window", aka if Lem's screen is split in two, op
 
 You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
+You can **drag and drop** a file from your desktop file manager to open
+it. This works with the SDL2 GUI.
+
+
 ### Filer - project explorer
 
 > This feature was added in Lem 2.1
