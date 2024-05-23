@@ -13,10 +13,30 @@ Otherwise, be sure to refer to Lem functions with the `lem:` prefix.
 
 {{< toc >}}
 
+
+## Show the completion list instantly
+
+The completion pop-up, like the one we get with `M-x`, wants us to
+press TAB before we get the completion candidates. If you want to open
+it right away, add this to your init file:
+
+```lisp
+(add-hook *prompt-after-activate-hook*
+          (lambda ()
+            (call-command 'lem/prompt-window::prompt-completion nil)))
+
+(add-hook *prompt-deactivate-hook*
+          (lambda ()
+            (lem/completion-mode:completion-end)))
+```
+
+You can start typing and the list will narrow down.
+
+
 ## Choosing the completion pop-up position: center, top, bottom
 
-Lem's completion pop-up, for example the one that shows on `M-x`, is
-by default centered on the middle of the screen.
+Lem's completion pop-up is by default centered on the middle of the
+screen.
 
 Since May of 2024, it is possible to choose its position: à la Emacs at the bottom? À la VSCode at the top?
 
