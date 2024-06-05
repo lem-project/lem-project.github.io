@@ -187,11 +187,11 @@ and work on region delimiters.
 #### Universal prefix argument
 
 We tell the following command that it accepts a prefix
-argument. We use "p" and `n` is the argument name to use in the
+argument. We use :universal and `n` is the argument name to use in the
 command body. `n` defaults to 1.
 
 ~~~lisp
-(define-command hellos (n) ("p")
+(define-command hellos (n) (:universal)
   (dotimes (i n)
     (insert-string (current-point) "hello ")))
 ~~~
@@ -203,24 +203,24 @@ Call it with `C-u 3 M-x hellos` and it writes "hello" 3 times.
 
 #### Optional arguments and default values
 
-We can also use `(&optional n) ("P")` or `(&optional (n 3)) ("P")` to
+We can also use `(&optional n) (:universal-nil)` or `(&optional (n 3)) (:universal-nil)` to
 change the default value.
 
-"P" is similar to "p" but doesn't default to 1.
+`:universal-nil` is similar to `:universal` but doesn't default to 1.
 
 #### Ask for a number
 
-Use "n". This prompts the user for a number.
+Use `:number`. This prompts the user for a number.
 
 
 #### Ask for a string
 
-Use "s" for the arg-descriptor, and "sMy prompt: " to give a custom prompt.
+Use `:string` for the arg-descriptor, and `(:string "My prompt: ")` to give a custom prompt.
 
 This is how a directory-mode is done:
 
 ~~~lisp
-(define-command simple-message (s) ("sEnter a string: ")
+(define-command simple-message (s) ((:string "Enter a string: "))
   (message s))
 ~~~
 
@@ -228,15 +228,15 @@ Run it with `M-x simple-message`.
 
 #### Ask for a buffer
 
-Use "b". It defaults to the current buffer's name.
+Use `:buffer`. It defaults to the current buffer's name.
 
-There is also "B" that defaults to the other buffer's name.
+There is also `:other-buffer` that defaults to the other buffer's name.
 
 #### Ask for a file
 
-Use "f" to prompt for a file. It defaults to the current buffer's directory.
+Use `:file` to prompt for a file. It defaults to the current buffer's directory.
 
-There is also "F" that defaults to the buffer's directory and must not be existing.
+There is also `:new-file` that defaults to the buffer's directory and must not be existing.
 
 
 #### Run on region
@@ -246,11 +246,11 @@ start and end point. We have to tell the command it operates on a
 region, that way it gives us the two points.
 
 We do so by declaring two `start` and `end` arguments, and a special
-argument descriptor: "r". Here's how it is done for the `python-eval-region` command:
+argument descriptor: `:region`. Here's how it is done for the `python-eval-region` command:
 
 
 ~~~lisp
-(define-command python-eval-region (start end) ("r")
+(define-command python-eval-region (start end) (:region)
   (unless (alive-process-p)
     (editor-error "Python process doesn't exist."))
   (lem-process:process-send-input *process* (points-to-string start end)))
@@ -261,7 +261,7 @@ argument descriptor: "r". Here's how it is done for the `python-eval-region` com
 We can have multiple arguments, for example:
 
 ```lisp
-(define-command multiple-args (regex &optional arg) ("sEnter a regex:" "P")
+(define-command multiple-args (regex &optional arg) ((:string "Enter a regex:") :universal-nil)
   ...)
 ```
 
