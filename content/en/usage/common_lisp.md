@@ -73,7 +73,7 @@ Common Lisp gives you type warnings and other errors at compile time.
 
 To evaluate the last s-expression, use `C-x C-e`. Lem prints the result in an overlay.
 
-The overlays go away when you edit their preceding definition or when you call `M-x lisp-eval-clear`.
+The overlays go away when you edit their preceding definition or when you call `M-x lisp-eval-clear`, which is also accessible in the context menu with `M-h`, and by choosing "Clear eval results".
 
 You can evaluate the last expression and print its result into the
 buffer, under the cursor. Use `lisp-eval-last-expression-and-insert`.
