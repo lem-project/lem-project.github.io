@@ -90,6 +90,6 @@ and support for:
 
 Scheme, Go, JavaScript, TypeScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, Swift, shell, asm
 
-markdown, ascii, JSON, HTML and CSS, SQL…
+Markdown, ASCII, JSON, HTML and CSS, Lua, SQL…
 
 {{< /columns >}}
