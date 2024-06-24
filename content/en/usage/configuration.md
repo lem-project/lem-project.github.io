@@ -368,6 +368,37 @@ We can use a hook to be in vi insert mode when we start the Lisp REPL:
 ~~~
 
 
+
+## Site init
+
+The site init configuration allows the user to arrange different libraries/files, the main two important directories
+to organize the files are:
+ - `*inits-directory-name*` (`"~/.lem/lisp"`):
+
+      This directory is intended to have libraries (asdf packages) that are going to be loaded
+      before our configuration files.
+
+ - `"~/.lem/inits"`:
+
+      Here is the place we can put our configuration files (which are .lisp files not asdf systems).
+
+It's usually recommended to make sure that the files are specify in the .asd file that is created at the root of
+the `(lem-home)` directory, usually `"~/.lem"`, the file is `lem-site-init.asd`, an example maybe:
+
+~~~lisp
+;; don't edit !!! (you can ignore this warning)
+(asdf/parse-defsystem:defsystem "lem-site-init"
+  :depends-on
+  (:system-on-lisp-directory)
+  :components
+  ((:file "inits/my-file-one") (:file "inits/my-file-two")))
+~~~
+
+Then, in the main init file `"init.lisp"`, you can load the systems + files with the function:
+~~~lisp
+(lem-core:load-site-init)
+~~~
+
 ## Example users' init files
 
 For inspiration, see those configuration files:
