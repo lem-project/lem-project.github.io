@@ -5,7 +5,7 @@ en:
   weight: 100
 
 ja:
-  languageName: "日語"
+  languageName: "日本語"
   contentDir: "content/ja"
   weight: 90
 
