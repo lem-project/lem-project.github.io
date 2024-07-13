@@ -330,7 +330,7 @@ Lem will recognize some forms of links, specifically **URLs** and
 - URL: opens your web browser
 - file (the link must start with `file://`): Lem opens the file.
 
-## Version control (Git, experimental)
+## Version control with lem/legit (Git, experimental)
 
 Simple Git support is available for reckless users.
 
@@ -350,6 +350,7 @@ Available features are:
 - stage files and diff hunks ("s", "u")
 - commit ("c")
 - push, pull the current branch ("P p" and "P f")
+- see the commits log ("l l", and "f"/"b" and "F"/"B" for pagination) (NEW in July, 2024)
 - interactive rebase (best case scenario, Linux only)
   - "r i": start an interactive rebase
   - "r a": abort an ongoing rebase (started by you or another process)
