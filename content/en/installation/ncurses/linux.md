@@ -7,15 +7,6 @@ weight: -20
 
 [Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
 
-## Arch linux
-
-- Enable the AUR arch package system https://wiki.archlinux.org/title/Arch_User_Repository
-
-- Run the installation command:
-```
-yay -S lem-editor-git
-```
-
 ## Debian/Mint/Ubuntu
 There is an automatic installer that works on Debian, Linux Mint and Ubuntu.
 
