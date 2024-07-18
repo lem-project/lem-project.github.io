@@ -51,6 +51,12 @@ arguments. For example, to extend the dynamic space size for SBCL:
 
     C-u M-x slime <RET> sbcl --dynamic-space-size 4GiB
 
+### Connect to a running Lisp server (Micros)
+
+You can connect Lem to another, external Lisp process, with `M-x slime-connect`.
+
+This Lisp process must be a `micros` server, and not `swank`.
+
 
 ### Configuration
 
