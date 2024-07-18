@@ -360,6 +360,8 @@ and basic support for Mercurial and Fossil.
 
 [See its README on GitHub](https://github.com/lem-project/lem/blob/main/extensions/legit/README.md), wait for more and come talk, it's actually easy to contribute ;)
 
+![](https://raw.githubusercontent.com/lem-project/lem/main/extensions/legit/lem-status.png)
+
 
 ## Misc
 
