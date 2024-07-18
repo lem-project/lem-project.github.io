@@ -334,11 +334,11 @@ Lem will recognize some forms of links, specifically **URLs** and
 
 Simple Git support is available for reckless users.
 
-Load it with:
+Since July, 16th of 2024, it is available by default. On older Lem versions, load it with:
 
     (ql:quickload "lem/legit")
 
-then:
+Start legit with:
 
     C-x g
 
@@ -350,7 +350,7 @@ Available features are:
 - stage files and diff hunks ("s", "u")
 - commit ("c")
 - push, pull the current branch ("P p" and "P f")
-- see the commits log ("l l", and "f"/"b" and "F"/"B" for pagination) (NEW in July, 2024)
+- see the commits log ("l l", then "f"/"b" and "F"/"B" for pagination) (NEW in July, 2024)
 - interactive rebase (best case scenario, Linux only)
   - "r i": start an interactive rebase
   - "r a": abort an ongoing rebase (started by you or another process)
