@@ -178,6 +178,15 @@ Press `q` to quit the macroexpand mode and see the original source again. You ha
 
 You can also call `M-x lisp-macroexpand-all` (`C-c M-m`) to expand the macro completely, or `M-x lisp-macroexpand`.
 
+## Sync packages
+
+Use the shortcut `C-c ~` (`M-x lisp-listen-in-current-package`) to
+cause the REPL's package to be switched to the buffer's active
+package.
+
+Note that, unlike Emacs and Slime, it doesn't switch Lisp's current
+directory.
+
 
 ## Code search
 
