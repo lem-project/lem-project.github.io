@@ -84,7 +84,7 @@ use project-aware commands.
 
 <img class="" src="/tetris.png" alt="File tree on the left.">
 
-Terminal integration, multiple cursors, interactive grep, directory mode, tabs, Git interface,
+Terminal integration, multiple cursors, interactive grep, directory mode, tabs, Git interface, keyboard macros,
 
 and support for:
 

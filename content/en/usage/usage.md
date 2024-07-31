@@ -309,6 +309,21 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 <img class="" src="/documentation-describe-bindings.png" alt="">
 
 
+## Keyboard macros
+
+Lem supports recording and playing keyboard macros.
+
+Start recording with `C-x (` (`M-x kbdmacro-start`).
+
+Now, press the keys and keyboard shortcuts that you want to replay automatically.
+
+Stop recording with `C-x )` (`M-x kbdmacro-end`).
+
+And now, re-play your key combination with `C-x e` (`M-x kbdmacro-execute`).
+
+Another command you might want to use is `M-x apply-macro-to-region-lines`,
+to re-play the macro only in the selected region.
+
 
 ## grep
 
