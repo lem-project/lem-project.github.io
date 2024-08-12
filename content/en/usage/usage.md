@@ -51,7 +51,7 @@ The shortcut `C-x d` opens a project explorer on the left side. Another keypress
 <img class="" src="/filer.png" alt="Lem Filer on the left window">
 
 
-### Find file in project
+### Project commands
 
 > Project related commands were added in Lem 2.1
 
@@ -78,6 +78,9 @@ There are also the commands:
 | `project-find-file-next-window` | `C-x 4 p f` | open a file in another window              |
 | `project-root-directory` | `C-x p d` | open the project root with Lem's directory-mode      |
 | `project-root-directory-next-window` |  | open the project root in another window          |
+| `project-grep` | `C-x p g` | run the **grep** command from the project root                    |
+
+Note: `project-grep` was added in August of 2024.
 
 These commands allow to **switch** between projects:
 
@@ -330,6 +333,9 @@ to re-play the macro only in the selected region.
     M-x grep
 
 this presents the results in a two-panes window. You can edit lines in the results buffer, changes are reflected immediately on the files, and updated on the right side. You can use search and replace `M-x query-replace` in the results buffer.
+
+See also: `M-x project-grep`, bound to `C-x p g`.
+
 
 ## multiple cursors
 
