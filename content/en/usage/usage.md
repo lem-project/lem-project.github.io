@@ -241,6 +241,7 @@ The frame multiplexer bindings start with `C-z`:
 | Command | Key-combination | Function                                                        |
 |:-------:|:-------:|:-----------------------------------------------------------------------:|
 | `frame-multiplexer-create-with-new-buffer-list` | `C-z c` | create a new workspace          |
+| `frame-multiplexer-create-with-previous-buffer` | `C-z C-c` | create a frame and sets it to the previous buffer (NEW in August, 2024) |
 | `frame-multiplexer-next` | `C-z n`              | go to the next workspace         |
 | `frame-multiplexer-prev` | `C-z p`              | go to the previous workspace     |
 | `frame-multiplexer-delete` | `C-z d`            | delete the current workspace     |
