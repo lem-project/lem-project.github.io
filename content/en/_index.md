@@ -88,8 +88,8 @@ Terminal integration, multiple cursors, interactive grep, directory mode, tabs, 
 
 and support for:
 
-Scheme, Go, JavaScript, TypeScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, Swift, shell, asm
+C, Scheme, Go, JavaScript, TypeScript, Python, Rust, Elixir, Haskell, Java, Nim, Dart, OCaml, Scala, Swift, Lua, shell, asm
 
-Markdown, ASCII, JSON, HTML and CSS, Lua, SQL…
+Markdown, ASCII, JSON, HTML and CSS, SQL…
 
 {{< /columns >}}
