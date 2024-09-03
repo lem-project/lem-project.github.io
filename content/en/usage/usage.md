@@ -408,6 +408,19 @@ To invoke it, simply write a color name or representation inside a string, enabl
 
 <img class="" src="/lem-color-picker.png" alt="Lem color picker" width="600px">
 
+### Dashboard, the welcome start-up screen
+
+At startup Lem opens by default a customizable dashboard, `lem-dashboard`:
+
+![Default dashboard](/default-dashboard.png)
+
+It ships with useful shortcuts like starting a lisp scratch or seeing
+recent files and projects at a glance.
+
+Read its documentation on its [dashboard documentation](/modes/dashboard).
+
+> Note: this feature has been added on the 3rd of September 2024.
+
 
 ### Line numbers
 
