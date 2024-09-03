@@ -94,6 +94,8 @@ You are responsible for the actual insertion of text inside of `draw-dashboard-i
 As an example, let's make a `dashboard-item` that fetches a random fact from an HTTP API and prints it:
 
 ```lisp
+(in-package :lem-dashboard)
+
 (defclass dashboard-random-fact (dashboard-item)
   ((fact :initform nil :accessor fact)
    (fetching :initform nil :accessor fetching))
