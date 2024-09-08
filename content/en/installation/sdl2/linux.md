@@ -16,10 +16,15 @@ weight: -20
 - [git](https://git-scm.com/)
 
 
-#### Install SBCL and ncurses library
+#### Install SBCL and SDL2
 - Debian-like distro
 ```
 sudo apt install sbcl build-essential libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+```
+
+- Fedora-like distro
+```
+sudo dnf install sbcl gcc-c++ SDL2-devel SDL2_image-devel SDL2_ttf-devel mesa-libEGL-devel
 ```
 
 #### Install qlot
