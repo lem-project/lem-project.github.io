@@ -95,12 +95,18 @@ From the root directory of the Lem project, using Make.
 - With ncurses:
 
 ```
- make ncurses
+make ncurses
 ```
 - With sld2:
 
 ```
- make sdl2 
+make sdl2 
 ```
-    
-This creates a binary on the root of the lem project called "lem".
+
+- With both:
+
+```
+make sdl2-ncurses
+```
+
+This creates a binary in the root of the lem project called `lem`.
