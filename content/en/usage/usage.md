@@ -451,6 +451,18 @@ current buffer only.
 
 Use: `M-x toggle-frame-fullscreen`
 
+### Line wrapping
+
+Use the following to turn line wrapping off and on again:
+
+    M-x toggle-line-wrap
+
+which you can also do like this in Lisp in your init file:
+
+~~~lisp
+(setf (variable-value 'line-wrap :global) nil)
+~~~
+
 ### Mouse support (ncurses)
 
 The GUI version supports the mouse, which is more difficult to bring
