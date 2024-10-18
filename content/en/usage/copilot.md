@@ -15,7 +15,7 @@ You might need to install the Copilot dependencies (see below).
 
 ## Login
 
-To login, use `M-x copilot-login`.
+To login, use `M-x copilot-signin`.
 
 After logging in, open a source file and edit it. The completion will be performed.
 
