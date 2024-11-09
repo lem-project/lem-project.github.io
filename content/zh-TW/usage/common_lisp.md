@@ -99,6 +99,9 @@ isn't. In that case, Lem asks you for a symbol *with autocompletion of
 all known symbols of the current Lisp image*, and it brings you to
 this symbol's definition.
 
+> If you can't find the definition of built-in symbols provided by your implementation, and get the `directory does not exists: ...` error, then you may need to specify the `source directory` of your implementation.
+> For example, if you are using `roswell` to start your `lisp repl`, you can create the `~/.roswell/init.lisp`, and add `(sb-ext:set-sbcl-source-location "/usr/share/sbcl-source/")` to specify the source direcoty. (Taken `sbcl` implementation for example.)
+
 "All symbols" really means all the symbols of any package that was
 loaded in the image. This includes the implementation and Lem's
 packages, the code of your current project, and any other third-party
