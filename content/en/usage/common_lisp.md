@@ -123,6 +123,8 @@ isn't. In that case, Lem asks you for a symbol *with autocompletion of
 all known symbols of the current Lisp image*, and it brings you to
 this symbol's definition.
 
+> To find the definition of a standard function in implementation (taken `sbcl` for example), you need to download the source of the implementation using `$ ros install sbcl --without-install` command.
+
 "All symbols" really means all the symbols of any package that was
 loaded in the image. This includes the implementation and Lem's
 packages, the code of your current project, and any other third-party
