@@ -46,9 +46,15 @@ it. This works with the SDL2 GUI.
 
 > This feature was added in Lem 2.1
 
-The shortcut `C-x d` opens a project explorer on the left side. Another keypress closes the Filer.
+The shortcut `C-x d` (M-x filer) opens a project explorer on the left side. Another keypress closes the Filer.
 
 <img class="" src="/filer.png" alt="Lem Filer on the left window">
+
+This command opens the filer at the current working directory. Often, it is the directory from which you started Lem. You can change it (M-x change-directory), but you can use other filer commands.
+
+The command `M-x filer-directory` opens (or closes) the filer at the current buffer's directory.
+
+The command `M-x filer-at-directory` prompts you for a directory. It is new as of November 2024.
 
 
 ### Project commands
