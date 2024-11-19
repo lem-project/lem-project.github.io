@@ -408,4 +408,5 @@ For inspiration, see those configuration files:
 - [@vindarel](https://github.com/vindarel/lem-init)
 - [@Gavinok](https://github.com/Gavinok/.lem)
 - [@garlic0x1](https://github.com/garlic0x1/.lem)
+- [@sakurawald](https://github.com/sakurawald/.dotfiles/blob/master/lem/.lem/init.lisp)  Heavily rely on the `vi-mode`.
 - https://gist.github.com/jason-chandler/6332e3fd753fa87e3b1cd13582df5862 getting cxxxr/valtan to work along with paredit and the monokai theme
