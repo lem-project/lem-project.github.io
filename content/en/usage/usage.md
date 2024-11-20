@@ -379,6 +379,7 @@ Available features are:
 - commit ("c")
 - push, pull the current branch ("P p" and "P f")
 - see the commits log ("l l", then "f"/"b" and "F"/"B" for pagination) (NEW in July, 2024)
+- see stashes, stash the current changes, pop and drop a given stash.
 - interactive rebase (best case scenario, Linux only)
   - "r i": start an interactive rebase
   - "r a": abort an ongoing rebase (started by you or another process)
