@@ -223,6 +223,15 @@ These other commands are not bound to a key:
 | `window-move-left/right` |  | Go to the window at the left / at the right          |
 
 
+### Frames (maximize, minimize)
+
+On SDL2, Lem is open in a desktop window, which we'll call frame for the context of Lem.
+
+You can programatically call `M-x maximize-frame` and `M-x
+minimize-frame`, or bind these commands to key bindings, to make the
+frame bigger, or have it minimized.
+
+
 ### Tabs
 
 Lem has a rudimentary support for tabs.
@@ -231,7 +240,7 @@ Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer
 
 On the GUI version of Lem, you can click on them.
 
-### Workspaces
+### Workspaces (frame-multiplexer)
 
 Lem has a frame multiplexer, aka "workspaces" or "screen
 manager".
