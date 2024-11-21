@@ -61,6 +61,33 @@ Now, open any file and activate your mode with `M-x awesome-mode`. Try to write 
 
 You can take inspiration from all Lem modes in `modes/` or `src/ext/`. Do a `grep` for "define-major-mode" or "define-minor-mode".
 
+## Open files of given extensions with your major mode
+
+It is natural that when you open a ".lisp" file Lem enables the lisp-mode. There is a mechanism for that.
+
+You can tell Lem to associate one or many file extensions with your mode.
+
+After your mode definition, use `define-file-type`. This is the declaration for all lisp files:
+
+```lisp
+(define-file-type ("lisp" "asd" "cl" "lsp" "ros") lisp-mode)
+```
+
+Adapt accordingly with your major mode.
+
+## Open files of given names with your major mode
+
+A "Makefile" file has no extension, but we want to open it in makefile-mode anyways. Use `define-file-associations`:
+
+
+~~~lisp
+(define-file-associations makefile-mode
+  ((:file-namestring "Makefile")
+   (:file-namestring "makefile")))
+~~~
+
+Adapt accordingly.
+
 
 # Third-party Lem libraries
 
