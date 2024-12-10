@@ -140,6 +140,13 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 this presents the results in a two-panes window. You can edit lines in the results buffer, changes are reflected immediately on the files, and updated on the right side. You can use search and replace `M-x query-replace` in the results buffer.
 
+> To set the default args for grep command, put this in your `~/.lem/init.lisp` file.
+> ``` 
+>   (setf lem/grep:*grep-args* "-niHI")
+>   (setf lem/grep::*last-query* "git grep -niHI ")
+> ```  
+>
+    
 ## multiple cursors
 
 Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
