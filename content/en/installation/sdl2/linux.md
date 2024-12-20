@@ -25,7 +25,7 @@ sudo apt install sbcl build-essential libsdl2-dev libsdl2-image-dev libsdl2-ttf-
 - Fedora-like distro
 ```
 sudo dnf install sbcl SDL2-devel SDL2_image-devel SDL2_ttf-devel
-sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+sudo dnf group install c-development development-tools
 ```
 
 #### Install qlot
