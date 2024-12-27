@@ -107,6 +107,7 @@ etc.
 You can also use `lem:define-keys` to define more than one key at once:
 
 ~~~lisp
+;; C-h is initially bound to delete-previous-char
 (define-keys *global-keymap*
   ("C-h b" 'describe-bindings)
   ("C-h k" 'describe-key)
