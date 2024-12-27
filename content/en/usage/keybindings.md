@@ -130,18 +130,22 @@ The up to date list it to be found on Github: https://github.com/lem-project/lem
 ## Buffer
 | Command                                                                                       | Key bindings | Documentation                                 |
 |-----------------------------------------------------------------------------------------------|--------------|-----------------------------------------------|
-| [toggle-read-only](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L14) | C-x C-q      | Toggle the buffer read-only.                  |
-| [rename-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L22)    |              | Rename the buffer.                            |
-| [unmark-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L26)    | M-~          | Remove the mark where the buffer was changed. |
-
-## Window
-| Command                                                                                                        | Key bindings   | Documentation                                                         |
-|----------------------------------------------------------------------------------------------------------------|----------------|-----------------------------------------------------------------------|
 | [select-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L62)                     | C-x b          | Switches to the selected buffer.                                      |
 | [kill-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L101)                      | C-x k          | Delete buffer.                                                        |
 | [previous-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L110)                  | C-x Left       | Switches to the previous buffer.                                      |
 | [next-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L120)                      | C-x Right      | Switches to the next buffer.                                          |
 | [recenter](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L126)                         | C-l            | Scroll so that the cursor is in the middle.                           |
+| [toggle-read-only](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L14) | C-x C-q      | Toggle the buffer read-only.                  |
+| [rename-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L22)    |              | Rename the buffer.                            |
+| [unmark-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L26)    | M-~          | Remove the mark where the buffer was changed. |
+
+## Window management
+
+### emacs-mode (default)
+
+
+| Command                                                                                                        | Key bindings   | Documentation                                                         |
+|----------------------------------------------------------------------------------------------------------------|----------------|-----------------------------------------------------------------------|
 | [split-active-window-vertically](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L133)   | C-x 2          | Split the current window vertically.                                  |
 | [split-active-window-horizontally](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L139) | C-x 3          | Split the current window horizontally.                                |
 | [other-window](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L150)                     | C-x o, M-o     | Go to the next window.                                                |
@@ -163,6 +167,30 @@ The up to date list it to be found on Github: https://github.com/lem-project/lem
 | [read-file-other-window](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L277)           | C-x 4 r        | Read a file in another window.                                        |
 | [select-buffer-other-window](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L278)       | C-x 4 b        | Select a buffer in another window.                                    |
 | [compare-windows](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L282)                  |                |                                                                       |
+
+### vi-mode
+
+And now the vi-mode keybindings
+
+
+| Keybinding | Function                | Command(s)   |
+|:----------:|:-----------------------:|:------------:|
+| `C-w hjkl` | Navigating split windows| `(vi-window-move-[left, right, down, up])` |
+| `C-w s/v`  | Splits the window and moves to the split | `(vi-window-split-[horizontally, vertically)` |
+| `C-w n`    | Split the window and creates a new window | `(vi-window-split-vertically-new)` |
+| `C-w c`    | Closes the current split, except the last one | `(vi-close)`         |
+| `C-w p`    | Go to the previous window                 | calls `previous-window`   |
+| `C-w o`    | Delete other windows    | calls `delete-other-windows`                |
+
+Ex commands are:
+
+| Ex-command | Function                   |
+|:----------:|:--------------------------:|
+| `:new`     | Creates a new buffer in a split below. Uses the `C-w n` command. |
+| `:vne(w)`  | Creates a new buffer in a split to the right. |
+| `:enew(w)`  | Opens the specified file name or creates a blank buffer. |
+| `:clo(se)` | Closes the buffer, unless it's the last one. Uses the C-w c command: (vi-close) |
+| `:on(ly)`  | delete other windows.      |
 
 ## Multiple-Cursors
 | Command                                                                                                        | Key bindings | Documentation                                               |
