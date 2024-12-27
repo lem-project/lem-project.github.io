@@ -108,12 +108,12 @@ You can also use `lem:define-keys` to define more than one key at once:
 
 ~~~lisp
 (define-keys *global-keymap*
-  ("C-a b" 'describe-bindings)
-  ("C-a k" 'describe-key)
-  ("C-a a" 'lem-lisp-mode:lisp-apropos)
-  ("C-a c" 'apropos-command)
-  ("C-a p" 'lem-lisp-mode:lisp-apropos-package)
-  ("C-a f" 'lem-lisp-mode:lisp-describe-symbol))
+  ("C-h b" 'describe-bindings)
+  ("C-h k" 'describe-key)
+  ("C-h a" 'lem-lisp-mode:lisp-apropos)
+  ("C-h c" 'apropos-command)
+  ("C-h p" 'lem-lisp-mode:lisp-apropos-package)
+  ("C-h f" 'lem-lisp-mode:lisp-describe-symbol))
 ~~~
 
 But wait, there is more.
@@ -121,7 +121,7 @@ But wait, there is more.
 ### Defining a keymap
 
 Did you notice that all the above commands have
-the `C-a` prefix? We can refactor this.
+the `C-h` prefix? We can refactor this.
 
 First, we define a keymap object. Let's take another example, the
 frame-multiplexer (aka tabs):
