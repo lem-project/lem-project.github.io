@@ -152,6 +152,24 @@ And now we can define the prefix key for our keymap and all its sub-keys command
 As a result, we defined `C-z c` for `'frame-mulitplexer-create-with-new-buffer-list`.
 
 
+## Undefining keys
+
+Did you define keys? It's also possible to *undefine* them.
+
+*NOTE: this function was added the 1st of January, 2025.*
+
+Use `undefine-key` and `undefine-keys`.
+
+Example:
+
+```lisp
+(undefine-key *paredit-mode-keymap* "C-k")
+
+(undefine-keys *paredit-mode-keymap* ("C-k")
+  ("C-L"))
+```
+
+
 ## Writing one's own commands
 
 Use `define-command`:
