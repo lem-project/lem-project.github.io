@@ -191,6 +191,30 @@ package.
 Note that, unlike Emacs and Slime, it doesn't switch Lisp's current
 directory.
 
+## Remove unused imports
+
+The function `M-x lisp-organize-imports` will delete the unnecessary
+imports from the package definition (from the symbols in
+`:import-from`).
+
+For example, if you have this package definition where `proper-list`
+is unused:
+
+```lisp
+(uiop:define-package :lem/porcelain
+  (:use :cl)
+  (:import-from :trivial-types
+                :proper-list))  ;; <-- unused
+```
+
+run `M-x lisp-organize-imports` and it's removed:
+
+```lisp
+(uiop:define-package :lem/porcelain
+  (:use :cl)
+  (:import-from :trivial-types))
+```
+
 
 ## Code search
 
@@ -275,3 +299,21 @@ testing framework.
 The commands available are:
 - `M-x lisp-test-runner-run-current` or (`C-c C-r`): It sends the current test symbol to the connection.
 - `M-x lisp-test-runner-run-buffer` or (`C-c C-R`): Run the test suite of the current buffer.
+
+## APPENDIX: Lem features not found in Emacs and Slime
+
+Lem has some unique features. Did you spot them?
+
+- the `watch` feature, that displays evaluation results on the fly, in overlays.
+- the `M-x lisp-organize-import` function
+- when evaluating expressions (C-x C-e), Lem prints the result in an overlay.
+- function arguments and the function signature are given in a clear UI.
+- when you run the `ls` command at the REPL (the comma-command with
+  `,ls`), the output is interactive:
+  - the list looks like a list of files in directory-mode, and we can
+    visit the file at point.
+- in the SDL2 version, double clicks select s-expressions. A middle mouse click inserts a s-expression.
+- Lem handles symbols presentations in a bit more contexts
+- the test-runner functions
+
+But don't assume the list is complete ;)
