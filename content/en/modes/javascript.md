@@ -2,9 +2,14 @@
 title: JavaScript
 ---
 
-## Configuration
+## LSP configuration
 
-An example JS config for LSP:
+LSP is built-in for JavaScript mode.
+
+Its config is defined in the package `lem-js-mode/lsp-config`.
+
+Before January, 2025, you ha to add a configuration snippet
+yourself. This is an example:
 
 ```lisp
 (lem-lsp-mode/lsp-mode::define-language-spec
