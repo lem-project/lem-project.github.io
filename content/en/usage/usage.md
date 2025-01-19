@@ -2,14 +2,19 @@
 title: Usage
 weight: -50
 ---
+
+This page shows how to use Lem.
+
+You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
+
+To learn about a specific mode (support for a programming language, the directory mode…) please see the Extensions section on the menu.
+
+This documentation is improved continually.
+
 {{< toc >}}
 
 
-
-The documentation is in progress. You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
-
-
-# Lem Manual for Users
+## Quickstart
 
 Lem has Emacs-like keybindings, as well as a vi emulation (`M-x vi-mode`).
 
@@ -26,6 +31,17 @@ To show the context menu: `Shift-F10`.
 Quit Lem with `C-x C-c`.
 
 See this Emacs & Slime cheatsheet to find more: https://lispcookbook.github.io/cl-cookbook/emacs-ide.html#appendix
+
+## Call commands by name
+
+Every keybinding is associated to a command. We can call commands with `Alt-x` (often written `M-x` too).
+
+Lem will open a pop-up where you can search commands interactively. It's a good way to discover commands.
+
+This pop-up also shows you the associated keybinding of a command.
+
+![](/completion-with-keybindings.png "Interactive completion of commands, showing the keybinding of each function.")
+
 
 ## Opening files
 
