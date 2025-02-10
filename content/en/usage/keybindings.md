@@ -134,7 +134,7 @@ The up to date list it to be found on Github: https://github.com/lem-project/lem
 | [kill-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L101)                      | C-x k          | Delete buffer.                                                        |
 | [previous-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L110)                  | C-x Left       | Switches to the previous buffer.                                      |
 | [next-buffer](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L120)                      | C-x Right      | Switches to the next buffer.                                          |
-| [recenter](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L126)                         | C-l            | Scroll so that the cursor is in the middle.                           |
+| [recenter](https://github.com/lem-project/lem/blob/main/src/commands/window.lisp#L126)                         | C-l            | Scroll so that the cursor is in the middle. See also: `recenter-top-bottom`                   |
 | [toggle-read-only](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L14) | C-x C-q      | Toggle the buffer read-only.                  |
 | [rename-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L22)    |              | Rename the buffer.                            |
 | [unmark-buffer](https://github.com/lem-project/lem/blob/main/src/commands/buffer.lisp#L26)    | M-~          | Remove the mark where the buffer was changed. |
