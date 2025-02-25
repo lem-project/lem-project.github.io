@@ -12,23 +12,6 @@ Copy the app file to the applications folder and type the following in your term
 xattr -d com.apple.quarantine /Applications/lem.app
 ```
 
-## Installation with roswell
-
-Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
-
-After that, please follow the steps bellow.
-
-1. Install lem by roswell
-
-```
-$ ros follow-dependency=t install lem-project/lem
-```
-
-2. Add the PATH in the initialization file (such as `~/.bashrc`)
-```
-export PATH=$PATH:~/.roswell/bin
-```
-
 ### Installation with Docker
 
 Clone the Lem repository and build a Docker image:
@@ -79,4 +62,21 @@ or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choo
 - Copying the PATH to `~/.bashrc`
 ```
 export PATH="$HOME/common-lisp/lem:$PATH"
+```
+
+## Installation with roswell (deprecated)
+
+Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
+
+After that, please follow the steps bellow.
+
+1. Install lem by roswell
+
+```
+$ ros follow-dependency=t install lem-project/lem
+```
+
+2. Add the PATH in the initialization file (such as `~/.bashrc`)
+```
+export PATH=$PATH:~/.roswell/bin
 ```
