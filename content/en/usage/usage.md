@@ -137,7 +137,7 @@ The command `find-file-recursively` is not bound to a key by default. This comma
 
 > Note: contrary to `project-find-file`, it starts the search at the buffer's directory, not at the project root.
 
-The method to search all files recursively is configurable. Lem first tries with any of these external programs: `fd`, `fdfind` (which is `fd` installed from Debian repositories) and `find` (the Unix find). If none of these programs exist, it falls back to a Lisp version.
+The method to search all files recursively is configurable. Lem first tries with any of these external programs: [fd](https://github.com/sharkdp/fd), `fdfind` (which is `fd` installed from Debian repositories) and `find` (the Unix find). If none of these programs exist, it falls back to a Lisp version.
 
 [fd](https://github.com/sharkdp/fd) is an external tool, that is fast and that filters out some directories by default: "node_modules/", ".git/" and such. The Lisp method doesn't exclude them.
 
