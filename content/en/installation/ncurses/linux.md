@@ -60,17 +60,17 @@ You can now run it:
 #### Install SBCL and ncurses library
 - Debian-like distro
 ```
-sudo apt install sbcl libncurses5-dev build-essential
+sudo apt install sbcl libncurses5-dev build-essential fd-find
 ```
 
 - Fedora
 ```
-sudo yum install sbcl ncurses-devel make automake gcc gcc-c++
+sudo yum install sbcl ncurses-devel make automake gcc gcc-c++ fd-find
 ```
 
 - OpenSuse
 ```
-sudo zypper install sbcl ncurses-devel make devel_basis
+sudo zypper install sbcl ncurses-devel make devel_basis fd
 ```
 
 #### Install qlot
