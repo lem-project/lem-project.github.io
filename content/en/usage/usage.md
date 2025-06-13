@@ -508,6 +508,18 @@ which you can also do like this in Lisp in your init file:
 (setf (variable-value 'line-wrap :global) nil)
 ~~~
 
+### Mark-ring and ring rotation
+
+`C-space` (or `C-@`, `mark-set`) sets a mark and starts a text selection. Use `C-x
+C-x` (`exchange-point-mark`) to move the point to the beginning of the selection.
+
+Use a universal argument to the mark-set command to use the **ring
+rotation**: press `C-u C-space` to move to the previous mark inside
+this buffer.
+
+Use `C-x h` (`mark-set-whole-buffer`) to select all the current buffer.
+
+
 ### Mouse support (ncurses)
 
 The GUI version supports the mouse, which is more difficult to bring
