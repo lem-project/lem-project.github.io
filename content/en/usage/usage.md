@@ -538,6 +538,10 @@ Set a transparent background with this line in your init file:
     (sdl2-ffi.functions:sdl-set-window-opacity (lem-sdl2/display::display-window lem-sdl2/display::*display*) 0.9)
 
 
-### Font size (SDL2 only)
+### Font size, font name (SDL2 only)
 
-Use: `font-size-increase` (`C-+`), `font-size-decrease` (`C--`) and `font-size-set [number]`.
+Change the font size: `font-size-increase` (`C-+`), `font-size-decrease` (`C--`) and `font-size-set [number]`.
+
+Change the font: `(lem-if:set-font-name "JuliaMono")`.
+
+You can list the available fonts with `fc-list` in Unix.
