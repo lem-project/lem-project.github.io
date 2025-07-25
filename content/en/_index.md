@@ -1,5 +1,5 @@
 ---
-title: Lem is the editor/IDE well-tuned for Common Lisp.
+title: Lem is a general-purpose editor/IDE extensible in Common Lisp.
 geekdocNav: false
 geekdocAlign: center
 geekdocAnchor: false
@@ -17,9 +17,9 @@ geekdocAnchor: false
 
 <!-- markdownlint-restore -->
 
-After installing lem, you can start developing in Common Lisp at once.
+Many languages are supported with Lem's **built-in LSP support**.
 
-In addition, many languages are supported with Lem's **built-in LSP support**.
+In addition, after installing lem, you can start developing in Common Lisp at once.
 
 {{< button size="large" relref="installation/ncurses/linux" >}}Getting Started{{< /button >}}
 
