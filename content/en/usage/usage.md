@@ -377,7 +377,22 @@ this presents the results in a two-panes window. You can edit lines in the resul
 >   (setf lem/grep:*grep-args* "-niHI")
 >   (setf lem/grep::*last-query* "git grep -niHI ")
 > ```
->
+
+Note that Lem needs result lines containing, in order, separated by colons: the filename, the line number, and the result, like this:
+
+```
+themes.lisp:17:  (syntax-function-name-attribute :foreground "blue")
+themes.lisp:33:  (syntax-function-name-attribute :foreground "LightSkyBlue")
+```
+
+Here is a working setting for `ripgrep`:
+
+```
+(setf *grep-command* "rg")
+(setf *grep-args* "--line-buffered --color=never --max-columns=1000 --path-separator=/ --smart-case --no-heading --with-filename --line-number --search-zip")
+```
+
+The important flags are `--no-heading`, `--line-number` and the absence of `--null` (rg 14.1).
 
 See also: `M-x project-grep`, bound to `C-x p g`.
 
