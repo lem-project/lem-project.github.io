@@ -394,6 +394,21 @@ Here is a working setting for `ripgrep`:
 
 The important flags are `--no-heading`, `--line-number` and the absence of `--null` (rg 14.1).
 
+Since July, 2025, one can use the function `lem/grep:change-grep-command` to set the grep command and arguments:
+
+```lisp
+CL-USER> (lem/grep:change-grep-command "rg" :args "--no-heading -n" :input "test")
+"rg"
+"--no-heading -n"
+"rg --no-heading -n test"
+
+;; back to normal:
+CL-USER> (lem/grep:change-grep-command "git grep")
+"git grep"
+"-nHI"
+"git grep -nHI "
+```
+
 See also: `M-x project-grep`, bound to `C-x p g`.
 
 
