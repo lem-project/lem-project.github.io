@@ -284,6 +284,127 @@ We can have multiple arguments, for example:
   ...)
 ```
 
+## Commands with persistent history
+
+Lem provides primitives to save and restore data to and from its
+config directory.
+
+We can use this to persist the entries of an interactive command (so
+we have a completion history when we quit and restart Lem). For
+example, the command `M-x project-switch` (C-x p p) remembers the
+latest accessed projects and suggests them on the first
+TAB-completion.
+
+The process isn't automatic and we present how to do it, following how
+it is done for the project commands, in `lem/core/commands/project.lisp`.
+
+The Lisp functions to use to manipulate the history are inside the
+`lem/commonhistory` package:
+
+- `make-history`
+- `add-history` or `remove-history`, followed by `save-file`
+- `history-data-list` to get the data from a history.
+
+First, create a global variable to hold the history object, a structure.
+
+```lisp
+(defvar *projects-history*)
+
+(defun history ()
+  "Return or create the projects' history struct.
+  The history file is saved on (lem-home)/history/projects"
+  (unless (boundp '*projects-history*)
+    (let* ((pathname (merge-pathnames "history/projects" (lem-home)))
+           (history (lem/common/history:make-history :pathname pathname)))
+      (setf *projects-history* history)))
+  *projects-history*)
+```
+
+Look how we can use `(merge-pathnames "history/projects" (lem-home))`
+to refer to the file under `~/.config/lem/history/projects` (or
+`~/.lem/history/projects` for older Lem versions).
+
+Once created, `*projects-history*` looks like this:
+
+```lisp
+#S(LEM/COMMON/HISTORY::HISTORY
+   :PATHNAME #P"/home/vince/.lem/history/projects"
+   :DATA #("/home/vince/bacasable/lisp-projects/lem/"
+           "/home/vince/bacasable/lisp-projects/cl-beers/"
+           "/home/vince/projets/ruche-web/abelujo/"
+           "/home/vince/bacasable/lisp-projects/fossil-test/"
+           "/media/vince/93de6b92-7390-4253-bab1-425052ba7a10/home/vince/"
+           "/home/vince/bacasable/mercurial-tests/" "/home/vince/dotfiles/lem/")
+   :INDEX 7
+   :EDIT-STRING NIL
+   :LIMIT NIL)
+```
+
+It is a struct (`#S`) with metadata as slots (pathname, index, limit…)
+and the data, as an array (which has a fill-pointer and is adjustable,
+but that's an implementation detail).
+
+This is how you can add data to your history file. We use
+`lem/common/history:add-history hitsory input :allow-duplicates nil`
+followed by `save-file history`.
+
+```lisp
+(defun remember-project (input)
+  "Add this project path to the history file."
+  (let* ((history (history))
+         ;; Project roots (pathnames) are converted to strings for the
+         ;; string completion prompt.
+         (input (namestring input)))
+    (if (and (lem/common/history:add-history history input :allow-duplicates nil)
+             (lem/common/history:save-file history))
+        (message "Saved project: ~A" input)
+        (message "Failed saving project: ~A" input))))
+```
+
+We can get the history data, as a list, to work for the completion commands:
+
+```lisp
+(defun saved-projects ()
+  "Return the saved projects.
+  Return: a list (of strings), not a vector."
+  (lem/common/history:history-data-list (history)))
+```
+
+Finally, this is how we use the history data for the interactive
+`project-switch` command.
+
+`prompt-for-string` is a built-in Lem function that builds the
+completion window. We can feed it the completion candidates, that we
+pulled from our persisted history.
+
+
+```lisp
+(defun prompt-for-project ()
+  "Prompt for a project saved in the projects history."
+  (let ((candidates (saved-projects)))
+    (if candidates
+        (prompt-for-string
+         "Project: "
+         :completion-function (lambda (x) (completion-strings x candidates))
+         :test-function (lambda (name) (member name candidates :test #'string=)))
+        (editor-error "No projects."))))
+
+(define-command project-switch () ()
+  "Prompt for a saved project and find a file in this project."
+  ;; Get a project, with our history:
+  (let ((project-root (prompt-for-project)))
+    ;; The code below has nothing to do with the history, it's just file completion.
+    (when project-root
+      (uiop:with-current-directory (project-root)
+        (let ((filename (prompt-for-files-recursively)))
+          (alexandria:when-let (buffer (execute-find-file *find-file-executor*
+                                                          (lem-core/commands/file::get-file-mode filename)
+                                                          filename))
+            (when buffer
+              (switch-to-buffer buffer t nil))))))))
+```
+
+
 
 ## Formatting code
 
