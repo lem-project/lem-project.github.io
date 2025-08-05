@@ -346,6 +346,20 @@ This is how you can add data to your history file. We use
 `lem/common/history:add-history hitsory input :allow-duplicates nil`
 followed by `save-file history`.
 
+The `add-history` function also has the `:move-to-top` key parameter:
+if T, it moves the input on top of the stack if it already exists.
+
+```lisp
+;; lem/common/history.lisp
+add-history (history input &key (allow-duplicates t) (test #'equal) move-to-top)
+  "Add this INPUT to the HISTORY.
+
+  Doesn't add the same INPUT as the previous one.
+  If ALLOW-DUPLICATES is non T, don't add duplicates at all.
+  If LIMIT is set, overwrite oldest entry when reached.
+  If MOVE-TO-TOP is T, move the entry to the top of the stack if it already exists."
+```
+
 ```lisp
 (defun remember-project (input)
   "Add this project path to the history file."
