@@ -299,7 +299,7 @@ The process isn't automatic and we present how to do it, following how
 it is done for the project commands, in `lem/core/commands/project.lisp`.
 
 The Lisp functions to use to manipulate the history are inside the
-`lem/commonhistory` package:
+`lem/common/history` package:
 
 - `make-history`
 - `add-history` or `remove-history`, followed by `save-file`
@@ -328,13 +328,11 @@ Once created, `*projects-history*` looks like this:
 
 ```lisp
 #S(LEM/COMMON/HISTORY::HISTORY
-   :PATHNAME #P"/home/vince/.lem/history/projects"
-   :DATA #("/home/vince/bacasable/lisp-projects/lem/"
-           "/home/vince/bacasable/lisp-projects/cl-beers/"
-           "/home/vince/projets/ruche-web/abelujo/"
-           "/home/vince/bacasable/lisp-projects/fossil-test/"
-           "/media/vince/93de6b92-7390-4253-bab1-425052ba7a10/home/vince/"
-           "/home/vince/bacasable/mercurial-tests/" "/home/vince/dotfiles/lem/")
+   :PATHNAME #P"/home/vindarel/.lem/history/projects"
+   :DATA #("/home/vindarel/bacasable/lisp-projects/lem/"
+           "/home/vindarel/bacasable/lisp-projects/fossil-test/"
+           "/home/vindarel/bacasable/lisp-projects/mito-admin/"
+           "/home/vindarel/dotfiles/lem/")
    :INDEX 7
    :EDIT-STRING NIL
    :LIMIT NIL)
@@ -404,6 +402,8 @@ pulled from our persisted history.
               (switch-to-buffer buffer t nil))))))))
 ```
 
+and voilà. You used the `lem/common/history` primitives to persist
+data, and used it for command completion.
 
 
 ## Formatting code
