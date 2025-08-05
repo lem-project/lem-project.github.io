@@ -9,6 +9,8 @@ major modes into a single markdown buffer.
 ## Default keybindings
 
 - `C-c C-l`: `markdown-insert-link`.
+  - you can select a text, and the command will add a link around it.
+  - with `C-u`, ask for a title / tooltip.
 
 ## Live preview
 
