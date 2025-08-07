@@ -42,6 +42,19 @@ This pop-up also shows you the associated keybinding of a command.
 
 ![](/completion-with-keybindings.png "Interactive completion of commands, showing the keybinding of each function.")
 
+These M-x commands are persisted across sessions. You can disable it with:
+
+```lisp
+(setf lem-core/commands/other:*persist-M-x-commands* nil)
+```
+
+and you can change these parameters:
+
+- `lem-core/commands/other:*history-limit*`: the number of commands that are saved to disk. Defaults to 1000.
+- `lem-core/commands/other:*max-M-x-candidates-from-history*`: the number of saved commands we see at the top when calling M-x. Defaults to 10.
+
+NB: this persistence was added on August, 2025.
+
 
 ## Opening files
 
