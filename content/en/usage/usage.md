@@ -585,6 +585,6 @@ Set a transparent background with this line in your init file:
 
 Change the font size: `font-size-increase` (`C-+`), `font-size-decrease` (`C--`) and `font-size-set [number]`.
 
-Change the font: `(lem-if:set-font-name "JuliaMono")`.
+Change the font: `(lem:set-font-name "JuliaMono")`.
 
 You can list the available fonts with `fc-list` in Unix.
