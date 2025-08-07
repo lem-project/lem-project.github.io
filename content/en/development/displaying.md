@@ -67,3 +67,135 @@ Because, in frame-multiplexer, it is needed to store frames and to switch betwee
 One virtual frame store multiple frames in it, and modify `lem::*display-frame-map*` when like frame switching.
 
 Source: `/lib/core/frame-multiplexer.lisp`
+
+## Editing display concepts
+
+These displaying mechanisms are used in text buffers.
+
+### Visually selecting text - the mark
+
+Setting the mark allows to start a visual selection of text.
+
+It also allows to add a point to the *mark ring*, which further allows
+to circle back between marks.
+
+It can be done with
+
+```lisp
+  (set-current-mark (current-point))
+```
+
+`set-cursor-mark` is similar, and in addition it pushes the point to the mark ring.
+
+For example, this is how the command `mark-set-whole-buffer` is implemented:
+
+```lisp
+(define-command (mark-set-whole-buffer (:advice-classes jump-cursor-advice)) () ()
+  "Select the whole buffer as a region."
+  (buffer-end (current-point))       ;; move the current point
+  (set-current-mark (current-point)) ;; set the mark to the current point, start visual selection.
+  (buffer-start (current-point))     ;; move the point, effectively selecting all text.
+  (message "Mark set whole buffer"))
+```
+
+### Adding and showing meta data on top of content - overlays
+
+Overlays allow to complement the buffer's text with all sort of
+metadata. It is visible, it appears "around" the text (in the left
+margin, in the emply line space on the right…), but it isn't part of
+the buffer's content. It can be temporary.
+
+For example, when your compile a Lisp form, you see a fast visual
+effect around it: it was an overlay that was created, and quickly
+deleted. When you evaluate a Lisp form, its result is showed on its
+right: it is an overlay.
+
+Overlays are defined in `src/overlays.lisp`. An overlay is defined by
+a class, with slots: `start, end, temporary, buffer, attribute, plist,
+alivep`.
+
+The class `line-endings-overlay` extends a base overlay with slots: `text, offset`.
+
+We also have `cursor-overlay`.
+
+When an overlay is created (with `make-overlay` and the corresponding
+constructor functions), it is automatically pushed to the buffer's
+list of overlays, and is displayed.
+
+```lisp
+;;; src/overlays.lisp
+(defun make-overlay (start end attribute
+                     &key (start-point-kind :right-inserting)
+                          (end-point-kind :left-inserting)
+                          temporary)
+  (make-instance 'overlay
+                 :start (copy-point start start-point-kind)
+                 :end (copy-point end end-point-kind)
+                 :attribute attribute
+                 :buffer (point-buffer start)
+                 :temporary temporary))
+```
+
+For example:
+
+```lisp
+(make-line-endings-overlay (current-point) (current-point) 'lem-lisp-mode/eval::eval-error-attribute :text "hello")
+```
+This creates an overlay at the end of the line, showing "hello".
+
+Delete all the current buffer overlays with `(clear-overlays)` (use
+`M-:` M-x `lisp-eval-string`).
+
+The `attribute` argument of the constructor functions lead us to… attributes.
+
+
+### Text properties, attributes
+
+Attributes allow to display rich text: bold, italic, with colors… but
+they also allow to store metadata in buffer strings. In that case,
+attributes are invisible.
+
+For example, Legit's status buffer displays a line of text `Untracked
+Files` with the built-in attribute `:header-marker`, like this:
+
+```lisp
+(put-text-property start point :header-marker t))
+;;                             ^^ attribute  ^^^ attribute value
+```
+
+Thanks to it, we can implement a keyboard shortcut to navigate from
+one heading to another.
+
+Attributes are created with `define-attribute name (specs)`:
+
+```lisp
+(define-attribute filename-attribute
+  (t :foreground :base0D))
+```
+
+Built-in attributes are defined in `src/attributes.lisp`, such as:
+
+```lisp
+;; built-in attributes
+(define-attribute cursor
+  (:light :background "black")
+  (:dark :background "white"))
+
+(define-attribute region
+  (:light :foreground nil :background "#eedc82")
+  (:dark :foreground nil :background "blue"))
+
+(define-attribute syntax-warning-attribute
+  (t :foreground "red"))
+
+(define-attribute syntax-comment-attribute
+  (:light :foreground "#cd0000")
+  (:dark :foreground "chocolate1"))
+
+
+(define-attribute document-header1-attribute
+  (:light :foreground "#000000" :bold t)
+  (:dark :foreground "#FFFFFF" :bold t))
+```
+
+and so on.
