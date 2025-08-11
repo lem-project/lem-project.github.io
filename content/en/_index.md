@@ -93,3 +93,5 @@ C, Scheme, Go, JavaScript, TypeScript, Python, Rust, Elixir, Haskell, Java, Nim,
 Markdown, ASCII, JSON, HTML and CSS, Vue, SQL…
 
 {{< /columns >}}
+
+{{< button size="large" relref="usage/usage/" >}}See the documentation{{< /button >}}
