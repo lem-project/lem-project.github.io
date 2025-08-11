@@ -4,9 +4,12 @@ weight: -20
 ---
 ## Using the binary
 
-[Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
+[Lem has nightly AppImage releases](https://github.com/lem-project/lem/releases)! for Linux, MacOS and Windows.
+
+Please run it with the `xattr` command below.
 
 #### How to Fix “App Is Damaged and Can’t Be Opened” on OSX
+
 Copy the app file to the applications folder and type the following in your terminal:
 ```
 xattr -d com.apple.quarantine /Applications/lem.app

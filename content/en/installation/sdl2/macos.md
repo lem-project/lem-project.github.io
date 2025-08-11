@@ -4,7 +4,7 @@ weight: -20
 ---
 ## Using the binary
 
-[Lem 2.1 was released](https://github.com/lem-project/lem/releases/tag/v2.1.0)! It provides binaries for Linux, MacOS and Windows.
+[Lem has nightly AppImage releases](https://github.com/lem-project/lem/releases)! for Linux, MacOS and Windows.
 
 
 #### How to Fix “App Is Damaged and Can’t Be Opened” on OSX
@@ -60,7 +60,7 @@ To create an executable that you can run as a GUI you will need to use Automator
 - Launch Automator
 - Choose 'Application' as the type for your document
 
-You should now see three columns. In the second column there will be a collection of actions 
+You should now see three columns. In the second column there will be a collection of actions
 that you can run in this 'application'. Scroll down until you see `Run Shell Script`. Double click
 on this and on the right you should now see a text box where you can enter your script:
 
@@ -75,7 +75,7 @@ exit 0
 
 Save this as an application (this should be the default) with the name `Lem` to `\Applications`.
 
-You should now be abel to run this as an application from the Applications folder. 
+You should now be abel to run this as an application from the Applications folder.
 
 ### Keyboard Layout
 
