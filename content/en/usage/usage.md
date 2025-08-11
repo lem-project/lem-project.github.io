@@ -156,7 +156,7 @@ The method to search all files recursively is configurable. Lem first tries with
 
 But what happens if you call this command on your HOME, or in a directory with lots and lots of files? The command has a 5 seconds timeout (by default). After that time, the process is aborted and Lem uses the simpler `find-file` command.
 
-### Configuration
+#### Configuration
 
 You can bind the command to a keybinding:
 
