@@ -284,16 +284,19 @@ We can have multiple arguments, for example:
   ...)
 ```
 
-## Commands with persistent history
+## Write commands with a persisted history
 
-Lem provides primitives to save and restore data to and from its
+As of August, 2025, `Alt-x` commands in Lem are persisted across
+sessions. On restart, your last used Alt-x commands will be listed
+first in the completion pop-up. Other commands remember their entries
+too, such as `Alt-x project-switch`.
+
+This section is intentend to developers. It describes how one can use
+the built-in history package to write commands with such a persisted
+history.
+
+Indeed, Lem provides primitives to save and restore data to and from its
 config directory.
-
-We can use this to persist the entries of an interactive command (so
-we have a completion history when we quit and restart Lem). For
-example, the command `M-x project-switch` (C-x p p) remembers the
-latest accessed projects and suggests them on the first
-TAB-completion.
 
 The process isn't automatic and we present how to do it, following how
 it is done for the project commands, in `lem/core/commands/project.lisp`.
