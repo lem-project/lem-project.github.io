@@ -52,5 +52,3 @@ It brings graphics and mouse support, as well as games and over 180
 colour themes.
 
 {{< /columns >}}
-
-{{< button size="large" relref="usage/usage/" >}}See the documentation{{< /button >}}
