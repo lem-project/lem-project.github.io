@@ -196,6 +196,15 @@ or `:after` qualifiers.
      (do-something-with-the-results)))
 ~~~
 
+### Recent files
+
+Lem keeps track of your recently opened files.
+
+Use `C-x C-h` (`Alt-x find-recent-file`) to open a recently visited file.
+
+You can also see them in Lem's dashboard.
+
+
 ## Buffers, windows and workspaces management
 
 ### Switching buffers
