@@ -56,6 +56,7 @@ by default for:
 
 - lisp
 - bash
+- python
 
 The idea is that you can run the code blocks, and do something with
 them: display them in a pop-up windowd, print them on file below the
