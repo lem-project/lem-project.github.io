@@ -519,14 +519,6 @@ Read its documentation on its [dashboard documentation](/modes/dashboard).
 > Note: this feature has been added on the 3rd of September 2024.
 
 
-### Line numbers
-
-Use: `M-x toggle-line-numbers`
-
-or `(lem/line-numbers:toggle-line-numbers)`
-
-Use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
-
 ### Read-only
 
 Use: `M-x toggle-read-only`
@@ -547,6 +539,28 @@ current buffer only.
 ### Full screen
 
 Use: `M-x toggle-frame-fullscreen`
+
+### Line highlighting
+
+By default, Lem highlights the current line.
+
+You can disable it with:
+
+```lisp
+(setf (lem-core:variable-value 'lem-core:highlight-line :global) nil)
+```
+
+See also the variable `highlight-line-color`. It is nil by default,
+but Lem will guess a color suitable for the current theme's background
+color (see `src/highlight-line.lisp`).
+
+### Line numbers
+
+Use: `M-x toggle-line-numbers`
+
+or `(lem/line-numbers:toggle-line-numbers)`
+
+Use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (added after Lem 2.1)
 
 ### Line wrapping
 
