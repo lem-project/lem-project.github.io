@@ -1,5 +1,5 @@
 ---
-title: Markdown mode
+title: Markdown
 ---
 
 Lem's markdown mode supports:
