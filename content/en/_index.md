@@ -29,7 +29,7 @@ In addition, after installing lem, you can start developing in Common Lisp and e
 
 ### Keyboard oriented
 
-<a href="/terminal.png"> <img class="" src="/terminal.png" alt=""> </a>
+<a href="/terminal.png"> <img class="" src="/lem-find-file-2025.png" alt=""> </a>
 
 If you come from Emacs or Vim, you will feel right at home.
 
