@@ -284,6 +284,8 @@ Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer
 
 On the GUI version of Lem, you can click on them.
 
+![](/lem-nice-tabs.png "Lem tabs in the webview version, with a new style added in August of 2025.")
+
 ### Workspaces (frame-multiplexer)
 
 Lem has a frame multiplexer, aka "workspaces" or "screen
