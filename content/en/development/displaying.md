@@ -199,3 +199,17 @@ Built-in attributes are defined in `src/attributes.lisp`, such as:
 ```
 
 and so on.
+
+## Attached buffers
+
+This feature attaches “attached-window” to the bottom of a specific
+window. An "attached-window" has an "attached-buffer".  When you attach an
+attached-window to a specific window, that window becomes the parent
+window from the perspective of the attached-window.  The attached
+window remains visible even when the parent window is scrolled.
+
+It's like a comment input form on slack or discord.
+
+They were initially added for the Claude Code integration.
+
+<img class="" src="/lem-attach-buffer.png" alt="Lem's attached buffers concept.">
