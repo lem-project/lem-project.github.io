@@ -1,9 +1,12 @@
 ---
-title: Lem's displaying concepts
+title: Displaying concepts
 weight: -2
 ---
+
 Lem has some concept for displaying.
 This document is a result of [a survey about them](https://gist.github.com/t-sin/cc0d036e40669395fd41cfd48bb9c997).
+
+{{< toc >}}
 
 ## Display(s)
 
@@ -200,16 +203,3 @@ Built-in attributes are defined in `src/attributes.lisp`, such as:
 
 and so on.
 
-## Attached buffers
-
-This feature attaches “attached-window” to the bottom of a specific
-window. An "attached-window" has an "attached-buffer".  When you attach an
-attached-window to a specific window, that window becomes the parent
-window from the perspective of the attached-window.  The attached
-window remains visible even when the parent window is scrolled.
-
-It's like a comment input form on slack or discord.
-
-They were initially added for the Claude Code integration.
-
-<img class="" src="/lem-attach-buffer.png" alt="Lem's attached buffers concept.">
