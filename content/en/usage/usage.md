@@ -483,6 +483,12 @@ and basic support for Mercurial and Fossil.
 
 ![](https://raw.githubusercontent.com/lem-project/lem/main/extensions/legit/lem-status.png)
 
+## Claude Code AI
+
+Use `Alt-x claude-code` to connect to a local `claude` server and start a session.
+
+![](/claude.png "Lem's prompt with Claude Code")
+
 
 ## Misc
 
