@@ -5,7 +5,7 @@ weight: -50
 
 This page shows how to use Lem.
 
-You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `M-x documentation-describe-bindings` (new in Lem 2.1).
+You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `Alt-x documentation-describe-bindings` (new in Lem 2.1).
 
 To learn about a specific mode (support for a programming language, the directory mode…) please see the Extensions section on the menu.
 
@@ -16,7 +16,7 @@ This documentation is improved continually.
 
 ## Quickstart
 
-Lem has Emacs-like keybindings, as well as a vi emulation (`M-x vi-mode`).
+Lem has Emacs-like keybindings, as well as a vi emulation (`Alt-x vi-mode`).
 
 So, to open a file, press `C-x C-f` (you get the file selection dialog shown above). To save it, it's `C-x C-s`. To save many buffers at once, use `C-x s`.
 
@@ -24,7 +24,7 @@ To switch windows (aka splits of a screen): `C-x o` ('o' letter) and `M-o`. To m
 
 To switch buffers: `C-x b`.
 
-To **run an interactive command by name**: `M-x` (`alt-x`).
+To **run an interactive command by name**: `Alt-x`.
 
 To show the context menu: `Shift-F10`.
 
@@ -42,7 +42,7 @@ This pop-up also shows you the associated keybinding of a command.
 
 ![](/completion-with-keybindings.png "Interactive completion of commands, showing the keybinding of each function.")
 
-These M-x commands are persisted across sessions. You can disable it with:
+These Alt-x commands are persisted across sessions. You can disable it with:
 
 ```lisp
 (setf lem-core/commands/other:*persist-M-x-commands* nil)
@@ -51,19 +51,19 @@ These M-x commands are persisted across sessions. You can disable it with:
 and you can change these parameters:
 
 - `lem-core/commands/other:*history-limit*`: the number of commands that are saved to disk. Defaults to 1000.
-- `lem-core/commands/other:*max-M-x-candidates-from-history*`: the number of saved commands we see at the top when calling M-x. Defaults to 10.
+- `lem-core/commands/other:*max-M-x-candidates-from-history*`: the number of saved commands we see at the top when calling Alt-x. Defaults to 10.
 
 NB: this persistence was added on August, 2025.
 
 
 ## Opening files
 
-As said above, the shortcut to open a file is `C-x C-f` (aka `M-x
+As said above, the shortcut to open a file is `C-x C-f` (aka `Alt-x
 find-file`). This presents a dialog to choose a file, with
 autocompletion, starting at the buffer's directory. We can also search
 for files in a **project** or recursively in **subdirectories**.
 
-You can open a file in another "window", aka if Lem's screen is split in two, open the file in the other screen. Use `C-x 4 f` (`M-x find-file-other-window`). This splits the screen vertically if needed.
+You can open a file in another "window", aka if Lem's screen is split in two, open the file in the other screen. Use `C-x 4 f` (`Alt-x find-file-other-window`). This splits the screen vertically if needed.
 
 You can then resize the windows. Look for the "shrink-" and "grow-" commands.
 
@@ -75,22 +75,22 @@ it. This works with the SDL2 GUI.
 
 > This feature was added in Lem 2.1
 
-The shortcut `C-x d` (M-x filer) opens a project explorer on the left side. Another keypress closes the Filer.
+The shortcut `C-x d` (Alt-x filer) opens a project explorer on the left side. Another keypress closes the Filer.
 
 <img class="" src="/filer.png" alt="Lem Filer on the left window">
 
-This command opens the filer at the current working directory. Often, it is the directory from which you started Lem. You can change it (M-x change-directory), but you can use other filer commands.
+This command opens the filer at the current working directory. Often, it is the directory from which you started Lem. You can change it (Alt-x change-directory), but you can use other filer commands.
 
-The command `M-x filer-directory` opens (or closes) the filer at the current buffer's directory.
+The command `Alt-x filer-directory` opens (or closes) the filer at the current buffer's directory.
 
-The command `M-x filer-at-directory` prompts you for a directory. It is new as of November 2024.
+The command `Alt-x filer-at-directory` prompts you for a directory. It is new as of November 2024.
 
 
 ### Project commands
 
 > Project related commands were added in Lem 2.1
 
-Use `M-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
+Use `Alt-x project-find-file` to choose a file among the list of all files pertaining to the current project. This command is bound to `C-x p f`.
 
 A project is recognized by typical files or directories. For example,
 a directory containing a `.git/` subdirectory or a `.project`,
@@ -209,9 +209,9 @@ You can also see them in Lem's dashboard.
 
 ### Switching buffers
 
-To switch buffers, use `C-x Left/Right arrow` (aka `M-x previous-buffer` and `next-buffer`).
+To switch buffers, use `C-x Left/Right arrow` (aka `Alt-x previous-buffer` and `next-buffer`).
 
-To choose a buffer interactively, use `C-x b` (aka `M-x
+To choose a buffer interactively, use `C-x b` (aka `Alt-x
 list-buffers`). You are presented a completion window. Type some text
 to start narrowing the buffers list matching your entry. But that's not all.
 
@@ -226,11 +226,11 @@ A buffer contains some text to display, but is not necessarily tied to a file.
 Try using the `C-x b` command and typing the name of a buffer that
 doesn't exist. Lem will ask confirmation to create it. If you confirm,
 you'll get a buffer that is not tied to a file on your filesystem. You
-can write whatever you want, as well as enable a major mode (`M-x
-lisp-mode`, `M-x markdown-mode`…). You'll note that the command `C-x
+can write whatever you want, as well as enable a major mode (`Alt-x
+lisp-mode`, `Alt-x markdown-mode`…). You'll note that the command `C-x
 C-s` (`save-current-buffer`) doesn't work, saying "No file name". This
 is correct, no file is associated to this buffer. To save this buffer
-to a new file, use `C-x C-w` (`M-x write-file`). It asks for a
+to a new file, use `C-x C-w` (`Alt-x write-file`). It asks for a
 filename, and saves the buffer to disk.
 
 ### Windows
@@ -249,7 +249,7 @@ To make the current window disappear, use `C-x 0` (a zero) (`delete-active-windo
 
 To switch windows (aka splits of a screen), use `C-x o` ('o' letter) or `M-o`.
 
-To switch to the previously active window, use `M-x
+To switch to the previously active window, use `Alt-x
 switch-to-last-focused-window`, which is not bound to a key by
 default.
 
@@ -271,7 +271,7 @@ For the full list of keybindings please see the [keybindings page](/usage/keybin
 
 On SDL2, Lem is open in a desktop window, which we'll call frame for the context of Lem.
 
-You can programatically call `M-x maximize-frame` and `M-x
+You can programatically call `Alt-x maximize-frame` and `Alt-x
 minimize-frame`, or bind these commands to key bindings, to make the
 frame bigger, or have it minimized.
 
@@ -280,7 +280,7 @@ frame bigger, or have it minimized.
 
 Lem has a rudimentary support for tabs.
 
-Activate the tab bar with `M-x toggle-tabbar`. This shows a tab for every buffer.
+Activate the tab bar with `Alt-x toggle-tabbar`. This shows a tab for every buffer.
 
 On the GUI version of Lem, you can click on them.
 
@@ -310,7 +310,7 @@ The frame multiplexer bindings start with `C-z`:
 
 The frame multiplexer is enabled by default. It shows a buffer indicator on the top left corner of the editor.
 
-You can disable it with `M-x toggle-frame-multiplexer`.
+You can disable it with `Alt-x toggle-frame-multiplexer`.
 
 Well, if you want to be sure, add this in your Lem init file (`~/.lem/init.lisp` or `~/.config/lem/init.lisp` since Lem 2.2):
 
@@ -319,7 +319,7 @@ Well, if you want to be sure, add this in your Lem init file (`~/.lem/init.lisp`
 
 ## vi and emacs modes
 
-Use `M-x vi-mode` and `M-x emacs-mode`.
+Use `Alt-x vi-mode` and `Alt-x emacs-mode`.
 
 You can also start Lem in any given mode by adding this in your init file:
 
@@ -357,15 +357,15 @@ and in vi-mode:
 
 ## Describe keys
 
-To know what function is bound to a key binding, use `C-x ?` (`M-x describe-key`).
+To know what function is bound to a key binding, use `C-x ?` (`Alt-x describe-key`).
 
 ## Describe and list available bindings
 
-To see the available key bindings in the current keymap, use `M-x describe-bindings`.
+To see the available key bindings in the current keymap, use `Alt-x describe-bindings`.
 
-You can use `M-x describe-mode` to understand in which mode the editor is in the current buffer.
+You can use `Alt-x describe-mode` to understand in which mode the editor is in the current buffer.
 
-You can do more and *list all Lem's existing keybindings* with `M-x documentation-describe-bindings`. It inspects Lem and lists keybindings, grouped by modes:
+You can do more and *list all Lem's existing keybindings* with `Alt-x documentation-describe-bindings`. It inspects Lem and lists keybindings, grouped by modes:
 
 - move, edit, mark, word, S-expressions, file, buffer, window, multiple-cursors, process, help, font and other.
 
@@ -378,23 +378,23 @@ You can do more and *list all Lem's existing keybindings* with `M-x documentatio
 
 Lem supports recording and playing keyboard macros.
 
-Start recording with `C-x (` (`M-x kbdmacro-start`).
+Start recording with `C-x (` (`Alt-x kbdmacro-start`).
 
 Now, press the keys and keyboard shortcuts that you want to replay automatically.
 
-Stop recording with `C-x )` (`M-x kbdmacro-end`).
+Stop recording with `C-x )` (`Alt-x kbdmacro-end`).
 
-And now, re-play your key combination with `C-x e` (`M-x kbdmacro-execute`).
+And now, re-play your key combination with `C-x e` (`Alt-x kbdmacro-execute`).
 
-Another command you might want to use is `M-x apply-macro-to-region-lines`,
+Another command you might want to use is `Alt-x apply-macro-to-region-lines`,
 to re-play the macro only in the selected region.
 
 
 ## grep
 
-    M-x grep
+    Alt-x grep
 
-this presents the results in a two-panes window. You can edit lines in the results buffer, changes are reflected immediately on the files, and updated on the right side. You can use search and replace `M-x query-replace` in the results buffer.
+this presents the results in a two-panes window. You can edit lines in the results buffer, changes are reflected immediately on the files, and updated on the right side. You can use search and replace `Alt-x query-replace` in the results buffer.
 
 > To set the default args for grep command, put this in your `~/.lem/init.lisp` file.
 > ```
@@ -433,19 +433,19 @@ CL-USER> (lem/grep:change-grep-command "git grep")
 "git grep -nHI "
 ```
 
-See also: `M-x project-grep`, bound to `C-x p g`.
+See also: `Alt-x project-grep`, bound to `C-x p g`.
 
 
 ## multiple cursors
 
-Use `M-C` (Alt and capital c), `M-x add-cursors-to-next-line` to add a cursor to the next line.
+Use `M-C` (Alt and capital c), `Alt-x add-cursors-to-next-line` to add a cursor to the next line.
 
 ## opening links
 
 Lem will recognize some forms of links, specifically **URLs** and
 **links to files**, and will write them with a special face attribute
 (in my case, an underscore). You can open such a link with the command
-`M-x open-link` (not bound to a key by default).
+`Alt-x open-link` (not bound to a key by default).
 
 - URL: opens your web browser
 - file (the link must start with `file://`): Lem opens the file.
@@ -462,7 +462,7 @@ Start legit with:
 
     C-x g
 
-or `M-x legit-status`.
+or `Alt-x legit-status`.
 
 Available features are:
 
@@ -494,7 +494,7 @@ Use `Alt-x claude-code` to connect to a local `claude` server and start a sessio
 
 ### Code formatting
 
-Use `M-x format-current-buffer`, or enable auto-formatting like this:
+Use `Alt-x format-current-buffer`, or enable auto-formatting like this:
 
     (setf lem:*auto-format* t)
 
@@ -503,7 +503,7 @@ Formatters are currently defined for c (`clang-format`), go (`gofmt`), js and js
 
 ### Color preview
 
-Use: `M-x color-preview` to highlight strings denoting a color (such as "blue" or "#ffffff") in their color.
+Use: `Alt-x color-preview` to highlight strings denoting a color (such as "blue" or "#ffffff") in their color.
 
 ### Color picker (SDL2)
 
@@ -529,24 +529,24 @@ Read its documentation on its [dashboard documentation](/modes/dashboard).
 
 ### Read-only
 
-Use: `M-x toggle-read-only`
+Use: `Alt-x toggle-read-only`
 
 aka `(lem-core/commands/buffer:toggle-read-only)`
 
 ### Auto-save
 
-Use: `M-x auto-save-mode`, aka `(lem/auto-save::auto-save-mode t)`.
+Use: `Alt-x auto-save-mode`, aka `(lem/auto-save::auto-save-mode t)`.
 
 This one is a global mode: autosave is enabled for all buffers.
 
-You can also use a minor mode: `M-x toggle-auto-save`, aka
+You can also use a minor mode: `Alt-x toggle-auto-save`, aka
 `(lem/auto-save:toggle-auto-save)`, to enable auto-save for the
 current buffer only.
 
 
 ### Full screen
 
-Use: `M-x toggle-frame-fullscreen`
+Use: `Alt-x toggle-frame-fullscreen`
 
 ### Line highlighting
 
@@ -564,7 +564,7 @@ color (see `src/highlight-line.lisp`).
 
 ### Line numbers
 
-Use: `M-x toggle-line-numbers`
+Use: `Alt-x toggle-line-numbers`
 
 or `(lem/line-numbers:toggle-line-numbers)`
 
@@ -574,7 +574,7 @@ Use `(setf lem/line-numbers:*relative-line* t)` to use relative line numbers (ad
 
 Use the following to turn line wrapping off and on again:
 
-    M-x toggle-line-wrap
+    Alt-x toggle-line-wrap
 
 which you can also do like this in Lisp in your init file:
 
@@ -601,7 +601,7 @@ to the terminal, so the feature is available in an optional contrib module.
 
 You can try it with:
 
-    M-x load-contrib RET mouse-sgr1006 RET
+    Alt-x load-contrib RET mouse-sgr1006 RET
 
 and now you can click around in windows.
 
