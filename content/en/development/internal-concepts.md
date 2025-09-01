@@ -217,3 +217,50 @@ line, and have no borders: they are not a pop-up window.
        :gravity :cursor
        :use-border nil))))
 ```
+
+## Buttons
+
+Lem makes it easy to display buttons, with text and/or icons: place
+them at a given point, define an action to run on click, and voilà:
+
+```lisp
+(in-package :lem)
+
+(defun btn-clicked ()
+  (message "clicked!"))
+
+(lem/button:insert-button (current-point) "hello btn" #'btn-clicked)
+```
+
+This "hello btn" text isn't styled in any way, it is just text. But
+you can click on it and trigger an action.
+
+Clicking might not work in your terminal, though.
+
+The full `insert-button` signature is:
+
+    (defun insert-button (point text &optional callback &rest plist)
+
+It accepts any other argument as a plist. This can be used to give:
+
+```
+:button-tag
+:attribute
+```
+
+or any other key-value pair to the `make-button` constructor.
+
+Buttons are used in the lisp inspector, in the dashboard, in the
+Claude Code window, and other places.
+
+See:
+
+- [`src/ext/button.lisp`](https://github.com/lem-project/lem/blob/main/src/ext/button.lisp)
+
+### Icons
+
+You can add an icon to your button:
+
+~~~lisp
+(lem/button:insert-button point (lem:icon-string "down-pointing-triangle") #'btn-clicked)
+~~~
