@@ -45,7 +45,7 @@ Lem is written and extensible in Common Lisp.
 
 <--->
 
-### GUI version using SDL2
+### GUI version with webview or SDL2
 
 <a href="/sdl2.png"> <img class="" src="/sdl2.png" alt=""> </a>
 
@@ -53,6 +53,8 @@ Since version 2.0, a GUI version is also available.
 
 It brings graphics and mouse support, as well as games and over 180
 colour themes.
+
+The webview will eventually replace the SDL2 version.
 
 {{< /columns >}}
 
