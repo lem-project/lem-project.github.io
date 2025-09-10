@@ -177,32 +177,19 @@ To delete all the current buffer overlays, use `(clear-overlays)` (you
 can also call this with `M-:`).
 
 
-### Text properties, attributes
+### Attributes
 
-Attributes allow to display rich text: bold, italic, foreground and background colors… but
-they also allow to store metadata in buffer strings. In that case,
-attributes are invisible.
+Attributes define how to display rich text: bold, italic, foreground and background colors…
 
-For example, Legit's status buffer displays a line of text `Untracked
-Files` with the built-in attribute `:header-marker`, like this:
-
-```lisp
-(put-text-property start point :header-marker t))
-;;                             ^^ attribute  ^^^ attribute value
-```
-
-Thanks to it, we can implement a keyboard shortcut to navigate from
-one heading to another.
-
-Attributes are created with `define-attribute name (specs)`
-where `specs` is a list of properties for a `:light` theme, a `:dark` one, or all (`t`).
+They are created with `define-attribute name (specs)`
+where `specs` is a list of any number of properties for a `:light` theme, a `:dark` one, or all (`t`).
 
 ```lisp
 (define-attribute filename-attribute
   (t :foreground :base0D))
 ```
 
-Built-in attributes are defined in `src/attributes.lisp`, such as:
+Built-in attributes are defined in [`src/attributes.lisp`](https://github.com/lem-project/lem/blob/main/src/attribute.lisp), such as:
 
 ```lisp
 ;; built-in attributes
@@ -228,3 +215,33 @@ Built-in attributes are defined in `src/attributes.lisp`, such as:
 ```
 
 and so on.
+
+### Text properties
+
+Text properties allow to store metadata in buffer strings. They are invisible.
+
+For example, Legit's status buffer displays a line of text `Untracked
+Files` with the built-in attribute `:header-marker`, like this:
+
+```lisp
+(put-text-property start point :header-marker t))
+;;                             ^^ attribute  ^^^ attribute value
+```
+
+Thanks to it, we can implement a keyboard shortcut to navigate from
+one heading to another.
+
+More functions:
+
+```lisps
+(defun text-property-at (point prop &optional (offset 0))
+  "Return the property of 'prop' at the offset position from 'point' to 'offset'."
+
+(defun remove-text-property (start-point end-point prop)
+  "Remove one property from text from START-POINT to END-POINT.
+  The third argument PROP is a property to remove."
+```
+
+See more:
+
+- [src/buffer/internal/basic.lisp](https://github.com/lem-project/lem/blob/main/src/buffer/internal/basic.lisp)
