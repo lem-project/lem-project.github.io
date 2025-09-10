@@ -101,7 +101,9 @@ For example, this is how the command `mark-set-whole-buffer` is implemented:
   (message "Mark set whole buffer"))
 ```
 
-### Adding and showing meta data on top of content - overlays
+### Overlays: showing meta data on top of content
+
+#### What are overlays?
 
 Overlays allow to complement the buffer's text with all sort of
 metadata. It is visible, it appears "around" the text (in the left
@@ -113,48 +115,71 @@ effect around it: it was an overlay that was created, and quickly
 deleted. When you evaluate a Lisp form, its result is showed on its
 right: it is an overlay.
 
-Overlays are defined in `src/overlays.lisp`. An overlay is defined by
-a class, with slots: `start, end, temporary, buffer, attribute, plist,
-alivep`.
+An overlay is defined by a class, with slots: `start, end, temporary,
+buffer, attribute, plist, alivep`.
 
-The class `line-endings-overlay` extends a base overlay with slots: `text, offset`.
+We access those slots with:
 
-We also have `cursor-overlay`.
+```lisp
+overlay-start
+overlay-end
+overlay-attribute
+overlay-buffer
+etc
+```
 
-When an overlay is created (with `make-overlay` and the corresponding
+The class `line-endings-overlay` extends a base overlay with more slots: `text, offset`.
+
+<!-- XXX: what are they? -->
+<!-- We also have `cursor-overlay`. -->
+
+See:
+
+- [src/overlays.lisp](https://github.com/lem-project/lem/blob/main/src/overlay.lisp)
+
+#### How to create overlays
+
+When an overlay is created (with `make-overlay` and the other corresponding
 constructor functions), it is automatically pushed to the buffer's
 list of overlays, and is displayed.
 
 ```lisp
 ;;; src/overlays.lisp
-(defun make-overlay (start end attribute
-                     &key (start-point-kind :right-inserting)
-                          (end-point-kind :left-inserting)
-                          temporary)
-  (make-instance 'overlay
-                 :start (copy-point start start-point-kind)
-                 :end (copy-point end end-point-kind)
-                 :attribute attribute
-                 :buffer (point-buffer start)
-                 :temporary temporary))
+(make-overlay start end attribute
+              &key (start-point-kind :right-inserting)
+                   (end-point-kind :left-inserting)
+                   temporary)
 ```
 
 For example:
 
+~~~lisp
+(make-overlay (current-point) (current-point) 'syntax-warning-attribute)
+~~~
+
+buuut… it might be difficult to see.
+
+Here we create an overlay at the line end with some text to display:
+
 ```lisp
-(make-line-endings-overlay (current-point) (current-point) 'lem-lisp-mode/eval::eval-error-attribute :text "hello")
+(make-line-endings-overlay (current-point) (current-point) 'syntax-warning-attribute :text "hello")
 ```
-This creates an overlay at the end of the line, showing "hello".
 
-Delete all the current buffer overlays with `(clear-overlays)` (use
-`M-:` M-x `lisp-eval-string`).
+This creates an overlay at the end of the line, showing "hello" in red (the color of our attribute).
 
-The `attribute` argument of the constructor functions lead us to… attributes.
+Learn about attributes below.
+
+#### How to delete overlays
+
+To delete a given overlay, use `delete-overlay` with your overlay object as argument.
+
+To delete all the current buffer overlays, use `(clear-overlays)` (you
+can also call this with `M-:`).
 
 
 ### Text properties, attributes
 
-Attributes allow to display rich text: bold, italic, with colors… but
+Attributes allow to display rich text: bold, italic, foreground and background colors… but
 they also allow to store metadata in buffer strings. In that case,
 attributes are invisible.
 
@@ -169,7 +194,8 @@ Files` with the built-in attribute `:header-marker`, like this:
 Thanks to it, we can implement a keyboard shortcut to navigate from
 one heading to another.
 
-Attributes are created with `define-attribute name (specs)`:
+Attributes are created with `define-attribute name (specs)`
+where `specs` is a list of properties for a `:light` theme, a `:dark` one, or all (`t`).
 
 ```lisp
 (define-attribute filename-attribute
@@ -202,4 +228,3 @@ Built-in attributes are defined in `src/attributes.lisp`, such as:
 ```
 
 and so on.
-
