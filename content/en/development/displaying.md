@@ -154,10 +154,17 @@ list of overlays, and is displayed.
 For example:
 
 ~~~lisp
-(make-overlay (current-point) (current-point) 'syntax-warning-attribute)
+LEM> (defparameter myoverlay (make-overlay (current-point) (current-point) 'syntax-warning-attribute))
+;; => #<LEM-CORE::OVERLAY {1206A500A3}>
+LEM>
 ~~~
 
-buuut… it might be difficult to see.
+To best see this snippet's effect, run this in the REPL, in the `lem`
+package. You will see the REPL output and the last REPL prompt printed
+in red. This is because the overlay is taking effect. Continue typing,
+it still has effect.
+
+You can try with another attribute, for example `'region` will give you a light grey background.
 
 Here we create an overlay at the line end with some text to display:
 
@@ -165,13 +172,17 @@ Here we create an overlay at the line end with some text to display:
 (make-line-endings-overlay (current-point) (current-point) 'syntax-warning-attribute :text "hello")
 ```
 
-This creates an overlay at the end of the line, showing "hello" in red (the color of our attribute).
+This shows "hello" in red (the color of our attribute) at the end of the current line.
 
 Learn about attributes below.
 
 #### How to delete overlays
 
 To delete a given overlay, use `delete-overlay` with your overlay object as argument.
+
+```lisp
+LEM> (delete-overlay myoverlay)
+```
 
 To delete all the current buffer overlays, use `(clear-overlays)` (you
 can also call this with `M-:`).
