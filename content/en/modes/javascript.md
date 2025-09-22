@@ -8,8 +8,8 @@ LSP is built-in for JavaScript mode.
 
 Its config is defined in the package `lem-js-mode/lsp-config`.
 
-Before January, 2025, you ha to add a configuration snippet
-yourself. This is an example:
+Before January, 2025, you had to add a configuration snippet
+yourself. An example:
 
 ```lisp
 (lem-lsp-mode/lsp-mode::define-language-spec
