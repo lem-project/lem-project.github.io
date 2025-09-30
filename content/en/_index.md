@@ -21,7 +21,7 @@ Many languages are supported with Lem's **built-in LSP support**.
 
 In addition, after installing lem, you can start developing in Common Lisp and extend the editor while it runs.
 
-{{< button size="large" relref="installation/ncurses/linux" >}}Getting Started{{< /button >}}
+{{< button size="large" relref="installation/" >}}Getting Started{{< /button >}}
 
 ## Feature overview
 
