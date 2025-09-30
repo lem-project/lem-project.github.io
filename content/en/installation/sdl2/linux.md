@@ -3,6 +3,9 @@ title: GNU/Linux
 weight: -20
 ---
 
+> **Note:** the SDL2 UI is deprecated in favor of the Webview one. It won't receive updates.
+
+
 ## Using the binary
 
 [Lem has nightly AppImage releases](https://github.com/lem-project/lem/releases)! for Linux, MacOS and Windows.
