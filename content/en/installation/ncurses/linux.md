@@ -105,6 +105,8 @@ export PATH="$HOME/common-lisp/lem:$PATH"
 
 ### Installation with roswell
 
+> Note: the installation with Roswell is deprecated.
+
 Please install roswell at first, [Roswell Installation Guide](https://github.com/roswell/roswell/wiki/Installation).
 
 After that, please follow the steps bellow.
