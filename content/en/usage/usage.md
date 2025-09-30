@@ -7,7 +7,7 @@ This page shows how to use Lem.
 
 You can find a list of available keys and commands in [keybindings](/usage/keybindings/), and you can get this list in Lem itself with `Alt-x documentation-describe-bindings` (new in Lem 2.1).
 
-To learn about a specific mode (support for a programming language, the directory mode…) please see the Extensions section on the menu.
+To learn about a specific mode (support for a programming language, the directory mode…) please see the `Lem modes` section on the menu.
 
 This documentation is improved continually.
 
@@ -29,8 +29,6 @@ To **run an interactive command by name**: `Alt-x`.
 To show the context menu: `Shift-F10`.
 
 Quit Lem with `C-x C-c`.
-
-See this Emacs & Slime cheatsheet to find more: https://lispcookbook.github.io/cl-cookbook/emacs-ide.html#appendix
 
 ## Call commands by name
 
