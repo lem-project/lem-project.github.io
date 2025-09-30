@@ -1,9 +1,17 @@
 ---
-title: Copilot
+title: AI - Copilot, Claude Code
 weight: 20
 ---
 
-Lem supports Copilot completions.
+Lem integrates Claude Code and Copilot.
+
+## Claude Code AI
+
+Use `Alt-x claude-code` to connect to a local `claude` server and start a session.
+
+![](/claude.png "Lem's prompt with Claude Code")
+
+## Copilot
 
 While editing a source file, Lem shows completions in an
 overlay. Below it suggests a function body for factorial, and we see
@@ -13,13 +21,14 @@ Lem's function signature default help.
 
 You might need to install the Copilot dependencies (see below).
 
-## Login
+
+### Login
 
 To login, use `M-x copilot-signin`.
 
 After logging in, open a source file and edit it. The completion will be performed.
 
-## Browsing and accepting changes
+### Browsing and accepting changes
 
 Use `Tab` to accept a suggestion (`copilot-accept-suggestion`)
 
@@ -28,14 +37,14 @@ See the next suggestion with `M-n` (`copilot-next-suggestion`),
 see the previous one with `M-p`.
 
 
-## Other commands
+### Other commands
 
 `M-x copilot-install-server`: install the required npm `copilot-node-server` dependency.
 
 `M-x copilot-restart`: restart the Copilot process.
 
 
-## Configuration
+### Configuration
 
 Lem's Copilot mode uses the `*copilot-completion-keymap*` keymap to
 define keys, inside the Lisp package `lem-copilot`.
