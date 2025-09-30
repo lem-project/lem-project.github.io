@@ -3,7 +3,10 @@ title: Windows
 weight: -20
 ---
 
+
 [Lem has nightly AppImage releases](https://github.com/lem-project/lem/releases)! for Linux, MacOS and Windows.
+
+> **Note:** the SDL2 UI is deprecated in favor of the Webview one. It won't receive updates.
 
 #### Keyboard Layout
 
