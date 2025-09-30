@@ -1,6 +1,6 @@
 ---
-title: Lem SDL2
-weight: 20
+title: Lem WebView
+weight: -15
 geekdocCollapseSection: true
 ---
 
@@ -23,18 +23,34 @@ Dependencies:
 
 ### Install SBCL and SDL2 libraries
 
-- Debian-like distro
+- **Debian**-like distro
 
 ```
-sudo apt install sbcl build-essential libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev fd-find
+sudo apt install sbcl build-essential  fd-find libgtk-4-dev libwebkitgtk-6.0-dev
 ```
 
-- Fedora-like distro
+- **Fedora**-like distro
 
 ```
-sudo dnf install sbcl SDL2-devel SDL2_image-devel SDL2_ttf-devel fd-find
+sudo dnf install sbcl fd-find gtk4-devel webkitgtk6.0-devel
 sudo dnf group install c-development development-tools
 ```
+
+- **MacOS**: install WebKit.
+
+- **Windows**:
+
+```
+    WebView2 from NuGet.
+    Windows libraries: advapi32 ole32 shell32 shlwapi user32 version
+```
+
+- **FreeBSD**:
+
+```
+pkg install sbcl webkit2-gtk4
+```
+
 
 ### Install qlot
 
@@ -46,50 +62,25 @@ curl -L https://qlot.tech/installer | bash
 
 > **Note:** For an alternative installation, see https://github.com/fukamachi/qlot#installation
 
-### Download and install
-
-There are two ways to install Lem:
-
-**1. Local installation:**
-
-```
-mkdir $HOME/common-lisp
-cd $HOME/common-lisp
-git clone https://github.com/lem-project/lem.git
-cd lem && make sdl2
-```
-
-> **Note:** You can also run `make sdl2-ncurses` to build Lem with both the SDL2 and ncurses interfaces. You can then choose the interface at startup with `-i / --interface`, either "sdl2" or "ncurses".
-
-Then add the executable to your PATH by adding this line to your `~/.bashrc`:
-
-```
-export PATH="$HOME/common-lisp/lem:$PATH"
-```
-
-**2. System-wide installation:**
+### Build
 
 ```
 git clone https://github.com/lem-project/lem.git
-cd lem
+cd lem && make webview
 ```
 
-First ensure qlot is installed for the root user:
-```
-sudo bash -c "curl -L https://qlot.tech/installer | bash"
-```
 
-Then install Lem:
+Optionnally, do:
+
 ```
 sudo make install
 ```
 
 This will:
 
-- Build Lem with both SDL2 and ncurses interfaces
 - Install the executable system-wide
 - Add a desktop entry file with relevant file associations
-- Configure SDL2 as the default interface
+- Configure webview as the default interface
 
 You can still switch between interfaces using the `-i / --interface` option when launching Lem.
 
