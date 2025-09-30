@@ -95,31 +95,54 @@ They were initially added for the Claude Code integration.
 <img class="" src="/lem-attach-buffer.png" alt="Lem's attached buffers concept.">
 
 
-## Moving the point
+## The Point
 
 The point is the cursor's location.
 
 <!-- TODO: add internal/point.lisp package documentation about points and their :kind types -->
 
-You may use these functions:
+`point` is an object that points to the position of some text in the buffer.
 
-```
-(current-point)
-(copy-point)
-(point=) ;; and other comparison functions
-(point-max)
-(move-point point new-point)
-```
-
-The macro `(save-excursion …)` will run its body and preserve the
-point position from before the macro was called.
+This is its definition:
 
 ```lisp
-(save-excursion
-   (move-point (current-point) point)
-   (prompt-for-string
-    "Say hi: "))
+(defclass point ()
+  ((buffer
+    :reader point-buffer
+    :type buffer)
+   (linum
+    :accessor point-linum
+    :type fixnum)
+   (line
+    :accessor point-line
+    :type line)
+   (charpos
+    :accessor point-charpos
+    :type fixnum)
+   (kind
+    :reader point-kind
+    :type point-kind)))
 ```
+
+It has a `buffer` slot, a `line` number, and `charpos` is an offset from the beginning of the line, starting at zero.
+
+`point` has a `kind` type. This is important as it defines how the
+text at point moves or not when you insert content before it.
+
+If you insert content at the point position, with `:right-inserting` the original position is unchanged, and with `:left-inserting` the position is adjusted by the length of your edit.
+
+When `kind` is `:left-inserting`, and if you insert content *before* the point, then the point position is adjusted by the length of your edit.
+
+When `kind` is `:temporary`, the point is used for temporary reads.  The
+overhead on creation and deletion is low, and there is no need to
+explicitly delete the point.  If you edit the buffer before the
+position, the `point` cannot be used correctly any more.
+
+When using `:left-inserting` or `:right-inserting`, you must explicitly delete the point after use with `delete-point`. For this reason, you should use the macro `with-point`, which automatically deletes it.
+
+Use `with-points` to define points to use in the macro body, to ensure they are deleted.
+
+Use `save-excursion` to move around the given point in the macro body, and come back to it once done.
 
 See:
 
@@ -138,6 +161,27 @@ point should be discarded. You can use `make-point` and
   ...)
 ~~~
 
+## Moving the point
+
+You may use these functions on a point object:
+
+```
+(current-point)
+(copy-point)
+(point=) ;; and other comparison functions
+(point-max)
+(move-point point new-point)
+```
+
+The macro `(save-excursion …)` will run its body and preserve the
+point position from before the macro was called.
+
+```lisp
+(save-excursion
+   (move-point (current-point) point)
+   (prompt-for-string
+    "Say hi: "))
+```
 
 ## Prompts
 
