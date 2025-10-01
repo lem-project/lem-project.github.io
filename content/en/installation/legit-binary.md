@@ -27,3 +27,5 @@ Now, simply run `legit` on a project:
     $ legit
 
 to see its status, and start working.
+
+This Git UI isn't only a UI, it's a complete code editor.
