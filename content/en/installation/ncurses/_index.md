@@ -69,12 +69,17 @@ Important places from the script installation:
 
 ### Optional dependencies
 
-This is a list of optional programs that we advise to install along of Lem:
+This is a list of optional programs that we advise to install along of Lem.
+
+On a Debian system:
 
 ```
+libvterm-dev
 fd
 ```
 
+- `libvterm-dev` is a C library that abstracts xterm-like terminals. See: [libvterm](https://www.leonerd.org.uk/code/libvterm/), [GitHub mirror](https://github.com/neovim/libvterm).
+  - Lem needs libvterm version >= 3.3 to provide a terminal inside Lem.
 - [fd](https://github.com/sharkdp/fd) or `fd-find` on Debian repositories: if present, Lem will use it in commands that find files recursively (see Usage: Opening Files). `fd` respects .gitignore by default and ignores common large development directories such as `node_modules/`. If it isn't present, Lem will fallback to a full Lisp solution.
 
 ### Install SBCL and ncurses library

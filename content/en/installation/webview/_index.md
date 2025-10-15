@@ -21,12 +21,17 @@ Dependencies:
 - [qlot](https://github.com/fukamachi/qlot)
 - [git](https://git-scm.com/)
 
-### Install SBCL and SDL2 libraries
+Optional but advised:
+
+- `libvterm-dev` >= 3.3
+- [fd](https://github.com/sharkdp/fd) or `fd-find`
+
+### Install SBCL and Webkit libraries
 
 - **Debian**-like distro
 
 ```
-sudo apt install sbcl build-essential  fd-find libgtk-4-dev libwebkitgtk-6.0-dev
+sudo apt install sbcl build-essential libgtk-4-dev libwebkitgtk-6.0-dev libvterm-dev fd-find
 ```
 
 - **Fedora**-like distro
