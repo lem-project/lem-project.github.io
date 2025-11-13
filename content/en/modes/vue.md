@@ -50,3 +50,5 @@ and its default configuration:
 
 (define-file-type ("vue") vue-mode)
 ```
+
+![](/vue-mode-detail.png "Vue-mode highlighting in Lem.")
