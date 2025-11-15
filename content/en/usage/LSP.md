@@ -5,9 +5,9 @@ weight: 10
 
 **Warning**
 
-LSP integration is still in development.
+LSP integration is working, but considered still in development.
 
-For more information https://github.com/lem-project/lem/issues/602 and https://github.com/lem-project/lem/issues/578
+For more information, see: https://github.com/lem-project/lem/issues/602
 
 For information on each supported programming language, see the Modes menu.
 
@@ -16,7 +16,7 @@ For information on each supported programming language, see the Modes menu.
 For some languages it should work without doing anything (for example
 Go, if you have `gopls`). Otherwise, a configuration step is required.
 
-This is an example JS config for LSP. Place it in your `~/.lem/init.lisp` (or `~/.config/lem/init.lisp` since Lem 2.2) (or evaluate it with `M-:`).
+This is an example JS config for LSP. Place it in your `~/.config/lem/init.lisp` (or evaluate it with `M-:`).
 
 ```lisp
 (lem-lsp-mode/lsp-mode::define-language-spec
@@ -28,3 +28,5 @@ This is an example JS config for LSP. Place it in your `~/.lem/init.lisp` (or `~
   :readme-url "https://github.com/typescript-language-server/typescript-language-server"
   :connection-mode :stdio)
 ```
+
+![](/lem-lsp.gif "Lem LSP demo")
