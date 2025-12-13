@@ -352,6 +352,64 @@ and in vi-mode:
 (define-key lem-vi-mode:*insert-keymap* "C-n" 'lem/abbrev:abbrev-with-pop-up-window)
 ~~~
 
+## Bookmarks
+
+Bookmarks are paths to files or directories that make it easy to open them.  Each
+bookmark has a name and possibly a position associated with it.
+
+They are not persisted automatically, so you can set temporary bookmarks for a work session.
+
+The interactive commands are the following.
+
+- `bookmark-set RET name RET`, used to **create a new bookmark**, which points to the file
+of the current buffer and the current cursor position.  The name of the bookmark will be
+prompted for.
+    - If you wish to not associate a position with the bookmark, you can use `bookmark-set-no-position`.  This might be useful, if another package is managing file positions for you.
+    - see also: `bookmark-rename`, `bookmark-relocate`, `bookmark-set-no-position-no-overwrite`, `bookmark-set-no-overwrite`.
+- `bookmark-save` is used to save the bookmarks to disk.
+  - they are not saved automatically, so that you can set temporary bookmarks for a work session. To do so, see below.
+- `bookmark-jump`: open a previously set bookmark.
+- `bookmark-load` loads the bookmarks from disk.
+  - the variable `*file*` configures from which file the bookmark information is read from/saved to:
+
+```lisp
+(defvar *file* #P"bookmarks.lisp-expr"
+  "File in which bookmarks are saved.
+If the file is a relative path, it is relative to LEM-HOME.")
+```
+
+- `bookmark-delete` prompts for a bookmark name and deletes it from memory.
+- `bookmark-delete-all` prompts for confirmation and deletes all loaded bookmarks.
+
+The keymap `*keymap*` has some pre-defined mappings for most of the available commands:
+
+```lisp
+(define-key *keymap* "x" 'bookmark-set)
+(define-key *keymap* "X" 'bookmark-set-no-overwrite)
+(define-key *keymap* "m" 'bookmark-set)
+(define-key *keymap* "M" 'bookmark-set-no-overwrite)
+(define-key *keymap* "j" 'bookmark-jump)
+(define-key *keymap* "g" 'bookmark-jump)
+(define-key *keymap* "l" 'bookmark-load)
+(define-key *keymap* "s" 'bookmark-save)
+(define-key *keymap* "d" 'bookmark-delete)
+(define-key *keymap* "D" 'bookmark-delete-all)
+(define-key *keymap* "r" 'bookmark-rename)
+(define-key *keymap* "R" 'bookmark-rename-no-overwrite)
+(define-key *keymap* "h" 'bookmark-relocate)
+```
+
+This keymap is not bound globally, you can do so like this:
+
+~~~lisp
+(define-key *global-keymap* "C-x b" lem-bookmark:*keymap*)
+~~~
+
+
+Bookmarks are defined in the `:lem-bookmark` package.
+
+Use `(describe (find-package \"lem-bookmark\"))` to find all available commands.
+
 
 ## Describe keys
 
