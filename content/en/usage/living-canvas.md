@@ -26,10 +26,10 @@ This visualization helps with:
 
 ### Visualize a Package
 
-Use `M-x living-canvas` and enter a package name:
+Use `Alt-x living-canvas` and enter a package name:
 
 ```
-M-x living-canvas
+Alt-x living-canvas
 Package name: lem-core
 ```
 
@@ -37,18 +37,18 @@ This displays all functions in the package and their call relationships.
 
 ### Visualize Current File
 
-Use `M-x living-canvas-current-file` to visualize functions in the current buffer:
+Use `Alt-x living-canvas-current-file` to visualize functions in the current buffer:
 
 ```
-M-x living-canvas-current-file
+Alt-x living-canvas-current-file
 ```
 
 ### Visualize an ASDF System
 
-Use `M-x living-canvas-system` to visualize an entire ASDF system:
+Use `Alt-x living-canvas-system` to visualize an entire ASDF system:
 
 ```
-M-x living-canvas-system
+Alt-x living-canvas-system
 System name: lem
 ```
 
