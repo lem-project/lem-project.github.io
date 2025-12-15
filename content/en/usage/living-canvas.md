@@ -5,11 +5,15 @@ weight: 25
 
 Living Canvas is a visual code analysis feature that displays function call graphs as an interactive, Figma-like canvas. It helps developers understand code structure, relationships, and execution flow.
 
+Supported languages:
+
+- Common Lisp
+
 ![](/living-canvas-demo.gif "Living Canvas - interactive function call graph visualization")
 
 ## Overview
 
-Living Canvas transforms source code into a navigable graph where:
+Living Canvas transforms Common Lisp source code into a navigable graph where:
 - **Nodes** represent functions, macros, and generic functions
 - **Edges** represent function calls between them
 - **Colors** distinguish different types (function, macro, generic-function)
@@ -116,3 +120,7 @@ Living Canvas uses the `lem-living-canvas` package. You can customize keybinding
 (define-key lem-living-canvas:*living-canvas-mode-keymap*
             "r" 'lem-living-canvas:living-canvas-refresh)
 ```
+
+## Future work
+
+- use the Language Server Protocol to make it usable with other languages.
