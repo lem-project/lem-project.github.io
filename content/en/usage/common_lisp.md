@@ -293,12 +293,21 @@ simple command:
 
 ### Using micro with test-runner
 
-It works by using the underlying connection to the lisp server,for now, it only works with the rove
-testing framework.
+It works by using the underlying connection to the lisp server.
 
-The commands available are:
-- `M-x lisp-test-runner-run-current` or (`C-c C-r`): It sends the current test symbol to the connection.
-- `M-x lisp-test-runner-run-buffer` or (`C-c C-R`): Run the test suite of the current buffer.
+For now, it only works with the `rove` testing framework.
+
+For example, have a test function like this:
+
+```lisp
+(deftest foo
+  (ok (= 1 2)))
+```
+
+And use one of the available commands available:
+
+- `M-x lisp-test-runner-run-current` or (`C-c C-r`): send the current test symbol to the connection.
+- `M-x lisp-test-runner-run-buffer` or (`C-c C-R`): run the test suite of the current buffer.
 
 ## APPENDIX: Lem features not found in Emacs and Slime
 
@@ -315,5 +324,6 @@ Lem has some unique features. Did you spot them?
 - in the SDL2 version, double clicks select s-expressions. A middle mouse click inserts a s-expression.
 - Lem handles symbols presentations in a bit more contexts
 - the test-runner functions
+- the Live Canvas for code analysis through an interactive graph.
 
 But don't assume the list is complete ;)
