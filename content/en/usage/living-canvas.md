@@ -8,6 +8,7 @@ Living Canvas is a visual code analysis feature that displays function call grap
 Supported languages:
 
 - Common Lisp
+  - the Living Canvas is integrated with micros RPC system (Lem's fork of Slime) to enable call graph visualization from connected runtimes.
 
 ![](/living-canvas-demo.gif "Living Canvas - interactive function call graph visualization")
 
