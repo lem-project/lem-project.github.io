@@ -17,7 +17,7 @@ geekdocCollapseSection: true
 Dependencies:
 
 - [sbcl](https://www.sbcl.org/)
-- [sdl2](https://www.libsdl.org/)
+- libwebkitgtk-6.0-dev
 - [qlot](https://github.com/fukamachi/qlot)
 - [git](https://git-scm.com/)
 
@@ -67,7 +67,7 @@ curl -L https://qlot.tech/installer | bash
 
 > **Note:** For an alternative installation, see https://github.com/fukamachi/qlot#installation
 
-### Build
+### Build webview
 
 ```
 git clone https://github.com/lem-project/lem.git
@@ -88,6 +88,14 @@ This will:
 - Configure webview as the default interface
 
 You can still switch between interfaces using the `-i / --interface` option when launching Lem.
+
+### Build webview + ncurses
+
+You can build the two frontends with one `make` command:
+
+```
+make webview-ncurses
+```
 
 ## MacOS
 
