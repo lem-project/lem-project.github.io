@@ -5,16 +5,24 @@ weight: 25
 
 Living Canvas is a visual code analysis feature that displays function call graphs as an interactive, Figma-like canvas. It helps developers understand code structure, relationships, and execution flow.
 
-Supported languages:
-
-- Common Lisp
-  - the Living Canvas is integrated with micros RPC system (Lem's fork of Slime) to enable call graph visualization from connected runtimes.
-
 ![](/living-canvas-demo.gif "Living Canvas - interactive function call graph visualization")
+
+## Supported languages
+
+
+| Language | File Extensions | Provider |
+|----------|----------------|----------|
+| Common Lisp | .lisp, .cl, .asd | micros (built-in) |
+| Python | .py, .pyw | tree-sitter |
+| JavaScript | .js, .mjs, .cjs, .jsx | tree-sitter |
+| TypeScript | .ts, .tsx, .mts, .cts | tree-sitter |
+| Go | .go | tree-sitter |
+
+In Common Lisp, the Living Canvas is integrated with micros RPC system (Lem's fork of Slime) to enable call graph visualization from connected runtimes.
 
 ## Overview
 
-Living Canvas transforms Common Lisp source code into a navigable graph where:
+Living Canvas transforms source code into a navigable graph where:
 - **Nodes** represent functions, macros, and generic functions
 - **Edges** represent function calls between them
 - **Colors** distinguish different types (function, macro, generic-function)
@@ -124,4 +132,5 @@ Living Canvas uses the `lem-living-canvas` package. You can customize keybinding
 
 ## Future work
 
-- use the Language Server Protocol to make it usable with other languages.
+- [X] use the Language Server Protocol to make it usable with other languages
+- Project-wide analysis for tree-sitter languages (currently single-file only)
