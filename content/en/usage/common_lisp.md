@@ -57,6 +57,25 @@ You can connect Lem to another, external Lisp process, with `M-x slime-connect`.
 
 This Lisp process must be a `micros` server, and not `swank`.
 
+### REPL commands
+
+- use `C-c C-u` to clear the current input.
+
+REPL history:
+
+- use `M-p` (`listener-previous-input`) to recall previous inputs.
+  - see also `listener-previous-startswith-input` so that the input you recall matches what is written on the current REPL.
+- use `M-n` (`listener-next-input`) to get the next input(s).
+- use `M-r` (`listener-isearch-history-previous`) to interactively search a previous input.
+  - inside this prompt, use `C-r` and `C-s` to cycle between candidates.
+  - see also `listener-previous-matching-input RET regexp RET`, an interactive command to find a previous input matching a regexp.
+
+Clear output:
+
+- use `C-c M-o` (`listener-clear-buffer`) to clear all the REPL buffer.
+
+REPL commands are defined in [`listener-mode.lisp`](https://github.com/lem-project/lem/blob/main/src/ext/listener-mode.lisp).
+
 
 ### Configuration
 
