@@ -1,5 +1,5 @@
 ---
-title: Kotline
+title: Kotlin
 ---
 
 `kotlin-mode` adds Kotlin language support to Lem.
