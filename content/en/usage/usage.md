@@ -539,6 +539,25 @@ and basic support for Mercurial and Fossil.
 
 ![](https://raw.githubusercontent.com/lem-project/lem/main/extensions/legit/lem-status.png)
 
+## Git-gutter
+
+`git-gutter-mode` is a global minor mode that displays `git diff` status in the editor gutter:
+
+- Show markers for added (`+`), modified (`~`), and deleted (`_`) lines with color coding (green/yellow/red)
+- Support configurable comparison reference (default: HEAD) via `git-gutter-set-ref` command
+- Add optional line background highlighting via `*git-gutter-highlight-line*` variable
+- **Real-time updates**: Gutter markers update automatically as you edit (debounced).
+- Non-git files: silently ignored
+
+The available commands are:
+
+- `git-gutter-mode` - Toggle the mode globally
+- `git-gutter-set-ref` - Change the comparison reference
+- `git-gutter-refresh` - Manually refresh current buffer
+- `git-gutter-toggle-line-highlight` - Toggle line background highlighting
+
+Tooling Used: Claude Code (Claude Opus 4.5) for this feature.
+
 
 ## Misc
 
