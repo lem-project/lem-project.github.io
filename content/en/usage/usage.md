@@ -691,3 +691,18 @@ Change the font: `(lem-core:set-font-name "JuliaMono")`.
 NB: on Lem versions older than August, 2025, use `(lem-if:set-font-name "JuliaMono")`.
 
 You can list the available fonts with `fc-list` in Unix.
+
+### Pixel-based positionning
+
+The webview frontend supports precise pixel-based positioning of
+floating windows. This enables smooth sub-character positioning for
+animations, mouse following, and GUI element placement.
+
+You can try some demos with the following commands:
+
+- bouncing window animation demo (`pixel-demo-animate`)
+- mouse-following window demo (`pixel-demo-follow-mouse`)
+- coordinate debug display (`pixel-demo-debug`)
+- side-by-side pixel vs character mode comparison (`pixel-demo-compare`)
+
+The feature was added on [this PR](https://github.com/lem-project/lem/pull/2073) (with a high-level overview).
