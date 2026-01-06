@@ -37,7 +37,7 @@ sudo apt install sbcl build-essential libgtk-4-dev libwebkitgtk-6.0-dev libvterm
 - **Fedora**-like distro
 
 ```
-sudo dnf install sbcl fd-find gtk4-devel webkitgtk6.0-devel
+sudo dnf install sbcl fd-find gtk4-devel webkitgtk6.0-devel webkit2gtk4.1-devel
 sudo dnf group install c-development development-tools
 ```
 
