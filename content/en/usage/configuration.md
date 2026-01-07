@@ -151,6 +151,35 @@ And now we can define the prefix key for our keymap and all its sub-keys command
 
 As a result, we defined `C-z c` for `'frame-mulitplexer-create-with-new-buffer-list`.
 
+### Change the Alt (Meta) key
+
+The editor variable `meta-prefix-keys` allows to treat keys as the Meta (Alt) prefix without timeout.
+
+- when enabled, pressing a prefix key followed by another key produces Meta+key immediately
+- pressing the same prefix key twice produces the prefix key itself
+- implemented in core layer, works across all frontends
+
+Example:
+
+```lisp
+;; Use Escape as Meta prefix (simplest)
+(setf (lem:variable-value 'lem:meta-prefix-keys :global) t)
+
+;; Use a specific key as Meta prefix
+(setf (lem:variable-value 'lem:meta-prefix-keys :global)
+      (lem:make-key :ctrl t :sym ";"))
+
+;; Use multiple keys as Meta prefix
+(setf (lem:variable-value 'lem:meta-prefix-keys :global)
+      (list (lem:make-key :sym "Escape")
+            (lem:make-key :ctrl t :sym ";")))
+```
+
+| Input | Output |
+|-------|--------|
+| Escape x | M-x |
+| Escape Escape | Escape |
+| Escape C-c | M-C-c |
 
 ## Undefining keys
 
