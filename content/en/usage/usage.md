@@ -558,6 +558,27 @@ The available commands are:
 
 Tooling Used: Claude Code (Claude Opus 4.5) for this feature.
 
+### legit-browse-remote: open current file/line on GitHub
+
+Use `Alt-x legit-browse-remote` to open the current file at the current line in GitHub.
+
+When the region is active, it selects a range of lines (e.g., `#L10-L20`).
+
+Example supported URL formats:
+
+| Input | Parsed |
+|-------|--------|
+| `git@github.com:owner/repo.git` | owner/repo |
+| `git@github.com:owner/repo` | owner/repo |
+| `https://github.com/owner/repo.git` | owner/repo |
+| `https://github.com/owner/repo` | owner/repo |
+
+You can configure these settings:
+
+- `lem/legit/browse:*default-remote*`: a variable to change the default git remote name (default: `"origin"`)
+
+This feature currently only works to open projects on GitHub. We will expand it, pull
+requests are also possible.
 
 ## Misc
 
