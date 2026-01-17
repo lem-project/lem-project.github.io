@@ -8,6 +8,9 @@ TypeScript is supported and enabled for the ".ts" and ".tsx" file
 extensions. It relies on `typescript-language-server`, `typescript`
 and `prettier` for auto formatting.
 
+Syntax highlighting is done with tree-sitter and fallsback to a
+tmLanguage grammar if tree-sitter isn't available.
+
 This is its default LSP configuration:
 
 ```lisp

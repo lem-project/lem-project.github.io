@@ -5,6 +5,19 @@ weight: -3
 
 Lem integrates [tree-sitter](https://tree-sitter.github.io/tree-sitter/) for advanced syntax highlighting and indentation. Tree-sitter provides incremental parsing that can efficiently update syntax trees as you edit, enabling features that understand code structure rather than just patterns.
 
+## Supported Languages
+
+The following modes have tree-sitter support:
+
+| Language | Syntax Highlighting | Indentation |
+|----------|:------------------:|:-----------:|
+| TypeScript | ✓ | ✓ |
+| JSON | ✓ | - |
+| YAML | ✓ | - |
+| Nix | ✓ | ✓ |
+| Markdown | ✓ | - |
+| WAT (WebAssembly Text) | ✓ | - |
+
 ## Overview
 
 The tree-sitter integration in Lem provides:
@@ -40,18 +53,6 @@ The integration consists of:
 | `tree-sitter-cl` | External | FFI bindings to native tree-sitter |
 | `lem-tree-sitter` | `extensions/tree-sitter/` | Core integration module |
 | Query files | `extensions/<mode>/tree-sitter/` | Per-language highlight/indent rules |
-
-## Supported Languages
-
-The following modes have tree-sitter support:
-
-| Language | Syntax Highlighting | Indentation |
-|----------|:------------------:|:-----------:|
-| JSON | ✓ | - |
-| YAML | ✓ | - |
-| Nix | ✓ | ✓ |
-| Markdown | ✓ | - |
-| WAT (WebAssembly Text) | ✓ | - |
 
 ## Adding Tree-sitter Support to a Mode
 
