@@ -580,6 +580,18 @@ You can configure these settings:
 This feature currently only works to open projects on GitHub. We will expand it, pull
 requests are also possible.
 
+## Terminal
+
+Open a terminal with `Alt-x terminal`.
+
+Launch multiple terminals with `C-u Alt-x terminal`.
+
+Lem's terminal is based on `libvterm`. You can run any visual and
+interactive program.
+
+<img class="" src="/terminal-vterm.png" alt="Lem's terminal based on libvterm" width="600px">
+
+
 ## Misc
 
 ### Code formatting
