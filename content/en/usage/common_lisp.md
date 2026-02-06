@@ -8,14 +8,14 @@ weight: -10
 Lem is written and extensible in Common Lisp. You can start writing
 and compiling Common Lisp code right away.
 
-Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `M-x start-lisp-repl` or just switch to one with `C-c C-z`.
+Use TAB-completion, compile a function with `C-c C-c` and start a REPL with `Alt-x start-lisp-repl` or just switch to one with `C-c C-z`.
 
 <a href="/lem-lisp.png"> <img class="" src="/lem-lisp.png" alt=""> </a>
 
 
 ## REPL
 
-Start a Lisp REPL with `M-x slime`.
+Start a Lisp REPL with `Alt-x slime`.
 
 To switch to the REPL from a Lisp buffer, even if you didn't start it before, use `C-c C-z`. You can use quick commands inside the REPL. They start with a `,` (comma). For example:
 
@@ -36,24 +36,36 @@ Search in the prompt history with `M-r` (`listener-isearch-history`).
 
 ### Start a REPL with Lem packages available
 
-There is a second way to start a Lisp REPL: `M-x start-lisp-repl`.
+There is a second way to start a Lisp REPL: `Alt-x start-lisp-repl`.
 
 This gives you a REPL, with the benefit that all Lem systems and packages are loaded and available. You should use this to explore Lem and work on it.
 
 
 ### Start a REPL with another Lisp core
 
-Use a prefix argument, as in `C-u M-x slime`. This prompts you for a Lisp command, with a pre-defined list of options such as `sbcl`, `ros run`, `ros -L ccl-bin`…).
+Use a prefix argument, as in `C-u Alt-x slime`. This prompts you for a Lisp command, with a pre-defined list of options such as `sbcl`, `ros run`, `ros -L ccl-bin`…).
 
 This way, you can choose another implementation, you can choose an
 image of your own (with `--core`), and you can set other command line
 arguments. For example, to extend the dynamic space size for SBCL:
 
-    C-u M-x slime <RET> sbcl --dynamic-space-size 4GiB
+    C-u Alt-x slime <RET> sbcl --dynamic-space-size 4GiB
+
+
+### Start a REPL from the terminal with `lem --eval`
+
+You can open Lem straight into a Lisp REPL with this command-line invocation:
+
+    lem --eval '(lem-lisp-mode:start-lisp-repl t)'
+
+Too long to type? Just create a bash alias and add it in your `~/.bashrc`.
+
+    alias ilem="lem --eval '(lem-lisp-mode:start-lisp-repl t)'"
+
 
 ### Connect to a running Lisp server (Micros)
 
-You can connect Lem to another, external Lisp process, with `M-x slime-connect`.
+You can connect Lem to another, external Lisp process, with `Alt-x slime-connect`.
 
 This Lisp process must be a `micros` server, and not `swank`.
 
@@ -87,7 +99,6 @@ For example: you have enable `vi-mode` by default, and you want to enter the REP
 
 > Note: this hook was added after Lem 2.1.
 
-
 ## Compilation
 
 To compile and load a buffer, use `C-c C-k`. To compile a function: `C-c C-c`.
@@ -98,7 +109,7 @@ Common Lisp gives you type warnings and other errors at compile time.
 
 To evaluate the last s-expression, use `C-x C-e`. Lem prints the result in an overlay.
 
-The overlays go away when you edit their preceding definition or when you call `M-x lisp-eval-clear`, which is also accessible in the context menu with `M-h`, and by choosing "Clear eval results".
+The overlays go away when you edit their preceding definition or when you call `Alt-x lisp-eval-clear`, which is also accessible in the context menu with `M-h`, and by choosing "Clear eval results".
 
 You can evaluate the last expression and print its result into the
 buffer, under the cursor. Use `lisp-eval-last-expression-and-insert`.
@@ -109,10 +120,10 @@ To evaluate some Lisp code globalyl wherever you are in Lem, use `M-:`.
 
 ## Inspection
 
-Use `C-c I` (`M-x lisp-inspect`) to get an inspector window about an expression. If the
+Use `C-c I` (`Alt-x lisp-inspect`) to get an inspector window about an expression. If the
 point is on a symbol, inspect this symbol. It works with objects printed on the REPL.
 
-Use `M-x lisp-browse-class-as-tree` to display the inheritance tree of a class.
+Use `Alt-x lisp-browse-class-as-tree` to display the inheritance tree of a class.
 In the screenshot below, you can inspect a class node by clicking on it.
 You can also scroll the graph with the same key bindings as cursor movement.
 
@@ -163,8 +174,8 @@ The command `lisp-search-symbol` (`C-c C-d s`) is similar, but more to the point
 
 The following two commands are shortcuts around the built-in `trace` macro:
 
-* `M-x lisp-toggle-trace` (`C-c C-t`): toggle tracing of the function under point.
-* `M-x lisp-trace-list` (`C-c T`): see all the traced functions, select the ones to untrace.
+* `Alt-x lisp-toggle-trace` (`C-c C-t`): toggle tracing of the function under point.
+* `Alt-x lisp-trace-list` (`C-c T`): see all the traced functions, select the ones to untrace.
 
 ## Watch
 
@@ -184,7 +195,7 @@ The **macrostep** commands are interactive commands that allow to expand the mac
 
 The **macroexpand** commands expand the macro too, but show the result in an overlay window.
 
-To call macrostep, put the cursor at the opening parentheses and call `M-x lisp-macrostep-expand` (`C-c Return`). This will show you an information message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
+To call macrostep, put the cursor at the opening parentheses and call `Alt-x lisp-macrostep-expand` (`C-c Return`). This will show you an information message saying that `q` will undo the macroexpand and come back to normal. Your macro is expanded a first time.
 
 Press `C-c Return` a second time (or call `lisp-macrostep-next`) to expand the macro once again.
 
@@ -199,11 +210,11 @@ Press `q` to quit the macroexpand mode and see the original source again. You ha
 | `lisp-macrostep-quit`      | `q`                    | quit and come back to the source     |
 
 
-You can also call `M-x lisp-macroexpand-all` (`C-c M-m`) to expand the macro completely, or `M-x lisp-macroexpand`.
+You can also call `Alt-x lisp-macroexpand-all` (`C-c M-m`) to expand the macro completely, or `Alt-x lisp-macroexpand`.
 
 ## Sync packages
 
-Use the shortcut `C-c ~` (`M-x lisp-listen-in-current-package`) to
+Use the shortcut `C-c ~` (`Alt-x lisp-listen-in-current-package`) to
 cause the REPL's package to be switched to the buffer's active
 package.
 
@@ -212,7 +223,7 @@ directory.
 
 ## Remove unused imports
 
-The function `M-x lisp-organize-imports` will delete the unnecessary
+The function `Alt-x lisp-organize-imports` will delete the unnecessary
 imports from the package definition (from the symbols in
 `:import-from`).
 
@@ -226,7 +237,7 @@ is unused:
                 :proper-list))  ;; <-- unused
 ```
 
-run `M-x lisp-organize-imports` and it's removed:
+run `Alt-x lisp-organize-imports` and it's removed:
 
 ```lisp
 (uiop:define-package :lem/porcelain
@@ -240,7 +251,7 @@ run `M-x lisp-organize-imports` and it's removed:
 ### Apropos
 
 `apropos` is a built-in Common Lisp function that you can use at the
-REPL. Lem provides the command `M-x apropos-command` that shows the
+REPL. Lem provides the command `Alt-x apropos-command` that shows the
 result in a floating window.
 
 `apropos` searches for symbols (functions, methods, variables…) whose name contain your search term. For example, at the REPL:
@@ -281,7 +292,7 @@ Paredit helps to handle parentheses balanced in your lisp code.
 
 Start it with
 
-    M-x paredit-mode
+    Alt-x paredit-mode
 
 It defines keys on:
 
@@ -306,7 +317,7 @@ on by default.
 You can bring distinct colours to each pair with this
 simple command:
 
-    M-x toggle-paren-coloring
+    Alt-x toggle-paren-coloring
 
 ## Testing
 
@@ -325,15 +336,15 @@ For example, have a test function like this:
 
 And use one of the available commands available:
 
-- `M-x lisp-test-runner-run-current` or (`C-c C-r`): send the current test symbol to the connection.
-- `M-x lisp-test-runner-run-buffer` or (`C-c C-R`): run the test suite of the current buffer.
+- `Alt-x lisp-test-runner-run-current` or (`C-c C-r`): send the current test symbol to the connection.
+- `Alt-x lisp-test-runner-run-buffer` or (`C-c C-R`): run the test suite of the current buffer.
 
 ## APPENDIX: Lem features not found in Emacs and Slime
 
 Lem has some unique features. Did you spot them?
 
 - the `watch` feature, that displays evaluation results on the fly, in overlays.
-- the `M-x lisp-organize-import` function
+- the `Alt-x lisp-organize-import` function
 - when evaluating expressions (C-x C-e), Lem prints the result in an overlay.
 - function arguments and the function signature are given in a clear UI.
 - when you run the `ls` command at the REPL (the comma-command with
