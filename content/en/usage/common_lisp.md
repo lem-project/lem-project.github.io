@@ -105,6 +105,51 @@ To compile and load a buffer, use `C-c C-k`. To compile a function: `C-c C-c`.
 
 Common Lisp gives you type warnings and other errors at compile time.
 
+## Call the form at point: `lisp-call-defun C-c C-y`
+
+Lem implements a very efficient keyboard shortcut that allows to
+*prefill* a call to the toplevel form at point into the REPL:
+`Alt-x lisp-call-defun`, bound to `C-c C-y`.
+
+When you are working on such a function:
+
+```lisp
+(in-package :my-project)
+
+(defun hello ()
+   (print "test"))
+```
+
+place the cursor inside the function or at its closing parenthesis,
+press `C-c C-y` and Lem will insert "(hello|)" at the REPL:
+
+```lisp
+CL-USER> (my-project::hello|)
+                          ^^^ cursor, ready to accept arguments.
+```
+
+When you work on a class, Lem will insert a call to `make-instance`:
+
+```lisp
+(defclass person ()
+  ())
+```
+
+`C-c C-y` =>
+
+```lisp
+CL-USER> (make-instance 'cl-user::person)
+```
+
+The recognized forms to "insert the right thing" are: `defun`,
+`defun-setf`, `defstruct`, `defclass` and, implicitely, `defgeneric`
+and `defmethod`.
+
+<a href="/lisp-call-defun-on-defun.png"> <img class="" src="/lisp-call-defun-on-defun.png" alt="Alt-x lisp-call-defun prefills a call to the toplevel form on the REPL."> </a>
+
+<a href="/lisp-call-defun-on-defclass.png"> <img class="" src="/lisp-call-defun-on-defclass.png" alt="Alt-x lisp-call-defun prefills a call to the toplevel form on the REPL."> </a>
+
+
 ## Evaluation
 
 To evaluate the last s-expression, use `C-x C-e`. Lem prints the result in an overlay.
