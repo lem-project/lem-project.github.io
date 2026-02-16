@@ -36,6 +36,8 @@ Every keybinding is associated to a command. We can call commands with `Alt-x` (
 
 Lem will open a pop-up where you can search commands interactively. It's a good way to discover commands.
 
+Press `TAB` to see the list of completions and cycle through them.
+
 This pop-up also shows you the associated keybinding of a command.
 
 ![](/completion-with-keybindings.png "Interactive completion of commands, showing the keybinding of each function.")
