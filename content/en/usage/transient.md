@@ -23,7 +23,7 @@ to always show help on-screen.
   (define-key *global-keymap* "C-c t" *demo-keymap-simple*)
 ```
 
-<div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
+<div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-simple.png"/> </div>
 
 ## Show all current keybindings
 
@@ -34,4 +34,4 @@ all available keybindings for the current mode(s):
 (setf lem/transient::*transient-always-show* t)
 ```
 
-<div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-simple.png"/> </div>
+<div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
