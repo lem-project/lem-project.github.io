@@ -286,6 +286,17 @@ On the GUI version of Lem, you can click on them.
 
 ![](/lem-nice-tabs.png "Lem tabs in the webview version, with a new style added in August of 2025.")
 
+In the webview and server frontends the tab bar is enabled
+automatically at startup. To turn that off, set the
+`*enable-tabbar-on-startup*` variable in your init file
+(`~/.lem/init.lisp`, `~/.config/lem/init.lisp`, or `~/.lemrc`):
+
+```lisp
+(setf lem/tabbar:*enable-tabbar-on-startup* nil)
+```
+
+You can still toggle the tab bar at runtime with `Alt-x toggle-tabbar`.
+
 ### Workspaces (frame-multiplexer)
 
 Lem has a frame multiplexer, aka "workspaces" or "screen
