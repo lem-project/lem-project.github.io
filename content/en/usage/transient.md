@@ -35,3 +35,21 @@ all available keybindings for the current mode(s):
 ```
 
 <div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
+
+## Configuration
+
+### Delay
+
+Add a configurable delay before the transient popup appears. The popup
+waits 500ms by default before showing — if the user completes the key
+sequence before the timer fires, the popup never appears, avoiding
+flicker for fast typists. Once the popup is already visible
+(e.g. navigating sub-menus), subsequent keymaps show immediately.
+
+```lisp
+;; Adjust delay (default 500ms)
+(setf lem/transient:*transient-popup-delay* 300)
+
+;; Disable delay (show immediately)
+(setf lem/transient:*transient-popup-delay* 0)
+```
