@@ -209,15 +209,20 @@ You can also see them in Lem's dashboard.
 
 ### Switching buffers
 
-To switch buffers, use `C-x Left/Right arrow` (aka `Alt-x previous-buffer` and `next-buffer`).
+To quickly switch buffers, use `C-x Left/Right arrow` (aka `Alt-x previous-buffer` and `next-buffer`).
 
-To choose a buffer interactively, use `C-x b` (aka `Alt-x
-list-buffers`). You are presented a completion window. Type some text
+To choose a buffer interactively, use `C-x b` (aka `Alt-x select-buffer`).
+You are presented a completion window. Type some text
 to start narrowing the buffers list matching your entry. But that's not all.
 
-You can also use Space to select or deselect entries, then use a right
-click to choose an action to apply on the selected buffers. Default
-actions are to kill the selected buffers, or to save them.
+Use `C-x C-b` (aka `Alt-x list-buffers`) to manage buffers. You are
+presented the list of existing buffers, into which you can:
+- use Enter to select a buffer,
+- press Space to select or deselect entries, then call an action on them:
+  - use `C-k` to kill the selected buffers.
+  - in a GUI, use a right click to choose an action to apply on the
+    selected buffers. The default available actions are to kill the
+    selected buffers, or to save them.
 
 ### Creating new buffers
 
