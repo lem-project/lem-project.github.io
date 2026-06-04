@@ -18,7 +18,7 @@ This documentation is improved continually.
 
 Lem has Emacs-like keybindings, as well as a vi emulation (`Alt-x vi-mode`).
 
-So, to open a file, press `C-x C-f` (you get the file selection dialog shown above). To save it, it's `C-x C-s`. To save many buffers at once, use `C-x s`.
+So, to open a file, press `C-x C-f` (you get the file selection dialog shown above). To save it, it's `C-x C-s`. To save many buffers at once, use `C-x s` (`Alt-x save-some-buffers`).
 
 To switch windows (aka splits of a screen): `C-x o` ('o' letter) and `M-o`. To make a window fullscreen: `C-x 1`. To split it vertically: `C-x 3` and horizontally: `C-x 2`. To make the current window disappear: `C-x 0` (zero).
 
@@ -224,6 +224,8 @@ presented the list of existing buffers, into which you can:
     selected buffers. The default available actions are to kill the
     selected buffers, or to save them.
 
+See also how to save many files at once below (`save-some-buffers` bound to `C-x s`).
+
 ### Creating new buffers
 
 A buffer contains some text to display, but is not necessarily tied to a file.
@@ -237,6 +239,20 @@ C-s` (`save-current-buffer`) doesn't work, saying "No file name". This
 is correct, no file is associated to this buffer. To save this buffer
 to a new file, use `C-x C-w` (`Alt-x write-file`). It asks for a
 filename, and saves the buffer to disk.
+
+### Saving files
+
+To save the current file, use `C-x C-s` (`save-current-buffer`).
+
+Note that calling this command in a buffer that isn't linked to a file
+will have no effect. You can use `Alt-x write-file` (`C-x C-w`) for this.
+
+To save many buffers at once, use `C-x s` (`Alt-x save-some-buffers`).
+You will be prompted for a confirmation for every unsaved file.
+
+To bypass this confirmation and save all files at once, give the command a
+universal argument: `C-u 1 C-x s`.
+
 
 ### Windows
 
