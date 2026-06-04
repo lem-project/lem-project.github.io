@@ -428,12 +428,13 @@ Bookmarks are defined in the `:lem-bookmark` package.
 
 Use `(describe (find-package \"lem-bookmark\"))` to find all available commands.
 
+## Help, finding keys and commands
 
-## Describe keys
+### Describe keys
 
 To know what function is bound to a key binding, use `C-x ?` (`Alt-x describe-key`).
 
-## Describe and list available bindings
+### Describe and list available bindings
 
 To see the available key bindings in the current keymap, use `Alt-x describe-bindings`.
 
@@ -446,6 +447,16 @@ You can do more and *list all Lem's existing keybindings* with `Alt-x documentat
 **Note:** this command was added in Lem 2.1.
 
 <img class="" src="/documentation-describe-bindings.png" alt="">
+
+### Transient: show available key bindings
+
+Since May of 2026, Lem has [transient popups](/usage/transient/): a text pop-up,
+displayed at the bottom of the screen, that shows keys and their associated commands.
+
+Use `Alt-x transient-always-show` to display the list of all available key bindings, for the current mode(s).
+
+<div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
+
 
 
 ## Keyboard macros

@@ -27,14 +27,17 @@ to always show help on-screen.
 
 ## Show all current keybindings
 
-Setting `lem/transient:*transient-always-show*` to `t` makes it show
-all available keybindings for the current mode(s):
+Use `Alt-x transient-always-show` to show all available keybindings
+for the current mode(s).
+
+You can also use this setting:
 
 ```lisp
 (setf lem/transient::*transient-always-show* t)
 ```
 
 <div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
+
 
 ## Configuration
 
