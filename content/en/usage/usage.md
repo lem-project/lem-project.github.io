@@ -220,9 +220,9 @@ presented the list of existing buffers, into which you can:
 - use Enter to select a buffer,
 - press Space to select or deselect entries, then call an action on them:
   - use `C-k` to kill the selected buffers.
-  - in a GUI, use a right click to choose an action to apply on the
-    selected buffers. The default available actions are to kill the
-    selected buffers, or to save them.
+  - use `C-s` to save the selected buffers (added in June, 2026)
+  - in a GUI, you can use a right click to choose an action to apply on the
+    selected buffers.
 
 See also how to save many files at once below (`save-some-buffers` bound to `C-x s`).
 
