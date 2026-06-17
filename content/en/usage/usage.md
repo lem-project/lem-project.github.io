@@ -643,6 +643,8 @@ interactive program.
 
 <img class="" src="/terminal-vterm.png" alt="Lem's terminal based on libvterm" width="600px">
 
+Alternatively, if you just need to run a single shell command, you can do that with `C-x @` (`M-x pipe-command`). 
+
 
 ## Misc
 
@@ -777,7 +779,7 @@ NB: on Lem versions older than August, 2025, use `(lem-if:set-font-name "JuliaMo
 
 You can list the available fonts with `fc-list` in Unix.
 
-### Pixel-based positionning
+### Pixel-based positioning
 
 The webview frontend supports precise pixel-based positioning of
 floating windows. This enables smooth sub-character positioning for
