@@ -625,6 +625,13 @@ You can configure these settings:
 This feature currently only works to open projects on GitHub. We will expand it, pull
 requests are also possible.
 
+## Shell commands
+
+Use `Alt-x pipe-command` to run a shell command and display its result in a pop-up window.
+
+Contributions are under way…
+
+
 ## Terminal
 
 Open a terminal with `Alt-x terminal`.
