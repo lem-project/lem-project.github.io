@@ -20,7 +20,7 @@ Lem has Emacs-like keybindings, as well as a vi emulation (`Alt-x vi-mode`).
 
 So, to open a file, press `C-x C-f` (you get the file selection dialog shown above). To save it, it's `C-x C-s`. To save many buffers at once, use `C-x s` (`Alt-x save-some-buffers`).
 
-To switch windows (aka splits of a screen): `C-x o` ('o' letter) and `M-o`. To make a window fullscreen: `C-x 1`. To split it vertically: `C-x 3` and horizontally: `C-x 2`. To make the current window disappear: `C-x 0` (zero).
+To switch windows (aka splits of a screen): `C-x o` ('o' letter) and `Alt-o`. To make a window fullscreen: `C-x 1`. To split it vertically: `C-x 3` and horizontally: `C-x 2`. To make the current window disappear: `C-x 0` (zero).
 
 To switch buffers: `C-x b`.
 
@@ -268,7 +268,7 @@ buffers.
 
 To make the current window disappear, use `C-x 0` (a zero) (`delete-active-window`).
 
-To switch windows (aka splits of a screen), use `C-x o` ('o' letter) or `M-o`.
+To switch windows (aka splits of a screen), use `C-x o` ('o' letter) or `Alt-o`.
 
 To switch to the previously active window, use `Alt-x
 switch-to-last-focused-window`, which is not bound to a key by
@@ -368,7 +368,7 @@ See more in the Configuration section.
 Lem has a system of *abbreviation* that permits to auto-complete any
 text that was previously entered in any text buffer.
 
-By default, `abbrev` is bound to `M-/`
+By default, `abbrev` is bound to `Alt-/`
 
 In vi's insert-mode, it is also bound to `C-p`.
 
@@ -539,7 +539,7 @@ See also: `Alt-x project-grep`, bound to `C-x p g`.
 
 ## multiple cursors
 
-Use `M-C` (Alt and capital c), `Alt-x add-cursors-to-next-line` to add a cursor to the next line.
+Use `Alt-C` (Alt and capital c), `Alt-x add-cursors-to-next-line` to add a cursor to the next line.
 
 ## opening links
 
@@ -643,7 +643,7 @@ interactive program.
 
 <img class="" src="/terminal-vterm.png" alt="Lem's terminal based on libvterm" width="600px">
 
-Alternatively, if you just need to run a single shell command, you can do that with `C-x @` (`M-x pipe-command`). 
+Alternatively, if you just need to run a single shell command, you can do that with `C-x @` (`Alt-x pipe-command`).
 
 
 ## Misc
