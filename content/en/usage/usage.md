@@ -793,3 +793,11 @@ You can try some demos with the following commands:
 - side-by-side pixel vs character mode comparison (`pixel-demo-compare`)
 
 The feature was added on [this PR](https://github.com/lem-project/lem/pull/2073) (with a high-level overview).
+
+### Showing a clock on the modeline
+
+display-time-mode is a lem minor mode that adds a clock to your modeline so you can easily keep track of time.
+
+You can enable display-time-mode by running `Alt-x display-time-mode`
+
+It was added on June, 2026.
