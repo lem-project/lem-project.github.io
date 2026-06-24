@@ -266,6 +266,16 @@ package.
 Note that, unlike Emacs and Slime, it doesn't switch Lisp's current
 directory.
 
+## Export symbols
+
+Use `Alt-x lisp-add-export` on a symbol to automatically add it to the
+`:export` clause of your `defpackage` (or `uiop:define-package`) definition.
+
+
+NB: on contrary to Slime, it doesn't add all the readers, writers or
+accessors of a class definition.
+
+
 ## Remove unused imports
 
 The function `Alt-x lisp-organize-imports` will delete the unnecessary
