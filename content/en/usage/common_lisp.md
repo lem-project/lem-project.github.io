@@ -301,7 +301,7 @@ run `Alt-x lisp-organize-imports` and it's removed:
 ```
 
 
-## Code search
+## Documentation lookup
 
 ### Apropos
 
