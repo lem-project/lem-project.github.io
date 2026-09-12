@@ -2,7 +2,59 @@
 
 .gdoc-header {
     background-color: #2B3868;
+    padding: 0.5rem 0;
 }
+
 .gdoc-footer {
     background-color: #2B3868;
+}
+
+/* Vertical alignment for navbar menu items and links */
+.gdoc-menu-header__items {
+    align-items: center;
+}
+
+.gdoc-header__link {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+/* Hide empty placeholder SVGs inside header links */
+.gdoc-header__link svg.gdoc-icon:empty {
+    display: none;
+}
+
+/* Social icons sizing (Discord maintained at height: 22px) */
+.gdoc-social-icon {
+    display: inline-block;
+    height: 22px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Match GitHub and Reddit to Discord's visual size */
+.gdoc-header svg.gdoc_github {
+    width: 28px;
+    height: 28px;
+}
+
+img.gdoc-social-icon[src*="reddit"] {
+    height: 25px;
+}
+
+/* Spacing between GitHub, Discord, and Reddit */
+.gdoc-menu-header__items > span {
+    margin-left: 0.75rem;
+}
+
+/* Slightly larger separation before Matrix */
+.gdoc-menu-header__items > span:has(a[title="Matrix"]) {
+    margin-left: 1.5rem;
+}
+
+@supports not selector(:has(*)) {
+    a[title="Matrix"] {
+        margin-left: 1.5rem;
+    }
 }

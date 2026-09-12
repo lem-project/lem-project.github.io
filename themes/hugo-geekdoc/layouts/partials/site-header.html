@@ -12,6 +12,7 @@
         </svg>
       </label>
     {{ end }}
+
     <div>
       <a class="gdoc-brand gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
         <span class="flex align-center">
@@ -24,53 +25,68 @@
         </span>
       </a>
     </div>
+
     <div class="gdoc-menu-header">
       <span class="gdoc-menu-header__items">
-	<span>
+
+        <!-- GitHub -->
+        <span>
           <a href="https://github.com/lem-project/lem" class="gdoc-header__link">
-            <svg class="gdoc-icon gdoc_github">
+            <svg class="gdoc-icon gdoc_github gdoc-social-icon">
               <title>GitHub</title>
               <use xlink:href="#gdoc_github"></use>
             </svg>
           </a>
-	</span>
+        </span>
 
-	<span>
+        <!-- Discord -->
+        <span>
           <a href="https://discord.gg/NHzqbw4zVR" class="gdoc-header__link" title="Discord">
-            <img style="height: 35%; margin-top: 5px" class="" src="/discord-mark-white.svg" alt="Discord">
-            <svg class="gdoc-icon">
-            </svg>
+            <img
+              class="gdoc-social-icon"
+              src="/discord-mark-white.svg"
+              alt="Discord"
+            >
           </a>
-	</span>
+        </span>
 
-	<span>
+        <!-- Reddit -->
+        <span>
           <a href="https://www.reddit.com/r/lem/" class="gdoc-header__link" title="Reddit">
-            <img style="height: 35%; margin-top: 5px" class="" src=""
-                 alt="Reddit"
-                 data-credit="icon by"
-                 >
-            <svg class="gdoc-icon">
-            </svg>
+            <img
+              class="gdoc-social-icon"
+              src="/reddit-mark-white.svg"
+              alt="Reddit"
+            >
           </a>
-	</span>
+        </span>
 
-	<span>
-          <a href="https://app.gitter.im/#/room/#lem-developers_community:gitter.im" class="gdoc-header__link" title="Matrix">
-            <img style="height: 35%; margin-top: 5px;margin-right: 12px" class="" src="/Matrix_logo.svg" alt="Matrix">
-            <svg class="gdoc-icon">
-            </svg>
+        <!-- Matrix -->
+        <span>
+          <a
+            href="https://app.gitter.im/#/room/#lem-developers_community:gitter.im"
+            class="gdoc-header__link"
+            title="Matrix"
+          >
+            <img
+              class="gdoc-social-icon"
+              src="/Matrix_logo.svg"
+              alt="Matrix"
+            >
           </a>
-	</span>
+        </span>
 
         <span id="gdoc-color-theme">
           <svg class="gdoc-icon gdoc_brightness_dark">
             <title>{{ i18n "button_toggle_dark" }}</title>
             <use xlink:href="#gdoc_brightness_dark"></use>
           </svg>
+
           <svg class="gdoc-icon gdoc_brightness_light">
             <title>{{ i18n "button_toggle_dark" }}</title>
             <use xlink:href="#gdoc_brightness_light"></use>
           </svg>
+
           <svg class="gdoc-icon gdoc_brightness_auto">
             <title>{{ i18n "button_toggle_dark" }}</title>
             <use xlink:href="#gdoc_brightness_auto"></use>
@@ -88,7 +104,6 @@
 
         {{ partial "language" .Root }}
 
-
         <span class="gdoc-menu-header__control">
           <label for="menu-header-control">
             <svg class="gdoc-icon gdoc_keyboard_arrow_right">
@@ -97,7 +112,9 @@
             </svg>
           </label>
         </span>
+
       </span>
+
       <label for="menu-header-control" class="gdoc-menu-header__control">
         <svg class="gdoc-icon gdoc_keyboard_arrow_left">
           <use xlink:href="#gdoc_keyboard_arrow_left"></use>
