@@ -120,6 +120,16 @@ cd lem && make ncurses
 
 or run `make sdl2-ncurses` to build Lem with the two interfaces in it. Then choose the interface at startup with `-i / --interface`, either "sdl2" or "ncurses".
 
+#### Minimal ncurses build
+
+Use
+
+    make minimal-build
+
+to build Lem core, ncurses frontend, without extensions: no
+programming modes, no LSP, no tree-sitter, no AI modes. Use this if
+you want to add what you need step by step.
+
 
 ### Add the executable to PATH
 - Copying the PATH to `~/.bashrc`
