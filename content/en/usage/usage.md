@@ -473,6 +473,25 @@ Use `Alt-x transient-always-show` to display the list of all available key bindi
 
 <div style="text-align: center;"> <img src="https://raw.githubusercontent.com/lem-project/lem/main/extensions/transient/transient-dashboard.png"/> </div>
 
+### Emacs Help mode: `C-h` bindings
+
+Enable the minor mode `emacs-help-mode` to bind help commands to the `C-h` prefix:
+
+- `C-h k`: `describe-key`
+- `C-h b`: `describe-bindings`
+- `C-h m`: `describe-mode`
+- `C-h a`: `apropos-command` (aka `describe-command`)
+- `C-h v`: `describe-lem-variable` (this askes for a Lem function or variable and prints its documentation).
+
+This was added in September, 2026.
+
+### How to show help: pop-up, buffer, message
+
+A new parameter was introduced: `lem-core/commands/help:*documentation-output-style*`.
+
+It can be one of `:buffer :popup :message` (or nil), and the describe
+commands will always show their output in this type of output. By
+default, it is a pop-up message.
 
 
 ## Keyboard macros
