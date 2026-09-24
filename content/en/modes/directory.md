@@ -11,30 +11,33 @@ but a directory), Lem shows a list of files and directories.
 
 With Lem's GUI frontend (SDL2), you can click on files and directories.
 
-Here is a list of keybindings. Emacs' Dired users will feel right at home.
+Here is a list of keybindings.
 
-| Key-combination | Function                                                             |
-|:---------------:|:--------------------------------------------------------------------:|
-|                 |                                                                      |
-| "n"             | next line                                                            |
-| "p"             | previous line                                                        |
-| "q"             | qui                                                                  |
-| "^"             | go up one directory                                                  |
-| "Enter"         | visit the file or the directory at point                             |
-| "Space"         | read the file                                                        |
-| "g"             | update the directory buffer                                          |
-| "m"             | mark file                                                            |
-| "u"             | unmark file                                                          |
-| "U"             | unmark all                                                           |
-| "t"             | toggle marks (the unmarked ones become marked)                       |
-| "* !"           | unmark all                                                           |
-| "* %"           | mark files and directories by regex                                  |
-| "Q"             | query-replace in marked files and directories                        |
-| "D"             | delete marked files and directories (recursively, with confirmation) |
-| "C"             | copy marked files and directories                                    |
-| "R"             | rename                                                               |
+| Key-combination | Function                                                                  |
+|:---------------:|:-------------------------------------------------------------------------:|
+|                 |                                                                           |
+| "n"             | next line                                                                 |
+| "p"             | previous line                                                             |
+| "q"             | quit                                                                      |
+| "^"             | go up one directory                                                       |
+| "Enter"         | visit the file or the directory at point                                  |
+| "Space"         | read the file                                                             |
+| "g"             | update the directory buffer                                               |
+| "m"             | mark file                                                                 |
+| "u"             | unmark file                                                               |
+| "U"             | unmark all                                                                |
+| "t"             | toggle marks (the unmarked ones become marked)                            |
+| "* !"           | unmark all                                                                |
+| "* %"           | mark files and directories by regex                                       |
+| "Q"             | query-replace in marked files and directories                             |
+| "D"             | delete marked files and directories (recursively, with confirmation)      |
+| "C"             | copy marked files and directories                                         |
+| "R"             | rename                                                                    |
 | "s"             | sort files and directories by mtime, then by size, and back to file name. |
-| "+"             | make a directory                                                     |
+| "S"             | open the sort transient menu.                                             |
+| "S x"           | sort by file extension.                                                   |
+| "S r"           | reverse the sort order.                                                   |
+| "+"             | make a directory                                                          |
 
 Key bindings added after the Lem 2.1 release:
 
