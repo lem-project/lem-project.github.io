@@ -45,6 +45,18 @@ Key bindings added after the Lem 2.1 release:
 |:---------------:|:-------------------------------------------------------------------------:|
 | "C-x C-j"       | find-file-directory. From a file buffer, open this file's directory.      |
 
+### Transient menu
+
+When you press `S` (capital s), after a short delay, a [Transient pop-up menu](https://lem-project.github.io/usage/transient/) appears
+with sort options.
+
+Press n, s, t, x or r to sort by name, size, last modification time,
+file extension, and reverse the sort order.
+
+<img class="" src="/directory-mode-transient.png" alt="The Transient menu showing sorting options.">
+
+
+
 ### Opening multimedia files
 
 Lem is smart enough to open files that it doesn't natively support
