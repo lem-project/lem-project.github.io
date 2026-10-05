@@ -510,7 +510,7 @@ Another command you might want to use is `Alt-x apply-macro-to-region-lines`,
 to re-play the macro only in the selected region.
 
 
-## grep
+## Grep
 
     Alt-x grep
 
@@ -556,11 +556,11 @@ CL-USER> (lem/grep:change-grep-command "git grep")
 See also: `Alt-x project-grep`, bound to `C-x p g`.
 
 
-## multiple cursors
+## Multiple cursors
 
 Use `Alt-C` (Alt and capital c), `Alt-x add-cursors-to-next-line` to add a cursor to the next line.
 
-## opening links
+## Opening links
 
 Lem will recognize some forms of links, specifically **URLs** and
 **links to files**, and will write them with a special face attribute
@@ -569,6 +569,20 @@ Lem will recognize some forms of links, specifically **URLs** and
 
 - URL: opens your web browser
 - file (the link must start with `file://`): Lem opens the file.
+
+### Browser window
+
+Lem's webview interface allows to open an URL in a new window: use `Alt-x browser-open-url`.
+
+This isn't a full-featured web browser and it isn't a Lem editor
+window either. It doesn't have many available commands (try a right
+click, you can at least go to the previous page), it doesn't have a
+menu. It doesn't support web extensions, it doesn't have an ad blocker.
+
+This is new as of October, 2026.
+
+<div style="text-align: center;"> <img src="/lem-browser.png"/> </div>
+
 
 ## Version control with lem/legit (Git, experimental)
 
