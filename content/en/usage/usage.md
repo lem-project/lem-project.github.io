@@ -444,6 +444,21 @@ Bookmarks are defined in the `:lem-bookmark` package.
 
 Use `(describe (find-package \"lem-bookmark\"))` to find all available commands.
 
+## Folding
+
+Code folding works for s-expressions and is bound to `C-c TAB`.
+
+It is defined in the package `:lem/language-mode` and the key is bound with:
+
+```lisp
+(define-key *language-mode-keymap* "C-c Tab" 'fold-or-indent-or-complete)
+```
+
+This command tries to complete lisp code first then folds.
+
+See also the command `unfold-all`.
+
+
 ## Help, finding keys and commands
 
 ### Describe keys
