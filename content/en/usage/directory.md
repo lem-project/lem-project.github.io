@@ -1,5 +1,6 @@
 ---
 title: Directory mode
+weight: -35
 ---
 
 When you open a directory (`C-x C-f` and don't choose a file,

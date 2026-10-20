@@ -1,13 +1,12 @@
 ---
-title: Lem modes
+title: Programming modes
 weight: -1
 geekdocCollapseSection: true
 ---
 
 Lem supports many programming languages out of the box.
 
-Below are also listed special Lem modes, such as the `directory` mode,
-Lem's `dashboard`, or again markup and configuration modes.
+Below are also listed markup and configuration modes.
 
 ---
 

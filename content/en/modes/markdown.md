@@ -17,7 +17,7 @@ Lem's markdown mode supports:
 
 ## Live preview
 
-Use `M-x markdown-preview`. This command renders the markdown of the
+Use `Alt-x markdown-preview`. This command renders the markdown of the
 current buffer to a browser window. The preview is refreshed when the
 file is saved.
 

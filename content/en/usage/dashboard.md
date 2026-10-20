@@ -1,5 +1,6 @@
 ---
 title: Dashboard
+weight: -33
 ---
 
 Lem ships with a customizable dashboard, `lem-dashboard`, out of the box:
@@ -8,7 +9,7 @@ Lem ships with a customizable dashboard, `lem-dashboard`, out of the box:
 
 Besides a more friendly greeting than a `*tmp*` buffer, it ships with useful shortcuts like starting a lisp scratch or seeing recent files/projects at a glance.
 
-The dashboard is launched when you open lem without passing any file arguments. If you wish to open/reopen it, you can do so with `M-x open-dashboard`.
+The dashboard is launched when you open lem without passing any file arguments. If you wish to open/reopen it, you can do so with `Alt-x open-dashboard`.
 
 ## Basic Customization
 
@@ -25,9 +26,9 @@ To disable, simply set `*dashboard-enable*` to `nil` in your `init.lisp`:
 If you want to make changes to the dashboard without defining a custom layout, there is a convenience function `set-default-dashboard` that you can use to make minor modifications:
 
 ```lisp
-(lem-dashboard:set-default-dashboard :project-count 1 
+(lem-dashboard:set-default-dashboard :project-count 1
                                      :file-count 6
-                                     :hide-links t 
+                                     :hide-links t
                                      :splash '("hello" "hello again"))
 ```
 
@@ -68,12 +69,12 @@ All you need to do is call `set-dashboard` and pass it a list of `dashboard-item
                                     :top-margin 4
                                     :bottom-margin 2)
                      (make-instance 'dashboard-working-dir)
-                     (make-instance 'dashboard-recent-files 
+                     (make-instance 'dashboard-recent-files
                                     :file-count 5
                                     :bottom-margin 1)
                      (make-instance 'dashboard-command
                                     :display-text " New Lisp Scratch Buffer (l)"
-                                    :action-command 'lem-lisp-mode/internal:lisp-scratch 
+                                    :action-command 'lem-lisp-mode/internal:lisp-scratch
                                     :item-attribute 'document-header2-attribute
                                     :bottom-margin 2)))
 ```
@@ -106,7 +107,7 @@ As an example, let's make a `dashboard-item` that fetches a random fact from an 
   (insert-string point
                  (create-centered-string (or (fact item) "Loading fact..."))
                  :attribute (item-attribute item))
-  
+
   ;; If we don't currently have a fact and are not fetching, start fetching fact
   (unless (or (fact item) (fetching item))
     (setf (fetching item) t)
@@ -118,7 +119,7 @@ As an example, let's make a `dashboard-item` that fetches a random fact from an 
                   (json-data (json:decode-json-from-string response))
                   (fact-text (cdr (assoc :text json-data))))
              ;; Once we receive the fact, we'll set it and redraw the dashboard
-             (send-event (lambda () 
+             (send-event (lambda ()
                            (setf (fact item) fact-text)
                            (redraw-dashboard))))
          (error (e)
