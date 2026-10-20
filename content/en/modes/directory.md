@@ -5,6 +5,9 @@ title: Directory mode
 When you open a directory (`C-x C-f` and don't choose a file,
 but a directory), Lem shows a list of files and directories.
 
+When you enter the "writable-directory" mode, you can edit file names
+as if the directory listing was a text buffer.
+
 ![](https://github-production-user-asset-6210df.s3.amazonaws.com/13656378/239887331-8c790229-1f7c-4581-b093-9c56d4d85420.png)
 
 ## Keybindings
@@ -80,6 +83,29 @@ Lem opens a PDF file natively, we can tell it to use an external program:
       (open-external-file pathname)
       (call-next-method)))
 ~~~
+
+## Writable directory mode
+
+The writable-directory mode turns the directory buffer as an almost
+normal text buffer. The file names become editable. We can use Lem's
+built-in text commands to edit file names in bulk. Once we are done,
+we validate the changes, file names are changed, and we are back to
+the normal directory listing.
+
+To enter `writable-directory-mode`, use `C-x C-q` (or `Alt-x writable-directory-change-to-writable-directory`).
+
+Make changes (use search and replace, square selection, multiple cursors…).
+
+Validate changes with `C-c C-c` (or `Alt-x writable-directory-finish-edit`).
+
+Abort changes with `C-c C-k` (or `Alt-x writable-directory-abort-changes`).
+
+Here's a short screencast. We enter writable-directory-mode and change file names in bulk.
+
+<video width="640" height="360" controls muted>
+  <source src="/writable-directory.webm" type="video/webm">
+  writable directory
+</video>
 
 
 ## Configuration
