@@ -786,7 +786,7 @@ At startup Lem opens by default a customizable dashboard, `lem-dashboard`:
 It ships with useful shortcuts like starting a lisp scratch or seeing
 recent files and projects at a glance.
 
-Read its documentation on its [dashboard documentation](/modes/dashboard).
+Read its documentation on its [dashboard documentation](/usage/dashboard/).
 
 > Note: this feature has been added on the 3rd of September 2024.
 
