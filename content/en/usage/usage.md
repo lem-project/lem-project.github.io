@@ -909,3 +909,10 @@ display-time-mode is a lem minor mode that adds a clock to your modeline so you 
 You can enable display-time-mode by running `Alt-x display-time-mode`
 
 It was added on June, 2026.
+
+### Unicode symbols
+
+Use `Alt-x insert-char` (`C-x 8`) to insert any unicode symbol, with
+completion by symbol name.
+
+<img class="" src="/insert-char.png" alt="Insert any unicode symbol by name." width="100%">
