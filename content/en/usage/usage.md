@@ -910,6 +910,12 @@ You can enable display-time-mode by running `Alt-x display-time-mode`
 
 It was added on June, 2026.
 
+### Spell check
+
+Use `Alt-x spell-check-[buffer, region, word]`.
+
+More: [Spell Check](/usage/spell_check/)
+
 ### Unicode symbols
 
 Use `Alt-x insert-char` (`C-x 8`) to insert any unicode symbol, with
